@@ -7,3 +7,16 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.reveal-ready{opacity:1;transform:none}.photo-frame{transform:none}}
 
 @media(min-width:761px){.menu-toggle{display:none}}
+
+/* Cinco momentos, siempre visibles. */
+.hero-visual.photo-mosaic{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:180px 180px 150px;gap:10px;padding:0 0 30px;perspective:none}
+.photo-mosaic figure{margin:0;min-width:0;overflow:hidden;border-radius:10px;position:relative;background:var(--line)}
+.photo-mosaic .mosaic-main{grid-column:span 2;grid-row:span 2;border-top-left-radius:90px}
+.photo-mosaic .mosaic-wide{grid-column:span 2}
+.photo-mosaic figure img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.photo-mosaic figure:hover img{transform:scale(1.045)}
+.photo-mosaic .mosaic-main img{object-position:center 42%}
+.photo-mosaic figcaption{position:absolute;inset:auto 0 0;padding:50px 20px 20px;background:linear-gradient(transparent,#11271fe6);color:#fff;font-size:17px;line-height:1.4}
+.photo-mosaic .university-badge{bottom:0;left:18px;transform:rotate(-3deg);padding:12px 17px}
+@media(max-width:1050px) and (min-width:761px){.hero-visual.photo-mosaic{grid-template-rows:160px 160px 130px}}
+@media(max-width:760px){.hero-visual.photo-mosaic{width:100%;max-width:480px;grid-template-rows:160px 160px 135px;gap:8px}.photo-mosaic .university-badge{left:10px}.photo-mosaic figcaption{font-size:15px}}

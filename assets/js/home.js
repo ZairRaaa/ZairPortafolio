@@ -14,22 +14,6 @@
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && navigation.classList.contains('open')) { closeMenu(); menuButton.focus(); }
   });
-  const photos = [
-    ['assets/images/perfil/foto_perfil3.jpg', 'Zair Ken frente a una iglesia de piedra en Cusco', '50% 42%'],
-    ['assets/images/perfil/foto_perfil.jpg', 'Zair Ken junto a un mural de colibríes en San Blas', '50% 55%'],
-    ['assets/images/perfil/foto_perfil1.jpg', 'Zair Ken en un mirador con la ciudad iluminada de noche', '50% 50%']
-  ];
-  const photo = document.querySelector('#hero-photo');
-  document.querySelectorAll('[data-photo]').forEach(button => {
-    button.addEventListener('click', () => {
-      const [src, alt, position] = photos[Number(button.dataset.photo)];
-      photo.src = src; photo.alt = alt; photo.style.objectPosition = position;
-      document.querySelectorAll('[data-photo]').forEach(item => {
-        item.classList.toggle('selected', item === button);
-        item.setAttribute('aria-pressed', String(item === button));
-      });
-    });
-  });
   const progress = document.querySelector('.reading-progress');
   let scheduled = false;
   const updateProgress = () => {

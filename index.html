@@ -1,23 +1,54 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio | Portafolio electrónico</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script src="assets/js/main.js" defer></script>
-</head>
-<body>
-  <header>
-    <nav aria-label="Navegación principal">
-      <a href="index.html">Inicio</a>
-      <a href="pages/cuaderno/index.html">Cuaderno</a>
-    </nav>
-  </header>
-  <main>
-    <h1>Mi portafolio electrónico</h1>
-    <p>Aquí irá mi presentación personal.</p>
-    <p><a href="pages/cuaderno/index.html">Ver mi cuaderno de aprendizaje</a></p>
-  </main>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Zair Ken Rojas Cerron, estudiante de Ingeniería de Sistemas en la UNCP. Proyectos, datos y cuaderno de aprendizaje.">
+  <meta name="theme-color" content="#173f35">
+  <title>Zair Ken — Portafolio electrónico</title>
+  <link rel="icon" href="assets/images/logos/Logo_uncp.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <script src="assets/js/home.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <header class="header">
+    <a class="brand" href="#inicio" aria-label="Zair Ken, inicio">zk<span>.</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" hidden>Menú <span aria-hidden="true">☰</span></button>
+    <nav id="navigation" aria-label="Navegación principal">
+      <a href="#sobre-mi">Sobre mí</a><a href="#proyectos">Proyectos</a><a href="#formacion">Formación</a><a href="#cuaderno">Cuaderno <span class="nav-count">15</span></a>
+    </nav>
+    <a class="header-contact" href="#contacto">Conversemos <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="contenido">
+    <section class="hero wrap" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> PORTAFOLIO PERSONAL · INGENIERÍA DE SISTEMAS</div>
+        <h1 id="hero-title">Hola, soy<br><span>Zair Ken</span><span class="name-dot">.</span></h1>
+        <p class="hero-statement">La curiosidad me mueve.<br>La tecnología me permite <em>crear.</em></p>
+        <p class="hero-description">Estudiante de la UNCP. Conecto el desarrollo de software, los datos y las ganas de aprender para convertir ideas en soluciones útiles.</p>
+        <div class="hero-actions"><a class="button primary" href="#proyectos">Explora mis proyectos <span aria-hidden="true">↗</span></a><a class="text-link" href="pages/cuaderno/index.html">Mi cuaderno <span aria-hidden="true">↗</span></a></div>
+        <div class="hero-location"><span aria-hidden="true">◎</span> Chupaca, Junín · Perú <span class="location-line"></span> Aprendiendo y construyendo</div>
+      </div>
+      <div class="hero-visual">
+        <div class="photo-frame"><img id="hero-photo" src="assets/images/perfil/foto_perfil3.jpg" alt="Zair Ken frente a una iglesia de piedra en Cusco" width="720" height="1280" fetchpriority="high"><div class="photo-shade"></div><div class="photo-caption"><span>UNA MIRADA CURIOSA</span><strong>Siempre hay algo<br>nuevo por descubrir.</strong></div></div>
+        <div class="photo-label" aria-hidden="true">PERSONAS. IDEAS. TECNOLOGÍA.</div>
+        <div class="university-badge"><img src="assets/images/logos/Logo_uncp.png" alt="Escudo de la UNCP" width="52" height="52"><div><strong>Ingeniería de Sistemas</strong><span>UNCP · 9.º semestre</span></div><span class="badge-spark" aria-hidden="true">✳</span></div>
+        <div class="photo-controls" aria-label="Elegir fotografía"><button class="selected" data-photo="0" aria-label="Ver fotografía en Cusco" aria-pressed="true">01</button><button data-photo="1" aria-label="Ver fotografía en San Blas" aria-pressed="false">02</button><button data-photo="2" aria-label="Ver fotografía de la ciudad de noche" aria-pressed="false">03</button><span>UN POCO DE MÍ</span></div>
+      </div>
+    </section>
+    <div class="discipline-strip"><div class="wrap"><span>DESARROLLO DE SOFTWARE</span><i>✳</i><span>ANÁLISIS DE DATOS</span><i>✳</i><span>APRENDIZAJE CONTINUO</span><i>✳</i><span>INNOVACIÓN</span></div></div>
+    <section class="about wrap section" id="sobre-mi">
+      <div class="section-marker">01 / SOBRE MÍ</div>
+      <div class="about-grid"><h2>Entender primero.<br>Construir <em>después.</em></h2><div><p class="lead">Soy Zair Ken Rojas Cerron, estudiante de Ingeniería de Sistemas en la Universidad Nacional del Centro del Perú.</p><p>Me interesa entender cómo funcionan las cosas y cómo hacerlas mejor. Mi formación combina análisis de datos, desarrollo de software y automatización de información.</p><p>Me identifico con el pensamiento analítico, la empatía y el trabajo en equipo. Busco seguir creciendo en proyectos donde la tecnología resuelva necesidades reales.</p><div class="values"><span>↗ Pensamiento analítico</span><span>↗ Trabajo en equipo</span><span>↗ Mejora continua</span></div></div></div>
+      <div class="skills"><div class="skills-heading"><h3>Mi caja de herramientas</h3><p>Tecnologías con las que aprendo y construyo.</p></div><div class="skill-list"><span>Python <small>Intermedio</small></span><span>SQL <small>Intermedio</small></span><span>Power BI <small>Intermedio</small></span><span>Excel <small>Avanzado</small></span><span>Scrum <small>Metodología ágil</small></span></div></div>
+    </section>
+
+
+
+
+  </main>
+  <footer class="wrap footer"><a class="brand" href="#inicio" aria-label="Volver al inicio">zk<span>.</span></a><p>© <span id="year">2026</span> Zair Ken Rojas Cerron<br><span>Hecho con curiosidad, desde Perú.</span></p><a href="#inicio">Volver arriba ↑</a></footer>
+</body>
+</html>

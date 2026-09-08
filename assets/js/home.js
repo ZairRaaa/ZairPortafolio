@@ -1,5 +1,26 @@
 (() => {
   'use strict';
+  const themeButton = document.querySelector('.theme-toggle');
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  let themeChosen = false;
+  try { themeChosen = ['light', 'dark'].includes(localStorage.getItem('portfolio-theme')); } catch { /* Storage is optional. */ }
+  const applyTheme = theme => {
+    const dark = theme === 'dark';
+    document.documentElement.dataset.theme = theme;
+    themeButton.setAttribute('aria-pressed', String(dark));
+    document.querySelector('meta[name="theme-color"]').content = dark ? '#101c18' : '#173f35';
+  };
+  themeButton.hidden = false;
+  applyTheme(document.documentElement.dataset.theme || (systemTheme.matches ? 'dark' : 'light'));
+  themeButton.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    themeChosen = true;
+    applyTheme(next);
+    try { localStorage.setItem('portfolio-theme', next); } catch { /* The theme still works for this visit. */ }
+  });
+  systemTheme.addEventListener('change', event => {
+    if (!themeChosen) applyTheme(event.matches ? 'dark' : 'light');
+  });
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const menuButton = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('#navigation');

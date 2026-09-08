@@ -1,5 +1,12 @@
 (() => {
   'use strict';
+  let appearanceTimer;
+  const animateAppearance = () => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    clearTimeout(appearanceTimer);
+    document.documentElement.classList.add('appearance-transition');
+    appearanceTimer = setTimeout(() => document.documentElement.classList.remove('appearance-transition'), 650);
+  };
   const themeButton = document.querySelector('.theme-toggle');
   const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
   let themeChosen = false;
@@ -15,11 +22,12 @@
   themeButton.addEventListener('click', () => {
     const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
     themeChosen = true;
+    animateAppearance();
     applyTheme(next);
     try { localStorage.setItem('portfolio-theme', next); } catch { /* The theme still works for this visit. */ }
   });
   systemTheme.addEventListener('change', event => {
-    if (!themeChosen) applyTheme(event.matches ? 'dark' : 'light');
+    if (!themeChosen) { animateAppearance(); applyTheme(event.matches ? 'dark' : 'light'); }
   });
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const menuButton = document.querySelector('.menu-toggle');

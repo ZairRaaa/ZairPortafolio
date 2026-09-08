@@ -54,3 +54,12 @@
 [data-theme="dark"] .discipline-strip i{color:#adc780}
 @media(max-width:1050px){.header nav{gap:14px}.header-contact{display:none}}
 @media(max-width:760px){.theme-toggle{margin-left:auto;font-size:11px;padding:7px 11px}.menu-toggle{margin-left:0;order:2}.header nav{order:3}.header{gap:10px}}
+
+/* Los cambios de apariencia conservan el movimiento de cada elemento. */
+@media(prefers-reduced-motion:no-preference){
+  html.appearance-transition body,html.appearance-transition body *,html.appearance-transition body *::before,html.appearance-transition body *::after{
+    transition-property:background-color,color,border-color,box-shadow,fill,stroke,transform,opacity;
+    transition-duration:.55s;
+    transition-timing-function:ease;
+  }
+}

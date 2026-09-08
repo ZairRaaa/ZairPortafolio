@@ -1,0 +1,7 @@
+/* Estilos compartidos. Base provisional mientras definimos el diseño. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.6; color: #1f2937; background: #f8fafc; }
+header, main { max-width: 960px; margin: 0 auto; padding: 24px; }
+nav { display: flex; gap: 24px; flex-wrap: wrap; }
+a { color: #174ea6; }
+section { margin-block: 32px; }

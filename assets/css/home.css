@@ -87,3 +87,26 @@
 @media(max-width:1050px){.personal-note{gap:45px}.learning-pause{gap:40px;padding-inline:35px}.hero-visual.portrait-intro{padding-left:15px}.intro-photo{height:420px}}
 @media(max-width:760px){.hero-visual.portrait-intro{padding:12px 12px 25px;justify-self:center;max-width:380px}.intro-photo{height:450px}.personal-note{grid-template-columns:1fr;gap:30px;margin:45px 0}.san-blas-photo{height:400px;width:min(85%,330px);margin-left:10px}.personal-note>div{padding-left:15px}.city-photo.wrap{height:270px;margin-top:40px}.city-photo figcaption{font-size:23px;padding:40px 20px 20px}.learning-pause{grid-template-columns:1fr;gap:22px;padding:0 10px 55px}.street-photo{height:380px;width:75%;max-width:280px;margin-right:12px}.contact-photo{height:240px;width:190px;margin:25px 0 35px 15px}.photo-thought{font-size:33px}}
 @media(prefers-reduced-motion:reduce){.editorial-photo img{transform:none!important}}
+
+/* Fotografías más amplias, con recorte dentro de su espacio. */
+.hero-visual.portrait-intro{max-width:none;padding:45px 8px 25px 0}
+.intro-photo{height:560px}
+.personal-note{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:65px}
+.san-blas-photo{height:560px;width:100%;max-width:none;margin-left:0}
+.city-photo.wrap{height:520px}
+.learning-pause{grid-template-columns:1fr 1.15fr;padding-inline:0;gap:65px}
+.street-photo{height:580px;width:100%;max-width:none}
+.street-photo img{object-position:50% 58%}
+.contact-photo{height:440px;width:100%;margin:35px 0 0;transform:rotate(-1deg)}
+.contact-photo img{object-position:50% 38%}
+@media(max-width:1050px){.intro-photo{height:500px}.san-blas-photo{height:500px}.street-photo{height:520px}.contact-photo{height:390px}.personal-note,.learning-pause{gap:40px}}
+@media(max-width:760px){
+  .hero-visual.portrait-intro{max-width:none;padding:12px 5px 25px}
+  .intro-photo{height:clamp(440px,125vw,620px)}
+  .personal-note,.learning-pause{grid-template-columns:1fr;gap:30px}
+  .san-blas-photo{height:clamp(420px,120vw,600px);width:100%;margin:0}
+  .city-photo.wrap{height:380px}
+  .city-photo img{object-position:50% 58%}
+  .street-photo{height:clamp(440px,130vw,640px);width:100%;max-width:none;margin:0;transform:rotate(1deg)}
+  .contact-photo{height:clamp(350px,100vw,480px);width:100%;margin:25px 0 35px}
+}

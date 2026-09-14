@@ -7,10 +7,10 @@ Coloca aquí las siguientes imágenes, respetando mayúsculas y extensiones. No 
 - `practica-02-pagina-03.png`: Página adaptable con imágenes.
 - `practica-02-pagina-04.png`: Página principal con tarjetas.
 - `practica-03-galeria.png`: Vista general de la galería de proyectos.
-- `validador-antes.jpg`: Validador HTML · Antes.
-- `codigo-error-validador.jpg`: Código revisado · Estado inicial.
-- `codigo-corregido-validador.jpg`: Código revisado · Corrección.
-- `validador-despues.jpg`: Validador HTML · Después.
+- `validator-antes.jpg`: Validador HTML · Antes.
+- `codigo-error-validator.jpg`: Código revisado · Estado inicial.
+- `codigo-corregido-validator.jpg`: Código revisado · Corrección.
+- `validator-despues.jpg`: Validador HTML · Después.
 - `wave-antes.png`: WAVE · Primera revisión.
 - `wave-antes1.png`: WAVE · Detalle de la revisión inicial.
 - `wave-despues.png`: WAVE · Después.

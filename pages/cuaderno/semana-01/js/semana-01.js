@@ -8,7 +8,8 @@
     const updateCapture = () => {
       const ready = image.complete && image.naturalWidth > 0;
       image.hidden = !ready;
-      placeholder.hidden = ready;
+      if (placeholder) placeholder.hidden = ready;
+      else figure.hidden = !ready;
     };
     image.addEventListener('load', updateCapture);
     image.addEventListener('error', updateCapture);

@@ -105,3 +105,47 @@ kbd { background: var(--soft); border: 1px solid var(--line); border-bottom-widt
 @media(max-width:1100px){.teachers{grid-template-columns:1fr 1fr}.teachers-intro{grid-column:1/-1;display:flex;align-items:center;gap:25px}.teachers-intro p{max-width:340px}.teachers-intro h2{font-size:28px}.notebook-layout{grid-template-columns:180px minmax(0,1fr);gap:30px}.teacher-photo{width:40%}.week-page .wrap{width:calc(100% - 50px)}}
 @media(max-width:760px){.week-page .wrap{width:calc(100% - 36px)}.week-page .header{gap:12px}.week-page .header nav{padding:0;gap:16px;margin-left:auto}.week-page .appearance-controls{flex-basis:100%;justify-content:flex-end;order:3}.week-hero-grid{grid-template-columns:1fr;gap:25px;padding:30px 0}.week-page h1{font-size:46px;letter-spacing:-2.4px}.week-number{display:flex;align-items:center;justify-content:space-around;gap:10px;padding:12px 15px;transform:none;border-radius:10px}.week-number strong{font-size:65px;letter-spacing:-4px}.week-number span{font-size:9px;letter-spacing:1px}.week-intro{font-size:16px}.teachers{grid-template-columns:1fr;padding-block:20px 45px;gap:15px}.teachers-intro{display:block;grid-column:auto}.teacher{min-height:200px}.teacher-photo{height:210px;width:40%}.teacher h3{font-size:20px}.teacher span{font-size:11px}.notebook-layout{grid-template-columns:1fr;gap:25px}.week-index{position:static}.week-index nav{grid-template-columns:1fr 1fr}.week-index>p{display:none}.week-index a{font-size:12px}.lesson{padding:38px 0}.concept-grid,.role-grid{grid-template-columns:1fr}.week-page h2{font-size:34px}.learning-goals,.margin-note,.reflection,.evidence{padding:22px}.glossary{grid-template-columns:1fr;gap:5px}.glossary dd{margin-bottom:12px}.standards article{gap:15px}.standards code{width:75px;font-size:14px}.address-bar{padding:15px;font-size:12px}.address-bar>span:last-child{display:none}.request-steps{padding:10px}.request-steps li{padding-left:43px}.demo-controls{padding:18px 15px}.shortcut-list{padding:18px}.shortcut-list p{flex-wrap:wrap}.week-pagination a{font-size:15px}.week-page .footer{margin-top:20px}}
 @media(prefers-reduced-motion:reduce){.request-steps li{transition:none}}
+
+/* Prácticas y evidencias: las capturas conservan todo su contenido. */
+.practice-jump{display:flex;gap:12px;flex-wrap:wrap;margin:25px 0 35px}
+.practice-jump a{padding:9px 16px;background:var(--soft);border:1px solid var(--line);border-radius:24px;font-size:14px;text-decoration:none!important}
+.practice-entry{padding:32px 0;scroll-margin-top:25px}
+.practice-entry+.practice-entry{border-top:1px solid var(--line);margin-top:25px}
+.practice-heading{display:flex;gap:22px;align-items:center;margin-bottom:25px}
+.practice-number{font:500 64px/1 var(--display);letter-spacing:-4px;color:var(--green)}
+.practice-kicker{display:block;font-size:11px;letter-spacing:1.1px;color:var(--muted);margin:0 0 10px}
+.practice-heading h3{font-size:28px;margin:0;letter-spacing:-1px}
+.practice-entry>p{color:var(--muted)}
+.practice-brief{background:var(--soft);border-left:3px solid var(--green);padding:20px 24px;border-radius:0 10px 10px 0;margin:25px 0}
+.practice-brief p{font-size:15px;margin:8px 0 0;color:var(--muted)}
+.practice-subtitle{margin-top:30px!important}
+.used-shortcuts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0 25px}
+.used-shortcuts>div{padding:18px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+.used-shortcuts span{display:block;font-size:13px;color:var(--muted);margin-top:13px}
+.practice-repository{display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid var(--line);border-radius:10px;padding:20px 24px;text-decoration:none!important;background:var(--soft)}
+.practice-repository small{display:block;font-size:10px;letter-spacing:1px;color:var(--muted)}
+.practice-repository strong{font-size:18px;color:var(--green);overflow-wrap:anywhere}
+.practice-repository>span:last-child{font-size:30px;color:var(--green)}
+.practice-capture{margin:28px 0}
+.capture-surface{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+.capture-surface img{display:block;width:100%;height:auto}
+.capture-placeholder{min-height:270px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;background:var(--soft)}
+.capture-placeholder>span{font-size:40px;color:var(--green)}
+.capture-placeholder strong{font-size:18px;margin:8px 0}
+.capture-placeholder p{font-size:14px;color:var(--muted);max-width:430px;margin:0 0 15px}
+.capture-placeholder code{font-size:12px;border:1px dashed var(--line);padding:6px 10px;border-radius:5px;overflow-wrap:anywhere;max-width:100%}
+.capture-placeholder small{font-size:12px;color:var(--muted);margin-top:12px}
+.practice-capture figcaption{font-size:13px;color:var(--muted);margin-top:9px}
+.infographic .capture-placeholder{min-height:380px}
+.practice-takeaway{background:var(--soft);padding:25px;border-radius:10px;margin:25px 0}
+.practice-takeaway p{margin:10px 0 0;font-size:15px}
+.practice-closing{font-size:15px;border-left:2px solid var(--green);padding-left:18px}
+.hosting-table-wrap{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:10px}
+.hosting-comparison{border-collapse:collapse;width:100%;font-size:14px;min-width:540px}
+.hosting-comparison caption{text-align:left;padding:15px 18px;color:var(--muted);font-size:12px;background:var(--card)}
+.hosting-comparison th,.hosting-comparison td{text-align:left;vertical-align:top;padding:16px;border-bottom:1px solid var(--line)}
+.hosting-comparison thead{background:var(--soft)}
+.hosting-comparison tbody th{width:23%;font-weight:500}
+.hosting-comparison td{color:var(--muted);width:38.5%}
+.hosting-comparison tbody tr:last-child>*{border-bottom:0}
+@media(max-width:760px){.practice-heading{gap:15px;align-items:start}.practice-number{font-size:50px}.practice-heading h3{font-size:24px}.used-shortcuts{grid-template-columns:1fr}.used-shortcuts>div{display:flex;align-items:center;gap:15px}.used-shortcuts span{margin:0}.capture-placeholder{min-height:230px;padding:20px}.practice-takeaway{padding:20px}.practice-repository{padding:18px}}

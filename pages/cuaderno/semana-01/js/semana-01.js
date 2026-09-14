@@ -1,6 +1,19 @@
 // Interacciones exclusivas de la semana 1.
 (() => {
   'use strict';
+  // Mostrar una captura solo cuando haya cargado; mantener el recuadro si aún falta.
+  document.querySelectorAll('.practice-capture').forEach(figure => {
+    const image = figure.querySelector('img');
+    const placeholder = figure.querySelector('.capture-placeholder');
+    const updateCapture = () => {
+      const ready = image.complete && image.naturalWidth > 0;
+      image.hidden = !ready;
+      placeholder.hidden = ready;
+    };
+    image.addEventListener('load', updateCapture);
+    image.addEventListener('error', updateCapture);
+    updateCapture();
+  });
   const steps = [...document.querySelectorAll('.request-steps li')];
   const next = document.querySelector('#step-next');
   const status = document.querySelector('#step-status');

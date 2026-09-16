@@ -4,7 +4,21 @@
   const origin = location.origin === 'null' ? '*' : location.origin;
   const parts = [...document.querySelectorAll('[data-part]')];
   const send = message => { if (window.parent !== window) window.parent.postMessage(message, origin); };
-  const updateEmpty = () => { document.querySelector('#empty-preview').hidden = parts.some(part => !part.hidden); };
+  const updateEmpty = () => {
+    document.querySelector('#empty-preview').hidden = parts.some(part => !part.hidden);
+    document.querySelectorAll('[data-extra]').forEach(extra => {
+      extra.hidden = Boolean(parts.find(part => part.dataset.part === extra.dataset.extra)?.hidden);
+    });
+  };
+  const favorites = new Set();
+  document.querySelectorAll('[data-favorite]').forEach(button => button.addEventListener('click', () => {
+    const dog = button.dataset.favorite;
+    if (favorites.has(dog)) favorites.delete(dog); else favorites.add(dog);
+    const selected = favorites.has(dog);
+    button.setAttribute('aria-pressed', String(selected));
+    button.textContent = selected ? '♥' : '♡';
+    document.querySelector('#favorite-count').textContent = String(favorites.size);
+  }));
   let previousHeight = 0;
   const reportHeight = () => {
     const height = Math.ceil(document.body.getBoundingClientRect().height) + 2;

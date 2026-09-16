@@ -1,23 +1,120 @@
 <!DOCTYPE html>
-<html lang="es"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Semana 3: laboratorio interactivo con Bootstrap y Tailwind. Una web de perritos que se construye en cinco pasos.">
-<meta name="theme-color" content="#173f35"><title>Semana 03 · Huellitas, paso a paso | Zair Ken</title>
-<link rel="icon" href="../../../assets/images/logos/Logo_uncp.png">
-<script src="../../../assets/js/theme.js"></script>
-<link rel="stylesheet" href="../../../assets/css/home.css"><link rel="stylesheet" href="css/semana-03.css">
-<script src="../../../assets/js/appearance.js" defer></script><script src="js/semana-03.js" defer></script>
-</head><body class="week-three"><a class="skip" href="#contenido">Saltar al contenido</a>  <header class="header">
-    <a class="brand" href="../../../index.html" aria-label="Zair Ken, inicio">zk<span>.</span></a>
-    <nav aria-label="Navegación principal"><a href="../../../index.html">Portafolio</a><a href="../index.html">Cuaderno <span class="nav-count">15</span></a></nav>
-    <div class="appearance-controls"><button class="theme-toggle" type="button" aria-pressed="false" hidden><span aria-hidden="true">◐</span> Modo oscuro</button><button class="palette-toggle" type="button" aria-pressed="false" hidden><span aria-hidden="true"></span> Paleta roja</button></div>
-  </header>
-
-<main id="contenido">
-<section class="lab-intro wrap"><nav class="breadcrumbs" aria-label="Ruta de la página"><a href="../index.html">Cuaderno</a><span>/</span><span aria-current="page">Semana 03</span></nav><div class="intro-line"><div><p class="eyebrow">SEMANA 03 · FRAMEWORKS CSS MODERNOS</p><h1>Una web.<br>Cinco pasos. <em>Muchas patitas.</em></h1></div><p>Este es mi laboratorio de Bootstrap y Tailwind. Activa cada parte y descubre cómo una idea se convierte en una interfaz.</p></div><div class="intro-tags"><span>Bootstrap 5.3.3</span><span>Tailwind CSS 3 · Play CDN</span><span>HTML · CSS · JavaScript</span></div></section>
-<section class="lab-workspace" aria-label="Laboratorio interactivo de cinco pasos">
-<aside class="step-panel"><div class="panel-dogs"><img src="images/huellitas.png" alt="Milo, Luna y Bruno juntos en el jardín"><span>El equipo Huellitas <span aria-hidden="true">♡</span></span></div><div class="panel-heading"><span class="section-marker">CONSTRUYE LA PÁGINA</span><h2>Control de pasos<span aria-hidden="true">↘</span></h2><p>Enciende o apaga cada parte.</p></div><div class="step-buttons"><button class="step-toggle" type="button" data-step="1" aria-pressed="true"><span class="step-index">1</span><span><strong>Base y metadatos</strong><small>El punto de partida</small></span><span class="step-check" aria-hidden="true">✓</span></button><button class="step-toggle" type="button" data-step="2" aria-pressed="true"><span class="step-index">2</span><span><strong>Navegación adaptable</strong><small>Siempre encuentra el camino</small></span><span class="step-check" aria-hidden="true">✓</span></button><button class="step-toggle" type="button" data-step="3" aria-pressed="true"><span class="step-index">3</span><span><strong>Una gran bienvenida</strong><small>La primera impresión</small></span><span class="step-check" aria-hidden="true">✓</span></button><button class="step-toggle" type="button" data-step="4" aria-pressed="true"><span class="step-index">4</span><span><strong>Tarjetas con personalidad</strong><small>Tres historias por conocer</small></span><span class="step-check" aria-hidden="true">✓</span></button><button class="step-toggle" type="button" data-step="5" aria-pressed="true"><span class="step-index">5</span><span><strong>Formulario y validación</strong><small>Una conversación que empieza</small></span><span class="step-check" aria-hidden="true">✓</span></button></div><div class="bulk-controls"><button type="button" id="enable-all">Activar todos</button><button type="button" id="disable-all">Desactivar todos</button></div><div class="step-progress"><div><span>Partes visibles</span><strong id="step-count">5 / 5</strong></div><progress id="step-progress" value="5" max="5" aria-label="Partes visibles">5 de 5</progress></div><p id="step-feedback" role="status">La página completa está lista para explorar.</p><div class="step-insight"><span>QUÉ ESTOY PRACTICANDO</span><p id="step-explanation">Componentes de Bootstrap y utilidades de Tailwind en una misma interfaz.</p></div></aside>
-<div class="preview-column"><div class="preview-toolbar"><div><span class="preview-dot" aria-hidden="true"></span><strong>Huellitas</strong><span class="preview-label"> / vista previa</span></div><div class="viewport-controls" role="group" aria-label="Ancho de la vista previa"><button type="button" data-width="full" aria-pressed="true">Amplia</button><button type="button" data-width="390" aria-pressed="false">Móvil</button></div><a href="laboratorio.html" target="_blank" rel="noopener" aria-label="Abrir Huellitas en otra pestaña">↗</a></div><div class="preview-canvas"><iframe id="dog-preview" src="laboratorio.html" title="Huellitas: web de perritos construida con Bootstrap y Tailwind" height="2000"></iframe></div><p class="preview-footnote">Proyecto educativo ficticio. El formulario permite probar la validación; no envía solicitudes ni guarda datos personales.</p></div>
-</section>
-<section class="learning-wrap wrap" id="aprendizaje"><span class="section-marker">DETRÁS DE LAS PATITAS</span><h2>Dos herramientas.<br>Una forma de <em>aprender.</em></h2><div class="learning-grid"><article><span>01 / COMPONENTES</span><h3>Bootstrap resuelve la base.</h3><p>Uso su navbar, su sistema de columnas, las tarjetas y los controles de formulario. El menú móvil funciona con el JavaScript de Bootstrap.</p><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Consultar Bootstrap ↗</a></article><article><span>02 / UTILIDADES</span><h3>Tailwind afina los detalles.</h3><p>Aplico utilidades para espaciado, bordes, sombras y cambios al interactuar. El prefijo <code>tw-</code> evita confundir sus clases con las de Bootstrap.</p><a href="https://v3.tailwindcss.com/docs/installation/play-cdn">Consultar Tailwind ↗</a></article><article><span>03 / CONVIVENCIA</span><h3>Cada estilo tiene su espacio.</h3><p>La demostración vive en un documento independiente, dentro de esta página. Desactivo Preflight de Tailwind para que no se superponga al reinicio de Bootstrap.</p><a href="https://v3.tailwindcss.com/docs/configuration#prefix">Ver la configuración ↗</a></article></div><details class="lab-notes"><summary>Mi recorrido y las comprobaciones de la práctica <span>+</span></summary><p>Primero preparo el documento, después construyo la navegación y la presentación, organizo las tarjetas y cierro con la validación. El panel muestra estas partes; no desinstala los frameworks ni elimina los metadatos al desactivar un paso.</p><p>El siguiente control de calidad es revisar contraste, teclado, etiquetas, rendimiento y SEO con WAVE y Lighthouse. Las puntuaciones de esas herramientas deben registrarse después de ejecutar las auditorías.</p><p>El Play CDN se utiliza aquí como parte del ejercicio de laboratorio. Una entrega de producción requeriría generar el CSS utilizado mediante un proceso de compilación.</p></details><div class="week-links"><a href="../semana-02/index.html">← Semana 02</a><a href="../index.html">Volver al cuaderno ↗</a></div></section>
-</main><footer class="wrap footer"><a class="brand" href="../../../index.html">zk<span>.</span></a><p>Zair Ken Rojas Cerron<br><span>Semana 03 · Aprender construyendo</span></p><a href="#contenido">Volver arriba ↑</a></footer></body></html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Semana 3: laboratorio interactivo con Bootstrap y Tailwind. Una web de perritos que se construye en cinco pasos.">
+        <meta name="theme-color" content="#173f35">
+        <title>Semana 03 · Huellitas, paso a paso | Zair Ken</title>
+        <link rel="icon" href="../../../assets/images/logos/Logo_uncp.png">
+        <script src="../../../assets/js/theme.js"></script>
+        <link rel="stylesheet" href="../../../assets/css/home.css">
+        <link rel="stylesheet" href="css/semana-03.css">
+        <script src="../../../assets/js/appearance.js" defer></script>
+        <script src="js/semana-03.js" defer></script>
+    </head>
+    <body class="week-three">
+        <a class="skip" href="#contenido">Saltar al contenido</a>
+        <header class="header">
+            <a class="brand" href="../../../index.html" aria-label="Zair Ken, inicio">zk<span>.</span></a>
+            <nav aria-label="Navegación principal"><a href="../../../index.html">Portafolio</a><a href="../index.html">Cuaderno<span class="nav-count">15</span></a></nav>
+            <div class="appearance-controls">
+                <button class="theme-toggle" type="button" aria-pressed="false" hidden><span aria-hidden="true">◐</span>Modo oscuro</button>
+                <button class="palette-toggle" type="button" aria-pressed="false" hidden><span aria-hidden="true"></span>Paleta roja</button>
+            </div>
+        </header>
+        <main id="contenido">
+            <section class="lab-intro wrap">
+                <nav class="breadcrumbs" aria-label="Ruta de la página"><a href="../index.html">Cuaderno</a><span>/</span><span aria-current="page">Semana 03</span></nav>
+                <div class="intro-line">
+                    <div>
+                        <p class="eyebrow">SEMANA 03 · FRAMEWORKS CSS MODERNOS</p>
+                        <h1>Una web.<br>Cinco pasos.<em>Muchas patitas.</em></h1>
+                    </div>
+                    <p>Este es mi laboratorio de Bootstrap y Tailwind. Activa cada parte y descubre cómo una idea se convierte en una interfaz.</p>
+                </div>
+                <div class="intro-tags"><span>Bootstrap 5.3.3</span><span>Tailwind CSS 3 · Play CDN</span><span>HTML · CSS · JavaScript</span></div>
+            </section>
+            <section class="lab-workspace" aria-label="Laboratorio interactivo de cinco pasos">
+                <aside class="step-panel">
+                    <div class="panel-dogs"><img src="images/huellitas.png" alt="Milo, Luna y Bruno juntos en el jardín"><span>El equipo Huellitas<span aria-hidden="true">♡</span></span></div>
+                    <div class="panel-heading">
+                        <span class="section-marker">CONSTRUYE LA PÁGINA</span>
+                        <h2>Control de pasos<span aria-hidden="true">↘</span></h2>
+                        <p>Enciende o apaga cada parte.</p>
+                    </div>
+                    <div class="step-buttons">
+                        <button class="step-toggle" type="button" data-step="1" aria-pressed="true"><span class="step-index">1</span><span><strong>Base y metadatos</strong><small>El punto de partida</small></span><span class="step-check" aria-hidden="true">✓</span></button>
+                        <button class="step-toggle" type="button" data-step="2" aria-pressed="true"><span class="step-index">2</span><span><strong>Navegación adaptable</strong><small>Siempre encuentra el camino</small></span><span class="step-check" aria-hidden="true">✓</span></button>
+                        <button class="step-toggle" type="button" data-step="3" aria-pressed="true"><span class="step-index">3</span><span><strong>Una gran bienvenida</strong><small>La primera impresión</small></span><span class="step-check" aria-hidden="true">✓</span></button>
+                        <button class="step-toggle" type="button" data-step="4" aria-pressed="true"><span class="step-index">4</span><span><strong>Tarjetas con personalidad</strong><small>Tres historias por conocer</small></span><span class="step-check" aria-hidden="true">✓</span></button>
+                        <button class="step-toggle" type="button" data-step="5" aria-pressed="true"><span class="step-index">5</span><span><strong>Formulario y validación</strong><small>Una conversación que empieza</small></span><span class="step-check" aria-hidden="true">✓</span></button>
+                    </div>
+                    <div class="bulk-controls">
+                        <button type="button" id="enable-all">Activar todos</button>
+                        <button type="button" id="disable-all">Desactivar todos</button>
+                    </div>
+                    <div class="step-progress">
+                        <div><span>Partes visibles</span><strong id="step-count">5 / 5</strong></div>
+                        <progress id="step-progress" value="5" max="5" aria-label="Partes visibles">5 de 5</progress>
+                    </div>
+                    <p id="step-feedback" role="status">La página completa está lista para explorar.</p>
+                    <div class="step-insight">
+                        <span>QUÉ ESTOY PRACTICANDO</span>
+                        <p id="step-explanation">Componentes de Bootstrap y utilidades de Tailwind en una misma interfaz.</p>
+                    </div>
+                </aside>
+                <div class="preview-column">
+                    <div class="preview-toolbar">
+                        <div><span class="preview-dot" aria-hidden="true"></span><strong>Huellitas</strong><span class="preview-label">/ vista previa</span></div>
+                        <div class="viewport-controls" role="group" aria-label="Ancho de la vista previa">
+                            <button type="button" data-width="full" aria-pressed="true">Amplia</button>
+                            <button type="button" data-width="390" aria-pressed="false">Móvil</button>
+                        </div>
+                        <a href="laboratorio.html" target="_blank" rel="noopener" aria-label="Abrir Huellitas en otra pestaña">↗</a>
+                    </div>
+                    <div class="preview-canvas">
+                        <iframe id="dog-preview" src="laboratorio.html" title="Huellitas: web de perritos construida con Bootstrap y Tailwind" height="2000"></iframe>
+                    </div>
+                    <p class="preview-footnote">Proyecto educativo ficticio. El formulario permite probar la validación; no envía solicitudes ni guarda datos personales.</p>
+                </div>
+            </section>
+            <section class="learning-wrap wrap" id="aprendizaje">
+                <span class="section-marker">DETRÁS DE LAS PATITAS</span>
+                <h2>Dos herramientas.<br>Una forma de<em>aprender.</em></h2>
+                <div class="learning-grid">
+                    <article>
+                        <span>01 / COMPONENTES</span>
+                        <h3>Bootstrap resuelve la base.</h3>
+                        <p>Uso su navbar, su sistema de columnas, las tarjetas y los controles de formulario. El menú móvil funciona con el JavaScript de Bootstrap.</p>
+                        <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Consultar Bootstrap ↗</a>
+                    </article>
+                    <article>
+                        <span>02 / UTILIDADES</span>
+                        <h3>Tailwind afina los detalles.</h3>
+                        <p>Aplico utilidades para espaciado, bordes, sombras y cambios al interactuar. El prefijo<code>tw-</code>evita confundir sus clases con las de Bootstrap.</p>
+                        <a href="https://v3.tailwindcss.com/docs/installation/play-cdn">Consultar Tailwind ↗</a>
+                    </article>
+                    <article>
+                        <span>03 / CONVIVENCIA</span>
+                        <h3>Cada estilo tiene su espacio.</h3>
+                        <p>La demostración vive en un documento independiente, dentro de esta página. Desactivo Preflight de Tailwind para que no se superponga al reinicio de Bootstrap.</p>
+                        <a href="https://v3.tailwindcss.com/docs/configuration#prefix">Ver la configuración ↗</a>
+                    </article>
+                </div>
+                <details class="lab-notes">
+                    <summary>Mi recorrido y las comprobaciones de la práctica<span>+</span></summary>
+                    <p>Primero preparo el documento, después construyo la navegación y la presentación, organizo las tarjetas y cierro con la validación. El panel muestra estas partes; no desinstala los frameworks ni elimina los metadatos al desactivar un paso.</p>
+                    <p>El siguiente control de calidad es revisar contraste, teclado, etiquetas, rendimiento y SEO con WAVE y Lighthouse. Las puntuaciones de esas herramientas deben registrarse después de ejecutar las auditorías.</p>
+                    <p>El Play CDN se utiliza aquí como parte del ejercicio de laboratorio. Una entrega de producción requeriría generar el CSS utilizado mediante un proceso de compilación.</p>
+                </details>
+                <div class="week-links"><a href="../semana-02/index.html">← Semana 02</a><a href="../index.html">Volver al cuaderno ↗</a></div>
+            </section>
+        </main>
+        <footer class="wrap footer">
+            <a class="brand" href="../../../index.html">zk<span>.</span></a>
+            <p>Zair Ken Rojas Cerron<br><span>Semana 03 · Aprender construyendo</span></p>
+            <a href="#contenido">Volver arriba ↑</a>
+        </footer>
+    </body>
+</html>

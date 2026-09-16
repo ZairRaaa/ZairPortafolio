@@ -405,14 +405,62 @@ a {
   font-size: 12px;
   text-decoration: underline;
 }
+/* Identidad académica del sexto paso. */
 .dog-footer {
-  font-size: 10px;
-  color: var(--muted);
-  align-items: center;
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--ink);
+  background: linear-gradient(145deg, var(--surface), var(--soft));
   border-top: 1px solid var(--line);
 }
-.dog-footer .dog-brand {
-  font-size: 21px;
+.academic-badge {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 6px 16px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.dog-footer h2 {
+  max-width: 680px;
+  margin: 0 auto 12px;
+  font-size: clamp(18px, 2.5vw, 27px);
+  font-weight: 750;
+  line-height: 1.45;
+  letter-spacing: 1px;
+}
+.academic-faculty {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 17px;
+  font-weight: 600;
+}
+.academic-semester {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.academic-divider {
+  width: 48px;
+  height: 3px;
+  margin: 24px auto;
+  border-radius: 3px;
+  background: var(--accent);
+}
+.academic-author {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.academic-course {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
 }
 #empty-preview {
   text-align: center;

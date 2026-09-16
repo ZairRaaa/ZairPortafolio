@@ -48,7 +48,7 @@
     if (!data || data.type !== "huellitas:state") return;
     if (
       Array.isArray(data.steps) &&
-      data.steps.length === 5 &&
+      data.steps.length === parts.length &&
       data.steps.every((value) => typeof value === "boolean")
     ) {
       parts.forEach((part) => {
@@ -141,13 +141,11 @@
       if (submitted) validateField(choice);
       result.hidden = true;
       name.focus({ preventScroll: true });
-      document
-        .querySelector("#encuentro")
-        .scrollIntoView({
-          behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-            ? "instant"
-            : "smooth",
-        });
+      document.querySelector("#encuentro").scrollIntoView({
+        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
+      });
     }),
   );
   if ("ResizeObserver" in window)

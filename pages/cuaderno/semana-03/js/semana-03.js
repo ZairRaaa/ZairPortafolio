@@ -3,7 +3,7 @@
   "use strict";
   const frame = document.querySelector("#dog-preview");
   const toggles = [...document.querySelectorAll("[data-step]")];
-  const steps = [true, true, true, true, true];
+  const steps = toggles.map(() => true);
   const origin = location.origin === "null" ? "*" : location.origin;
   const descriptions = [
     "Base: idioma, viewport, descripción y frameworks. El interruptor muestra su franja introductoria; la configuración permanece cargada.",
@@ -11,6 +11,7 @@
     "La bienvenida combina columnas y tipografía de Bootstrap con el fondo degradado y utilidades de Tailwind.",
     "Las tarjetas usan row y col-md-4; Tailwind añade sombras, bordes redondeados y movimiento al pasar el cursor.",
     "El formulario relaciona labels y mensajes con sus campos, muestra errores y confirma una validación local sin enviar datos.",
+    "El pie de página presenta mi nombre, la Facultad de Ingeniería de Sistemas de la UNCP y el IX semestre.",
   ];
   const sync = () => {
     frame.contentWindow?.postMessage(
@@ -28,7 +29,8 @@
       button.setAttribute("aria-pressed", String(steps[index])),
     );
     const count = steps.filter(Boolean).length;
-    document.querySelector("#step-count").textContent = `${count} / 5`;
+    document.querySelector("#step-count").textContent =
+      `${count} / ${steps.length}`;
     document.querySelector("#step-progress").value = count;
     document.querySelector("#step-feedback").textContent = message;
     sync();
@@ -43,7 +45,7 @@
   );
   document.querySelector("#enable-all").addEventListener("click", () => {
     steps.fill(true);
-    render("Los cinco pasos están activos.");
+    render("Los seis pasos están activos.");
   });
   document.querySelector("#disable-all").addEventListener("click", () => {
     steps.fill(false);
@@ -77,7 +79,7 @@
       data.type === "huellitas:enable" &&
       Number.isInteger(data.step) &&
       data.step >= 1 &&
-      data.step <= 5
+      data.step <= steps.length
     ) {
       steps[data.step - 1] = true;
       render(`Paso ${data.step} activado desde Huellitas.`);

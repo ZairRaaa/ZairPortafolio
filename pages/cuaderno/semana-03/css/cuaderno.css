@@ -1,0 +1,47 @@
+/* Semana 3: presentación, navegación y evidencias. El laboratorio conserva su CSS. */
+.week-three { --week-radius: 24px; }
+.week-three main { overflow: clip; }
+.week-three [id] { scroll-margin-top: 28px; }
+.week-hero { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 65px; padding: 70px 0 45px; }
+.week-hero h1 { font-size: clamp(46px, 5.6vw, 80px); letter-spacing: -4px; line-height: 1.06; }
+.hero-summary { max-width: 480px; color: var(--muted); font-size: 18px; }
+.week-cta { display: inline-flex; align-items: center; gap: 35px; background: var(--green); color: var(--paper); padding: 15px 23px; border-radius: 30px; margin: 14px 0 28px; }
+.week-cta span { font-size: 24px; }
+.hero-composition { position: relative; background: var(--soft); border: 1px solid var(--line); border-radius: var(--week-radius); padding: 25px; transform: rotate(2deg); }
+.composition-top, .composition-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 9px; letter-spacing: 1.3px; color: var(--muted); }
+.composition-window { margin: 28px -10px 22px; transform: rotate(-5deg); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--card); box-shadow: 0 20px 45px #0002; }
+.composition-window img { width: 100%; height: auto; }
+.window-dots { padding: 10px 14px; font-size: 9px; color: var(--green); }
+.window-dots span { margin-left: 12px; color: var(--muted); }
+.composition-note { position: relative; display: flex; justify-content: space-between; align-items: center; width: 65%; padding: 20px; margin: -12px 0 18px auto; background: var(--accent); color: #173f35; border-radius: 4px 4px 22px 4px; transform: rotate(3deg); font: 600 23px/1.2 var(--display); }
+.composition-note strong { font-size: 45px; font-weight: 400; }
+.composition-bottom strong { font-size: 25px; }
+.practice-directory { padding-block: 35px 70px; }
+.practice-directory h2 { font-size: 34px; margin-bottom: 0; letter-spacing: -1.5px; }
+.directory-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.directory-card { display: block; padding: 28px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); transition: transform .2s, border-color .2s; }
+.directory-card:hover { transform: translateY(-6px); border-color: var(--green); }
+.directory-number, .practice-label { display: block; color: var(--green); font-size: 11px; font-weight: 650; letter-spacing: 1.5px; margin-bottom: 25px; }
+.directory-card h3 { display: flex; justify-content: space-between; gap: 10px; font-size: 23px; letter-spacing: -.8px; }
+.directory-card p { font-size: 14px; color: var(--muted); min-height: 46px; }
+.directory-meta { display: block; padding-top: 18px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); }
+.practice-heading { padding-block: 50px 30px; border-top: 1px solid var(--line); }
+.practice-heading p, .section-lead { max-width: 660px; font-size: 17px; color: var(--muted); }
+.practice-section { padding-block: 85px 55px; border-bottom: 1px solid var(--line); }
+.practice-section h2, .practice-heading h2 { font-size: clamp(32px, 4vw, 52px); }
+@media (max-width: 1000px) {
+  .week-hero { gap: 30px; }
+  .directory-card { padding: 20px; }
+}
+@media (max-width: 760px) {
+  .week-hero { grid-template-columns: 1fr; padding-top: 35px; }
+  .week-hero h1 { font-size: clamp(43px, 10vw, 64px); letter-spacing: -2px; }
+  .hero-composition { margin: 15px 8px; max-width: 500px; }
+  .directory-grid { grid-template-columns: 1fr; }
+  .directory-card p { min-height: 0; }
+  .practice-directory { padding-bottom: 40px; }
+  .practice-section { padding-top: 55px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .directory-card:hover { transform: none; }
+}

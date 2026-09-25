@@ -90,4 +90,28 @@
     attributeFilter: ["data-theme", "data-palette"],
   });
   sync();
+
+  // Scroll Spy para resaltar la sección activa en el menú lateral
+  if ("IntersectionObserver" in window) {
+    const indexLinks = [...document.querySelectorAll(".week-index a")];
+    const sections = document.querySelectorAll(
+      "#huellitas, #pulso, #calificada, #reflexion"
+    );
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            indexLinks.forEach((link) => {
+              const active = link.hash === `#${entry.target.id}`;
+              link.classList.toggle("active", active);
+              if (active) link.setAttribute("aria-current", "location");
+              else link.removeAttribute("aria-current");
+            });
+          }
+        });
+      },
+      { rootMargin: "-10% 0px -55% 0px", threshold: 0 }
+    );
+    sections.forEach((s) => spy.observe(s));
+  }
 })();

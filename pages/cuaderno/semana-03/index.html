@@ -64,7 +64,21 @@
           </div>
         </div>
       </section>
-      <section class="practice-directory wrap" id="recorrido" aria-labelledby="directory-title">
+
+      <div class="notebook-layout wrap">
+        <aside class="week-index">
+          <span class="section-marker">MI RECORRIDO</span>
+          <nav aria-label="Índice de contenidos">
+            <a href="#huellitas">01 · Huellitas (Laboratorio)</a>
+            <a href="#pulso">02 · Pulso (Práctica grupal)</a>
+            <a href="#calificada">03 · Explorar interfaces</a>
+            <a href="#reflexion">04 · Lo que aprendí</a>
+          </nav>
+          <p>El resultado importa.<br />El proceso también.</p>
+        </aside>
+
+        <div class="week-content">
+          <section class="practice-directory" id="recorrido" aria-labelledby="directory-title">
         <div class="section-heading"><div><p class="eyebrow">EL RECORRIDO</p><h2 id="directory-title">Tres formas de crear.</h2></div><p>Elige una práctica y explora el proceso.</p></div>
         <div class="directory-grid">
           <a class="directory-card" href="#huellitas"><span class="directory-number">01 / LABORATORIO</span><h3>Huellitas<span aria-hidden="true">↗</span></h3><p>Componentes y utilidades, paso a paso.</p><span class="directory-meta">6 partes interactivas</span></a>
@@ -330,7 +344,7 @@
         </div>
         <details class="lab-notes"><summary>Qué conecta estas interfaces <span aria-hidden="true">+</span></summary><p>La práctica propone trabajar en equipo con ramas individuales, registrar el backlog en el README e integrar las páginas desde una portada común. Cada ejercicio cambia el contenido, pero comparte decisiones de jerarquía, espaciado y adaptación a la pantalla.</p><p>Las capturas documentan el resultado visual. Los efectos de giro, los estados al pasar el cursor y los puntos de adaptación se comprueban en las páginas en funcionamiento.</p></details>
       </section>
-      <section class="learning-wrap wrap" id="aprendizaje">
+      <section class="learning-wrap" id="reflexion">
         <span class="section-marker">LO QUE CONECTA LA SEMANA</span>
         <h2>Dos herramientas.<br />Una forma de <em>aprender.</em></h2>
         <div class="learning-grid">
@@ -394,13 +408,20 @@
             mediante un proceso de compilación.
           </p>
         </details>
-        <div class="week-links">
-          <a href="../semana-02/index.html">← Semana 02</a>
-          <a href="../index.html">Volver al cuaderno ↗</a>
-          <a href="../semana-04/index.html">Semana 04 →</a>
-        </div>
+        <nav class="week-pagination" aria-label="Navegación del cuaderno">
+          <a href="../semana-02/index.html">
+            <small>SEMANA ANTERIOR</small>
+            ← Semana 02
+          </a>
+          <a href="../semana-04/index.html">
+            <small>SIGUIENTE ENTRADA</small>
+            Semana 04 →
+          </a>
+        </nav>
       </section>
-    </main>
+    </div>
+  </div>
+</main>
     <dialog class="evidence-dialog" id="evidence-dialog" aria-labelledby="evidence-title" aria-describedby="evidence-description">
       <div class="viewer-header"><span id="evidence-position" aria-live="polite"></span><button type="button" id="evidence-close" autofocus>Cerrar <span aria-hidden="true">×</span></button></div>
       <div class="viewer-stage"><img id="evidence-full" alt="" /></div>

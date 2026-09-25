@@ -1,29 +1,64 @@
-// Galerías y seguimiento de lectura exclusivos de la semana 2.
+// Galerías y visor de evidencias de la semana 2.
 (() => {
   'use strict';
-  const dialog = document.querySelector('#capture-dialog');
-  const expanded = document.querySelector('#expanded-capture');
-  let trigger = null;
-  document.querySelectorAll('.evidence-shot').forEach(figure => {
-    const image = figure.querySelector('img');
-    const update = () => { figure.hidden = !(image.complete && image.naturalWidth > 0); };
-    image.addEventListener('load', update);
-    image.addEventListener('error', update);
-    update();
-    figure.querySelector('button').addEventListener('click', event => {
-      trigger = event.currentTarget;
-      expanded.src = image.src;
-      expanded.alt = image.alt;
-      document.querySelector('#capture-title').textContent = image.alt;
-      dialog.showModal();
+  const dialog = document.querySelector('#evidence-dialog');
+  if (dialog && typeof dialog.showModal === 'function') {
+    const fullImage = dialog.querySelector('#evidence-full');
+    const title = dialog.querySelector('#evidence-title');
+    const description = dialog.querySelector('#evidence-description');
+    const position = dialog.querySelector('#evidence-position');
+    let gallery = [];
+    let current = 0;
+    let trigger = null;
+
+    function getVisibleItems() {
+      return [...document.querySelectorAll('.evidence-shot:not([hidden]) button')];
+    }
+
+    function display(index) {
+      if (gallery.length === 0) return;
+      current = (index + gallery.length) % gallery.length;
+      const btn = gallery[current];
+      const img = btn.querySelector('img');
+      const figcaption = btn.closest('figure')?.querySelector('figcaption');
+      fullImage.src = img.src;
+      fullImage.alt = img.alt;
+      title.textContent = figcaption?.textContent || img.alt || 'Evidencia';
+      description.textContent = img.alt || '';
+      position.textContent = `${current + 1} / ${gallery.length} · Evidencias`;
+      dialog.querySelector('.viewer-stage').scrollTop = 0;
+    }
+
+    document.querySelectorAll('.evidence-shot').forEach(figure => {
+      figure.hidden = false; // Asegurar que sea visible
+      const button = figure.querySelector('button');
+      if (!button) return;
+      button.addEventListener('click', event => {
+        trigger = event.currentTarget;
+        gallery = getVisibleItems();
+        display(gallery.indexOf(trigger));
+        dialog.showModal();
+        document.documentElement.classList.add('evidence-open');
+      });
     });
-  });
-  document.querySelector('#close-viewer').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', event => {
-    const rect = dialog.getBoundingClientRect();
-    if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
-  });
-  dialog.addEventListener('close', () => { if (trigger) trigger.focus(); });
+
+    dialog.querySelector('#evidence-close')?.addEventListener('click', () => dialog.close());
+    dialog.querySelector('#evidence-prev')?.addEventListener('click', () => display(current - 1));
+    dialog.querySelector('#evidence-next')?.addEventListener('click', () => display(current + 1));
+    dialog.addEventListener('keydown', event => {
+      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      event.preventDefault();
+      display(current + (event.key === 'ArrowRight' ? 1 : -1));
+    });
+    dialog.addEventListener('click', event => {
+      const rect = dialog.getBoundingClientRect();
+      if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+      document.documentElement.classList.remove('evidence-open');
+      if (trigger) trigger.focus();
+    });
+  }
   const filters = [...document.querySelectorAll('[data-filter]')];
   const groups = [...document.querySelectorAll('[data-audit]')];
   document.querySelector('.evidence-filters').hidden = false;

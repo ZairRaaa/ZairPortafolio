@@ -764,3 +764,45 @@ kbd {
     align-items: flex-start;
   }
 }
+
+/* Enlace a repositorios GitHub (estilo de semana 2) */
+.repo-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 25px 0;
+  text-decoration: none !important;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.repo-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--green);
+  box-shadow: 0 8px 24px var(--tone-7, rgba(0, 0, 0, 0.08));
+}
+.repo-link small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+.repo-link strong {
+  color: var(--green);
+  font-size: 15.5px;
+  overflow-wrap: anywhere;
+}
+.repo-link > span:last-child {
+  font-size: 26px;
+  color: var(--green);
+  transition: transform 0.25s ease;
+}
+.repo-link:hover > span:last-child {
+  transform: translate(3px, -3px);
+}

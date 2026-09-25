@@ -237,6 +237,15 @@
             </a>
           </article>
         </div>
+        <details class="lab-notes">
+          <summary>El reto de trabajar en equipo con Git y ramas <span>+</span></summary>
+          <p>
+            El desarrollo se organizó en ramas individuales en GitHub para distribuir los módulos: la física de rotación de la ruleta, la persistencia en <code>localStorage</code>, los atajos de teclado y la lógica de partición de equipos. Cada integrante probó su módulo de forma aislada antes de realizar la integración final mediante merge en la rama principal.
+          </p>
+          <p>
+            Uno de los mayores desafíos fue garantizar que la ruleta y el listado de participantes se mantuvieran sincronizados bidireccionalmente sin generar redundancia de eventos ni ciclos infinitos de renderizado.
+          </p>
+        </details>
       </section>
 
       <!-- PRÁCTICA 2: Órbita (Individual) -->
@@ -419,6 +428,15 @@
             </a>
           </article>
         </div>
+        <details class="lab-notes">
+          <summary>Decisiones técnicas de animación y control de memoria <span>+</span></summary>
+          <p>
+            Al trabajar con Canvas 2D y 200 partículas, la tentación inicial es recrear objetos en cada frame; sin embargo, eso genera presión sobre el recolector de basura (Garbage Collector) y provoca caídas de frames visibles (micro-stutters). El uso de closures permitió mantener una estructura de datos estable en memoria y recalcular únicamente las posiciones necesarias con delta time.
+          </p>
+          <p>
+            En la pestaña Performance de Chrome DevTools se comprobó que el tiempo de ejecución en el hilo principal se mantiene por debajo de 8 ms por cuadro, garantizando una animación sedosa a más de 120 FPS sin nodos desvinculados (detached DOM nodes).
+          </p>
+        </details>
       </section>
 
       <!-- Reflexión de la semana -->

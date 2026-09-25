@@ -1,38 +1,481 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Semana 04 | Portafolio electrónico</title>
-  <link rel="stylesheet" href="../../../assets/css/styles.css">
-  <script src="../../../assets/js/main.js" defer></script>
-</head>
-<body>
-  <header>
-    <nav aria-label="Navegación principal">
-      <a href="../../../index.html">Inicio</a>
-      <a href="../../../pages/cuaderno/index.html">Cuaderno</a>
-    </nav>
-  </header>
-  <main>
-    <h1>Semana 04</h1>
-    <!-- Completar con el contenido de esta semana. -->
-    <section aria-labelledby="tema">
-      <h2 id="tema">Tema de la semana</h2>
-      <p>Pendiente de completar.</p>
-    </section>
-    <section aria-labelledby="aprendizajes">
-      <h2 id="aprendizajes">Lo que aprendí</h2>
-      <p>Pendiente de completar.</p>
-    </section>
-    <section aria-labelledby="evidencias">
-      <h2 id="evidencias">Actividades y evidencias</h2>
-      <p>Pendiente de completar.</p>
-    </section>
-    <section aria-labelledby="reflexion">
-      <h2 id="reflexion">Reflexión personal</h2>
-      <p>Pendiente de completar.</p>
-    </section>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Semana 4: JavaScript ES6+, manipulación del DOM, closures, ruleta interactiva, sorteo de equipos y animaciones con Canvas API y Delta Time."
+    />
+    <meta name="theme-color" content="#173f35" />
+    <title>Semana 04 · JavaScript en acción: Del DOM a Canvas | Zair Ken</title>
+    <link rel="icon" href="../../../assets/images/logos/Logo_uncp.png" />
+    <script src="../../../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="../../../assets/css/home.css" />
+    <link rel="stylesheet" href="css/semana-04.css" />
+    <script src="../../../assets/js/appearance.js" defer></script>
+    <script src="js/semana-04.js" defer></script>
+  </head>
+  <body class="week-four">
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+    <header class="header">
+      <a class="brand" href="../../../index.html" aria-label="Zair Ken, inicio"
+        >zk<span>.</span></a
+      >
+      <nav aria-label="Navegación principal">
+        <a href="../../../index.html">Portafolio</a>
+        <a href="../index.html">Cuaderno<span class="nav-count">15</span></a>
+      </nav>
+      <div class="appearance-controls">
+        <button class="theme-toggle" type="button" aria-pressed="false" hidden>
+          <span aria-hidden="true">◐</span>Modo oscuro
+        </button>
+        <button
+          class="palette-toggle"
+          type="button"
+          aria-pressed="false"
+          hidden
+        >
+          <span aria-hidden="true"></span>Paleta roja
+        </button>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <!-- Encabezado de la semana -->
+      <section class="lab-intro wrap">
+        <nav class="breadcrumbs" aria-label="Ruta de la página">
+          <a href="../index.html">Cuaderno</a><span>/</span>
+          <span aria-current="page">Semana 04</span>
+        </nav>
+        <div class="week-hero">
+          <div class="week-hero-copy">
+            <p class="eyebrow">BITÁCORA DE APRENDIZAJE / SEMANA 04</p>
+            <h1>JavaScript en acción:<br />Del DOM a <em>Canvas.</em></h1>
+            <p class="hero-summary">
+              Dos prácticas que llevan el lenguaje más allá de lo básico: una ruleta dinámica y sorteador para el aula virtual desarrollada en equipo, y Órbita, un laboratorio individual de constelaciones animadas con Canvas API y closures.
+            </p>
+            <a class="week-cta" href="#recorrido">Explorar mis prácticas <span aria-hidden="true">↘</span></a>
+            <div class="intro-tags">
+              <span>JavaScript ES6+</span>
+              <span>Canvas 2D</span>
+              <span>Closures & Scope</span>
+              <span>requestAnimationFrame</span>
+              <span>Trabajo en equipo</span>
+            </div>
+          </div>
+          <div class="hero-composition" aria-hidden="true">
+            <div class="composition-top">
+              <span>MI MESA DE TRABAJO</span>
+              <span>04 / INTERACCIÓN</span>
+            </div>
+            <div class="composition-window">
+              <div class="window-dots">● ● ● <span>órbita en movimiento</span></div>
+              <img src="images/Practica_individual (4).png" alt="" width="1377" height="667" />
+            </div>
+            <div class="composition-note">
+              <span>renderizado fluido<br />con delta time</span>
+              <strong>137 FPS</strong>
+            </div>
+            <div class="composition-bottom">
+              <span>EVENT LOOP · CLOSURES · REPAINT</span>
+              <strong>{ }</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Directorio de prácticas -->
+      <section class="practice-directory wrap" id="recorrido" aria-labelledby="directory-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">EL RECORRIDO</p>
+            <h2 id="directory-title">Dos prácticas, un mismo lenguaje.</h2>
+          </div>
+          <p>Selecciona una práctica para revisar el código, decisiones y evidencias.</p>
+        </div>
+        <div class="directory-grid">
+          <a class="directory-card" href="#aula-virtual">
+            <span class="directory-number">01 / PRÁCTICA GRUPAL</span>
+            <h3>Aula Virtual: Ruleta y Sorteo<span aria-hidden="true">↗</span></h3>
+            <p>Ruleta interactiva con sectores de colores, atajos de teclado y distribución aleatoria de equipos.</p>
+            <span class="directory-meta">JavaScript puro · 3 evidencias</span>
+          </a>
+          <a class="directory-card" href="#orbita-canvas">
+            <span class="directory-number">02 / LABORATORIO INDIVIDUAL</span>
+            <h3>Órbita: Universo en Canvas<span aria-hidden="true">↗</span></h3>
+            <p>Constelaciones interactivas, closures para retención de estado y profiling de rendimiento a más de 120 FPS.</p>
+            <span class="directory-meta">Canvas API & Closures · 5 evidencias</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- PRÁCTICA 1: Aula Virtual (Grupal) -->
+      <section class="practice-section wrap" id="aula-virtual" aria-labelledby="aula-title">
+        <span class="practice-label">01 / PRÁCTICA CALIFICADA 3 (GRUPAL)</span>
+        <h2 id="aula-title">Aula Virtual.<br /><em>Ruleta y sorteo de equipos.</em></h2>
+        <p class="section-lead">
+          Desarrollamos una aplicación web para dinamizar la participación en clase. Con JavaScript puro, sin librerías externas y mediante ramas en GitHub, integramos una ruleta con puntero dinámico y un sorteador flexible de participantes.
+        </p>
+
+        <div class="practice-facts">
+          <span>01 — Ruleta con 5 colores cíclicos</span>
+          <span>02 — Persistencia con localStorage</span>
+          <span>03 — Atajos de teclado completos</span>
+          <span>04 — Exportación en imagen y portapapeles</span>
+        </div>
+
+        <div class="req-grid">
+          <article class="req-card">
+            <span>FUNCIONALIDADES F1 – F3</span>
+            <h4>Ruleta reactiva</h4>
+            <p>Puntero triangular rojo superior, sectores con colores alternados y lectura dinámica desde un control de texto multifila.</p>
+          </article>
+          <article class="req-card">
+            <span>FUNCIONALIDADES F4 – F6</span>
+            <h4>Persistencia y edición</h4>
+            <p>Sincronización instantánea con el almacenamiento local y redibujado automático ante cualquier edición del listado.</p>
+          </article>
+          <article class="req-card">
+            <span>FUNCIONALIDADES F7 – F9</span>
+            <h4>Exclusión y atajos</h4>
+            <p>Ocultamiento en gris de participantes ya seleccionados con descarte en siguientes rondas y modo pantalla completa.</p>
+          </article>
+          <article class="req-card">
+            <span>MÓDULO DE EQUIPOS</span>
+            <h4>Distribución equitativa</h4>
+            <p>División configurable por cantidad de equipos o por cantidad de integrantes, con copia en columnas y exportación.</p>
+          </article>
+        </div>
+
+        <div class="shortcuts-box">
+          <h4>Atajos de teclado implementados en la ruleta</h4>
+          <div class="shortcuts-grid">
+            <div class="shortcut-item"><kbd>SPACE</kbd> <span>Girar la ruleta</span></div>
+            <div class="shortcut-item"><kbd>S</kbd> <span>Ocultar seleccionado</span></div>
+            <div class="shortcut-item"><kbd>R</kbd> <span>Reiniciar elementos</span></div>
+            <div class="shortcut-item"><kbd>E</kbd> <span>Habilitar edición</span></div>
+            <div class="shortcut-item"><kbd>F</kbd> <span>Pantalla completa</span></div>
+          </div>
+        </div>
+
+        <div class="evidence-heading">
+          <h3>Evidencias del proyecto Aula Virtual.</h3>
+          <p>Haz clic en cualquier imagen para abrirla en alta resolución.</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="evidence-card">
+            <a
+              class="evidence-link"
+              href="images/Practica_grupal (2).png"
+              data-gallery="grupal"
+              data-title="Ruleta aleatoria interactiva"
+              data-description="Vista principal de la ruleta con sectores de 5 colores, puntero triangular rojo superior, lista editable de elementos y panel de atajos."
+            >
+              <div class="evidence-image">
+                <img
+                  src="images/Practica_grupal (2).png"
+                  alt="Vista de la ruleta aleatoria con sectores y panel de edición"
+                  loading="lazy"
+                />
+                <span class="image-expand" aria-hidden="true">↗</span>
+              </div>
+              <div class="evidence-caption">
+                <span class="evidence-tag">Ruleta</span>
+                <h4>Ruleta aleatoria interactiva</h4>
+                <p>Sectores con colores rotativos, puntero indicador y panel de atajos de teclado.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="evidence-card">
+            <a
+              class="evidence-link"
+              href="images/Practica_grupal (3).png"
+              data-gallery="grupal"
+              data-title="Configuración del sorteo de equipos"
+              data-description="Formulario de configuración con lista multifila de hasta 100 participantes, selector de modo de división (por equipos o por integrantes) y título personalizado."
+            >
+              <div class="evidence-image">
+                <img
+                  src="images/Practica_grupal (3).png"
+                  alt="Pantalla de configuración del sorteo con opciones de división"
+                  loading="lazy"
+                />
+                <span class="image-expand" aria-hidden="true">↗</span>
+              </div>
+              <div class="evidence-caption">
+                <span class="evidence-tag">Configuración</span>
+                <h4>Configuración del sorteo de equipos</h4>
+                <p>Control de participantes, selector de agrupación y título para la asignación.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="evidence-card">
+            <a
+              class="evidence-link"
+              href="images/Practica_grupal (1).png"
+              data-gallery="grupal"
+              data-title="Resultados y exportación de equipos"
+              data-description="Segunda pantalla donde los participantes aparecen organizados en tarjetas rectangulares por equipo, con botones para descargar en JPG, copiar al portapapeles y copiar en columnas."
+            >
+              <div class="evidence-image">
+                <img
+                  src="images/Practica_grupal (1).png"
+                  alt="Resultados del sorteo organizados en equipos con botones de exportación"
+                  loading="lazy"
+                />
+                <span class="image-expand" aria-hidden="true">↗</span>
+              </div>
+              <div class="evidence-caption">
+                <span class="evidence-tag">Resultados</span>
+                <h4>Resultados y exportación de equipos</h4>
+                <p>Distribución en tarjetas con opciones de exportar a JPG o copiar en columnas.</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- PRÁCTICA 2: Órbita (Individual) -->
+      <section class="practice-section wrap" id="orbita-canvas" aria-labelledby="orbita-title">
+        <span class="practice-label">02 / LABORATORIO INDIVIDUAL</span>
+        <h2 id="orbita-title">Órbita.<br /><em>Canvas API, Closures y Rendimiento.</em></h2>
+        <p class="section-lead">
+          Un laboratorio enfocado en los fundamentos internos de JavaScript: el ciclo de renderizado del navegador, el uso de closures para retener el estado de partículas sin ensuciar el ámbito global, y el desacoplamiento de la velocidad de animación mediante Delta Time ($\Delta t$).
+        </p>
+
+        <div class="practice-facts">
+          <span>IIFE para aislamiento estricto</span>
+          <span>Closures para retención de estado</span>
+          <span>requestAnimationFrame con Delta Time</span>
+          <span>DevTools Profiling sin fugas de memoria</span>
+        </div>
+
+        <!-- Demostración interactiva en vivo incrustada -->
+        <div class="interactive-demo">
+          <div class="demo-header">
+            <div>
+              <span class="practice-label">DEMOSTRACIÓN EN VIVO</span>
+              <h3 style="margin: 4px 0;">Constelaciones reactivas con Canvas API</h3>
+            </div>
+            <p style="color: var(--muted); font-size: 14px; margin: 0;">Mueve el cursor sobre el lienzo para interactuar con las estrellas.</p>
+          </div>
+          <div class="demo-canvas-wrap">
+            <canvas id="constellation-canvas" aria-label="Simulador interactivo de partículas espaciales"></canvas>
+          </div>
+          <div class="demo-controls-bar">
+            <span style="font-size: 13px; color: var(--muted);">Partículas conectadas mediante cálculo de distancia euclidiana</span>
+            <div class="demo-fps" id="demo-fps-counter">60 FPS · 16.6 ms</div>
+          </div>
+        </div>
+
+        <div class="metrics-banner">
+          <div class="metrics-info">
+            <h3>Métricas de rendimiento registradas</h3>
+            <p>Medición continua en DevTools Performance sin bloqueos en el hilo principal ni layout thrashing.</p>
+          </div>
+          <div class="metrics-badges">
+            <div class="metric-badge">
+              <strong>137</strong>
+              <span>FPS en pico</span>
+            </div>
+            <div class="metric-badge">
+              <strong>7.3 ms</strong>
+              <span>Frame Time</span>
+            </div>
+            <div class="metric-badge">
+              <strong>0</strong>
+              <span>Nodos huérfanos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="evidence-heading">
+          <h3>Galería de evidencias del laboratorio Órbita.</h3>
+          <p>Cinco capturas del proyecto en funcionamiento local y sus módulos.</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="evidence-card">
+            <a
+              class="evidence-link"
+              href="images/Practica_individual (2).png"
+              data-gallery="individual"
+              data-title="Bienvenida e identidad de Órbita"
+              data-description="Portada de la experiencia con ilustración vectorial de planeta, frase de inspiración, contador de visitas guardado en localStorage y contador de destinos guardados."
+            >
+              <div class="evidence-image">
+                <img
+                  src="images/Practica_individual (2).png"
+                  alt="Portada de Órbita con planeta animado y frase inspiradora"
+                  loading="lazy"
+                />
+                <span class="image-expand" aria-hidden="true">↗</span>
+              </div>
+              <div class="evidence-caption">
+                <span class="evidence-tag">Portada</span>
+                <h4>Bienvenida e identidad de Órbita</h4>
+                <p>Presentación espacial con contador de visitas y destinos en localStorage.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="evidence-card">
+            <a
+              class="evidence-link"
+              href="images/Practica_individual (3).png"
+              data-gallery="individual"
+              data-title="Explorador de destinos y filtros"
+              data-description="Sección 'Lugares para imaginar' con selector por categorías (Todos, Rocosos, Gigantes, Guardados) y tarjetas interactivas de La Luna, Marte y Saturno con opción de favoritos."
+            >
+              <div class="evidence-image">
+                <img
+                  src="images/Practica_individual (3).png"
+                  alt="Catálogo interactivo de destinos espaciales con filtros"
+                  loading="lazy"
+                />
+                <span class="image-expand" aria-hidden="true">↗</span>
+              </div>
+              <div class="evidence-caption">
+                <span class="evidence-tag">Filtros DOM</span>
+                <h4>Explorador de destinos y filtros</h4>
+                <p>Tarjetas dinámicas con gestión de favoritos y filtrado sin recarga.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="evidence-card">
+            <a
+              class="evidence-link"
+              href="images/Practica_individual (4).png"
+              data-gallery="individual"
+              data-title="Canvas de constelaciones y control de ritmo"
+              data-description="Lienzo 2D con 200 partículas interconectadas en tiempo real, panel de control lateral (cantidad de estrellas, ritmo, paletas de cielo, rastro de luz) y telemetría de 137 FPS y 7.3 ms."
+            >
+              <div class="evidence-image">
+                <img
+                  src="images/Practica_individual (4).png"
+                  alt="Lienzo de constelaciones animadas en Canvas con panel de control"
+                  loading="lazy"
+                />
+                <span class="image-expand" aria-hidden="true">↗</span>
+              </div>
+              <div class="evidence-caption">
+                <span class="evidence-tag">Canvas 2D</span>
+                <h4>Canvas de constelaciones y ritmo</h4>
+                <p>200 estrellas conectadas en tiempo real corriendo a 137 FPS con closures.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="evidence-card">
+            <a
+              class="evidence-link"
+              href="images/Practica_individual (5).png"
+              data-gallery="individual"
+              data-title="Postales para el universo y pase de explorador"
+              data-description="Módulo interactivo donde el usuario ingresa su texto personalizado ('HOLA, UNIVERSO') y este orbita dinámicamente en el Canvas, acompañado de la tarjeta de pase de explorador para La Luna."
+            >
+              <div class="evidence-image">
+                <img
+                  src="images/Practica_individual (5).png"
+                  alt="Generador de postales espaciales y pase de explorador"
+                  loading="lazy"
+                />
+                <span class="image-expand" aria-hidden="true">↗</span>
+              </div>
+              <div class="evidence-caption">
+                <span class="evidence-tag">Interactividad</span>
+                <h4>Postales para el universo y pase</h4>
+                <p>Texto orbitando dinámicamente en Canvas con opción de descarga de postal.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="evidence-card">
+            <a
+              class="evidence-link"
+              href="images/Practica_individual (1).png"
+              data-gallery="individual"
+              data-title="Cierre de experiencia y formulario personal"
+              data-description="Sección de reflexiones de asombro ('Redescubre la Luna', 'Inventa una constelación', 'Comparte el momento') y formulario para generar el pase personal de explorador."
+            >
+              <div class="evidence-image">
+                <img
+                  src="images/Practica_individual (1).png"
+                  alt="Sección final de reflexión y formulario de pase de explorador"
+                  loading="lazy"
+                />
+                <span class="image-expand" aria-hidden="true">↗</span>
+              </div>
+              <div class="evidence-caption">
+                <span class="evidence-tag">Comunidad</span>
+                <h4>Cierre de experiencia y formulario</h4>
+                <p>Reflexiones de observación astronómica y validación de correo para pase personal.</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Reflexión de la semana -->
+      <section class="practice-section wrap" aria-labelledby="reflexion-title">
+        <span class="practice-label">03 / REFLEXIÓN PERSONAL</span>
+        <h2 id="reflexion-title">Lo que me dejó<br /><em>esta semana.</em></h2>
+        <div class="section-lead">
+          <p>
+            Esta semana me demostró el verdadero poder de los fundamentos de JavaScript. Muchas veces caemos en la tentación de buscar una librería para cualquier animación o componente interactivo; sin embargo, entender cómo funciona el <strong>Event Loop</strong>, por qué <code>requestAnimationFrame</code> respeta la tasa de refresco del monitor y cómo un <strong>closure</strong> puede proteger el estado de 200 partículas sin exponer variables al objeto global, cambia por completo la perspectiva al escribir código.
+          </p>
+          <p>
+            En la práctica grupal, aprendí el valor de la coordinación técnica con Git y la importancia de pensar en la accesibilidad: hacer que una ruleta responda tanto a clics como a atajos de teclado y que los resultados se puedan exportar o copiar con un toque hace que la herramienta sea verdaderamente útil para un docente en el aula.
+          </p>
+        </div>
+
+        <div class="week-links">
+          <a href="../semana-03/index.html">← Semana 03</a>
+          <a href="../index.html">Volver al cuaderno ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal accesible para visualización de evidencias -->
+    <dialog
+      class="evidence-dialog"
+      id="evidence-dialog"
+      aria-labelledby="evidence-title"
+      aria-describedby="evidence-description"
+    >
+      <div class="viewer-header">
+        <span id="evidence-position" aria-live="polite"></span>
+        <button type="button" id="evidence-close" autofocus>
+          Cerrar <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="viewer-stage">
+        <img id="evidence-full" alt="" />
+      </div>
+      <div class="viewer-caption">
+        <div>
+          <h2 id="evidence-title"></h2>
+          <p id="evidence-description"></p>
+        </div>
+        <div class="viewer-controls">
+          <button type="button" id="evidence-prev" aria-label="Captura anterior">←</button>
+          <button type="button" id="evidence-next" aria-label="Captura siguiente">→</button>
+        </div>
+      </div>
+    </dialog>
+
+    <footer class="wrap footer">
+      <a class="brand" href="../../../index.html">zk<span>.</span></a>
+      <p>
+        Zair Ken Rojas Cerron<br />
+        <span>Semana 04 · JavaScript en acción</span>
+      </p>
+      <a href="#contenido">Volver arriba ↑</a>
+    </footer>
+  </body>
 </html>

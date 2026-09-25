@@ -64,7 +64,8 @@ Sistema de rastreo GPS de vehículos de residuos sólidos para la **Municipalida
 | [Semana 01](pages/cuaderno/semana-01/index.html) | Fundamentos web, estándares, DNS y HTTP, roles de desarrollo, VS Code y reflexión. | ✅ Desarrollada |
 | [Semana 02](pages/cuaderno/semana-02/index.html) | Prácticas de requerimientos, interfaces HTML/CSS y revisión de una galería. Capturas por incorporar. | ✅ Desarrollada |
 | [Semana 03](pages/cuaderno/semana-03/index.html) | Huellitas: laboratorio con seis pasos activables. Evidencias de Pulso y de la práctica calificada 2, con galerías ampliables. | ✅ Desarrollada |
-| Semanas 04–15 | Páginas preparadas para documentar los siguientes aprendizajes. | 📝 Por desarrollar |
+| [Semana 04](pages/cuaderno/semana-04/index.html) | Aula Virtual (ruleta y sorteo de equipos en JS puro) y Órbita (animaciones en Canvas API con closures y Delta Time). | ✅ Desarrollada |
+| Semanas 05–15 | Páginas preparadas para documentar los siguientes aprendizajes. | 📝 Por desarrollar |
 
 La primera semana incluye un recorrido interactivo de una petición web, una pregunta de repaso y fuentes de consulta.
 

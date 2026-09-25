@@ -85,8 +85,21 @@
         </div>
       </section>
 
-      <!-- Directorio de prácticas -->
-      <section class="practice-directory wrap" id="recorrido" aria-labelledby="directory-title">
+      <div class="notebook-layout wrap">
+        <aside class="week-index">
+          <span class="section-marker">MI RECORRIDO</span>
+          <nav aria-label="Índice de contenidos">
+            <a href="#recorrido">01 · El recorrido</a>
+            <a href="#aula-virtual">02 · Aula Virtual (Grupal)</a>
+            <a href="#orbita-canvas">03 · Órbita (Individual)</a>
+            <a href="#reflexion">04 · Lo que aprendí</a>
+          </nav>
+          <p>El resultado importa.<br />El proceso también.</p>
+        </aside>
+
+        <div class="week-content">
+          <!-- Directorio de prácticas -->
+          <section class="practice-directory" id="recorrido" aria-labelledby="directory-title">
         <div class="section-heading">
           <div>
             <p class="eyebrow">EL RECORRIDO</p>
@@ -452,12 +465,20 @@
           </p>
         </div>
 
-        <div class="week-links">
-          <a href="../semana-03/index.html">← Semana 03</a>
-          <a href="../index.html">Volver al cuaderno ↗</a>
-        </div>
+        <nav class="week-pagination" aria-label="Navegación del cuaderno">
+          <a href="../semana-03/index.html">
+            <small>SEMANA ANTERIOR</small>
+            ← Semana 03
+          </a>
+          <a href="../index.html">
+            <small>VOLVER AL CUADERNO</small>
+            Las 15 semanas →
+          </a>
+        </nav>
       </section>
-    </main>
+    </div>
+  </div>
+</main>
 
     <!-- Modal accesible para visualización de evidencias -->
     <dialog

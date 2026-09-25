@@ -554,22 +554,97 @@ kbd {
   margin: 8px 0 14px;
 }
 
-/* Paginación entre semanas */
-.week-links {
+/* Layout del cuaderno con barra lateral */
+.notebook-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 55px;
+  align-items: start;
+  padding-bottom: 40px;
+}
+.week-index {
+  position: sticky;
+  top: 30px;
+  border-top: 2px solid var(--green);
+  padding-top: 20px;
+}
+.week-index .section-marker {
+  display: block;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.week-index nav {
+  display: grid;
+  gap: 4px;
+}
+.week-index a {
+  font-size: 13.5px;
+  padding: 10px 12px;
+  border-left: 2px solid transparent;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 0 6px 6px 0;
+  transition: all 0.2s ease;
+}
+.week-index a:hover {
+  color: var(--green);
+  background: var(--soft);
+}
+.week-index a.active,
+.week-index a[aria-current="location"],
+.week-index a[aria-current="true"] {
+  background: rgba(140, 200, 160, 0.12);
+  color: var(--green);
+  border-left-color: var(--green);
+  font-weight: 550;
+}
+[data-theme="dark"] .week-index a.active,
+[data-theme="dark"] .week-index a[aria-current="location"],
+[data-theme="dark"] .week-index a[aria-current="true"] {
+  background: rgba(180, 230, 200, 0.1);
+  color: var(--green);
+}
+.week-index > p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: 32px;
+}
+
+/* Paginación */
+.week-pagination {
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
-  padding-top: 20px;
+  align-items: center;
+  gap: 20px;
   border-top: 1px solid var(--line);
+  padding: 32px 0 60px;
+  margin-top: 40px;
 }
-.week-links a {
-  text-decoration: none;
-  color: var(--ink);
-  font-weight: 550;
-  font-size: 14px;
-}
-.week-links a:hover {
+.week-pagination a {
+  font-size: 17px;
+  font-family: var(--display);
+  font-weight: 500;
   color: var(--green);
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.week-pagination a:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+.week-pagination small {
+  display: block;
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-transform: uppercase;
 }
 
 /* Diálogo de evidencias (Modal) */
@@ -664,13 +739,26 @@ kbd {
   background: #2a3c32;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 960px) {
   .week-hero {
     grid-template-columns: 1fr;
     gap: 32px;
   }
   .hero-composition {
     transform: none;
+  }
+  .notebook-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .week-index {
+    position: static;
+  }
+  .week-index nav {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .week-index > p {
+    display: none;
   }
   .directory-grid {
     grid-template-columns: 1fr;

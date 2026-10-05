@@ -1,0 +1,333 @@
+/* Semana 05: base visual compartida con el portafolio. */
+.week-five .header {
+  flex-wrap: wrap;
+}
+.week-five .header nav {
+  order: initial;
+  flex-basis: auto;
+}
+.week-five [id] {
+  scroll-margin-top: 30px;
+}
+.breadcrumbs {
+  display: flex;
+  gap: 12px;
+  padding-top: 32px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.week-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 65px;
+  align-items: center;
+  padding-block: 65px 75px;
+}
+.week-hero h1 {
+  font-size: clamp(44px, 5.8vw, 80px);
+  letter-spacing: -3px;
+  line-height: 1.1;
+}
+.hero-summary, .section-lead {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 680px;
+}
+.week-cta {
+  display: inline-flex;
+  gap: 25px;
+  padding: 15px 24px;
+  background: var(--green);
+  color: var(--paper);
+  border-radius: 30px;
+  margin: 15px 0 25px;
+}
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.topic-tags span {
+  border: 1px solid var(--line);
+  padding: 5px 12px;
+  border-radius: 25px;
+  font-size: 11px;
+}
+.concept-board {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 30px;
+  transform: rotate(2deg);
+}
+.board-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.board-row {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  background: var(--card);
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.tool-symbol {
+  font-size: 36px;
+  color: var(--green);
+  width: 40px;
+  text-align: center;
+}
+.board-row strong {
+  display: block;
+  font: 650 25px var(--display);
+}
+.board-row div span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.board-row small {
+  margin-left: auto;
+  color: var(--muted);
+}
+.concept-board > p {
+  font-size: 13px;
+  margin: 25px 0 0;
+  color: var(--muted);
+}
+.week-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 30px;
+  border-block: 1px solid var(--line);
+  padding: 22px 0;
+  font-size: 12px;
+}
+.week-index a:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
+.week-section {
+  padding-block: 70px;
+  border-bottom: 1px solid var(--line);
+}
+.week-section > .section-marker {
+  display: block;
+}
+.week-section h2 {
+  font-size: clamp(32px, 4vw, 50px);
+}
+.activity-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+}
+.scope-note, .dependency-note {
+  background: var(--soft);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+}
+.scope-note p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.small-note {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 25px;
+}
+.tool-grid-week {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.tool-card-week {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 27px;
+  background: var(--card);
+}
+.tool-kind {
+  color: var(--muted);
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+.tool-card-week h3 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  margin: 22px 0;
+}
+.tool-card-week h3 span {
+  color: var(--green);
+}
+.tool-card-week p {
+  font-size: 14px;
+  color: var(--muted);
+}
+.tool-card-week strong {
+  display: block;
+  font-size: 13px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+}
+.tool-card-week a, .concept-note a, .syllabus-list a {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--green);
+  text-decoration: underline;
+}
+.relationship {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px 28px;
+  margin: 35px 0;
+  padding: 25px;
+  border-left: 3px solid var(--green);
+  background: var(--soft);
+}
+.relationship span {
+  color: var(--muted);
+}
+.table-scroll {
+  overflow-x: auto;
+}
+.table-scroll table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.table-scroll caption {
+  text-align: left;
+  font-weight: 650;
+  padding-bottom: 15px;
+}
+.table-scroll th, .table-scroll td {
+  text-align: left;
+  padding: 17px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.table-scroll thead {
+  background: var(--soft);
+}
+.table-scroll td {
+  color: var(--muted);
+}
+.concept-note, .syllabus-list details {
+  border-block: 1px solid var(--line);
+  padding: 8px 0;
+  margin-top: 25px;
+}
+.concept-note p, .syllabus-list p {
+  color: var(--muted);
+  font-size: 15px;
+}
+.structure-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin: 30px 0;
+}
+.file-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--card);
+  overflow: hidden;
+}
+.file-card h3 {
+  font-size: 18px;
+  padding: 20px;
+  margin: 0;
+  border-bottom: 1px solid var(--line);
+}
+.file-card pre {
+  margin: 0;
+  padding: 24px;
+  overflow-x: auto;
+  font-size: 12px;
+  line-height: 1.9;
+}
+.dependency-note p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.syllabus-list summary {
+  font-weight: 600;
+  gap: 20px;
+}
+.syllabus-list summary > span {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.syllabus-list details[open] summary > span {
+  transform: none;
+}
+.reflection > p {
+  max-width: 740px;
+}
+.week-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 18px;
+  padding-block: 30px;
+  font-size: 13px;
+}
+@media (max-width: 950px) {
+  .week-hero {
+    gap: 30px;
+  }
+  .tool-grid-week {
+    grid-template-columns: 1fr;
+  }
+  .structure-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 760px) {
+  .week-five .header nav {
+    padding: 0;
+  }
+  .week-five .appearance-controls {
+    flex-basis: 100%;
+    justify-content: flex-end;
+  }
+  .week-hero, .activity-layout {
+    grid-template-columns: 1fr;
+  }
+  .week-hero {
+    padding-block: 35px 45px;
+  }
+  .week-hero h1 {
+    letter-spacing: -2px;
+  }
+  .concept-board {
+    transform: none;
+    padding: 22px;
+  }
+  .week-section {
+    padding-block: 45px;
+  }
+  .relationship {
+    grid-template-columns: 1fr;
+  }
+  .syllabus-list summary {
+    align-items: start;
+    flex-direction: column;
+    gap: 5px;
+  }
+}

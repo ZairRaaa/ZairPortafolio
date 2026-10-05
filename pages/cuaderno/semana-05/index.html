@@ -1,38 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Semana 05 | Portafolio electrónico</title>
-  <link rel="stylesheet" href="../../../assets/css/styles.css">
-  <script src="../../../assets/js/main.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Semana 05: creación de plantillas y diferencias entre React, Vite y Next.js. Primer acercamiento al entorno de desarrollo frontend." />
+  <meta name="theme-color" content="#173f35" />
+  <title>Semana 05 · El inicio de una aplicación | Zair Ken</title>
+  <link rel="icon" href="../../../assets/images/logos/Logo_uncp.webp" />
+  <script src="../../../assets/js/theme.js"></script>
+  <link rel="stylesheet" href="../../../assets/css/home.css" />
+  <link rel="stylesheet" href="css/semana-05.css" />
+  <script src="../../../assets/js/appearance.js" defer></script>
 </head>
-<body>
-  <header>
-    <nav aria-label="Navegación principal">
-      <a href="../../../index.html">Inicio</a>
-      <a href="../../../pages/cuaderno/index.html">Cuaderno</a>
-    </nav>
-  </header>
-  <main>
-    <h1>Semana 05</h1>
-    <!-- Completar con el contenido de esta semana. -->
-    <section aria-labelledby="tema">
-      <h2 id="tema">Tema de la semana</h2>
-      <p>Pendiente de completar.</p>
+<body class="week-five">
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+    <header class="header">
+      <a class="brand" href="../../../index.html" aria-label="Zair Ken, inicio"
+        >zk<span>.</span></a
+      >
+      <nav aria-label="Navegación principal">
+        <a href="../../../index.html">Portafolio</a>
+        <a href="../index.html">Cuaderno<span class="nav-count">15</span></a>
+      </nav>
+      <div class="appearance-controls">
+        <button class="theme-toggle" type="button" aria-pressed="false" hidden>
+          <span aria-hidden="true">◐</span>Modo oscuro
+        </button>
+        <button
+          class="palette-toggle"
+          type="button"
+          aria-pressed="false"
+          hidden
+        >
+          <span aria-hidden="true"></span>Paleta roja
+        </button>
+      </div>
+    </header>
+
+
+  <main id="contenido" class="wrap">
+    <nav class="breadcrumbs" aria-label="Ruta de la página"><a href="../index.html">Cuaderno</a><span>/</span><span aria-current="page">Semana 05</span></nav>
+    <section class="week-hero" aria-labelledby="week-title">
+      <div>
+        <p class="eyebrow">BITÁCORA DE APRENDIZAJE / SEMANA 05</p>
+        <h1 id="week-title">Toda aplicación<br />tiene un <em>inicio.</em></h1>
+        <p class="hero-summary">Antes de construir una interfaz, hay que conocer el lugar donde va a crecer. Esta semana creamos tres plantillas y comparamos React, Vite y Next.js.</p>
+        <a class="week-cta" href="#herramientas">Explorar las diferencias <span aria-hidden="true">↘</span></a>
+        <div class="topic-tags"><span>Frontend</span><span>Plantillas de proyecto</span><span>Dependencias</span></div>
+      </div>
+      <div class="concept-board" aria-label="Relación entre las herramientas">
+        <div class="board-top"><span>EL PUNTO DE PARTIDA</span><span>05 / WEB</span></div>
+        <div class="board-row"><span class="tool-symbol" aria-hidden="true">⚛</span><div><strong>React</strong><span>Construir la interfaz</span></div><small>01</small></div>
+        <div class="board-row"><span class="tool-symbol" aria-hidden="true">ϟ</span><div><strong>Vite</strong><span>Preparar el entorno</span></div><small>02</small></div>
+        <div class="board-row"><span class="tool-symbol" aria-hidden="true">N</span><div><strong>Next.js</strong><span>Organizar la aplicación</span></div><small>03</small></div>
+        <p>Una biblioteca, una herramienta y un framework. Cada uno cumple un papel.</p>
+      </div>
     </section>
-    <section aria-labelledby="aprendizajes">
-      <h2 id="aprendizajes">Lo que aprendí</h2>
-      <p>Pendiente de completar.</p>
+    <nav class="week-index" aria-label="Contenido de la semana"><a href="#actividad">01 / En clase</a><a href="#herramientas">02 / Diferencias</a><a href="#estructura">03 / Estructura</a><a href="#silabo">04 / Sílabo</a><a href="#reflexion">05 / Reflexión</a></nav>
+    <section class="week-section" id="actividad">
+      <span class="section-marker">01 / LO QUE HICIMOS</span>
+      <h2>Primero, preparar<br /><em>el terreno.</em></h2>
+      <div class="activity-layout"><p class="section-lead">En clase creamos las plantillas de tres proyectos: React, Vite y Next.js. El trabajo se centró en el punto de partida y en reconocer sus diferencias.</p><aside class="scope-note"><strong>Alcance de la sesión</strong><p>Se crearon las estructuras iniciales. Todavía no desarrollamos una aplicación completa ni el laboratorio de props y children.</p></aside></div>
+      <p class="small-note">Los conceptos y estructuras de esta página complementan la actividad. Los ejemplos son orientativos: no representan archivos ni comandos verificados de los proyectos de clase.</p>
     </section>
-    <section aria-labelledby="evidencias">
-      <h2 id="evidencias">Actividades y evidencias</h2>
-      <p>Pendiente de completar.</p>
+    <section class="week-section" id="herramientas">
+      <span class="section-marker">02 / ENTENDER LAS DIFERENCIAS</span>
+      <h2>Tres nombres.<br /><em>Tres responsabilidades.</em></h2>
+      <div class="tool-grid-week">
+        <article class="tool-card-week"><span class="tool-kind">BIBLIOTECA DE INTERFACES</span><h3>React <span aria-hidden="true">⚛</span></h3><p>Permite construir interfaces con componentes reutilizables. Su responsabilidad principal es describir qué se muestra y actualizarlo cuando cambian los datos.</p><strong>Pienso en componentes.</strong><a href="https://react.dev/learn/creating-a-react-app">Documentación de React ↗</a></article>
+        <article class="tool-card-week"><span class="tool-kind">HERRAMIENTA DE DESARROLLO</span><h3>Vite <span aria-hidden="true">ϟ</span></h3><p>Ofrece un servidor de desarrollo y un proceso de construcción para producción. Puede preparar proyectos con React y con otras tecnologías.</p><strong>Preparo y ejecuto el proyecto.</strong><a href="https://vite.dev/guide/">Guía de Vite ↗</a></article>
+        <article class="tool-card-week"><span class="tool-kind">FRAMEWORK BASADO EN REACT</span><h3>Next.js <span aria-hidden="true">↗</span></h3><p>Añade convenciones, rutas y distintas opciones de renderizado a una aplicación React. Su App Router permite combinar componentes de servidor y de cliente.</p><strong>Organizo una aplicación.</strong><a href="https://nextjs.org/docs/app">Documentación de Next.js ↗</a></article>
+      </div>
+      <div class="relationship"><strong>React + Vite</strong><span>La interfaz y sus herramientas de desarrollo.</span><strong>React dentro de Next.js</strong><span>La interfaz dentro de un framework.</span></div>
+      <div class="table-scroll" role="region" aria-label="Comparación de herramientas" tabindex="0"><table><caption>Qué aporta cada tecnología</caption><thead><tr><th scope="col">Aspecto</th><th scope="col">React</th><th scope="col">Vite</th><th scope="col">Next.js</th></tr></thead><tbody>
+        <tr><th scope="row">Función principal</th><td>Componentes de interfaz</td><td>Desarrollo y build</td><td>Estructura de aplicación React</td></tr>
+        <tr><th scope="row">Rutas</th><td>Requiere una solución adicional</td><td>No proporciona un router por sí solo</td><td>Rutas basadas en archivos</td></tr>
+        <tr><th scope="row">Renderizado</th><td>Depende del entorno que lo integra</td><td>La plantilla React habitual usa CSR; también admite integración SSR</td><td>Combina estrategias de servidor, estáticas y de cliente</td></tr>
+        <tr><th scope="row">Relación</th><td>Puede usarse con Vite o Next.js</td><td>Puede trabajar con React</td><td>Se construye sobre React</td></tr>
+      </tbody></table></div>
+      <details class="concept-note"><summary>¿Qué significa Client Side Rendering? <span aria-hidden="true">+</span></summary><p>En CSR, el navegador ejecuta JavaScript para construir la interfaz. Una plantilla habitual de React con Vite carga un documento HTML y monta los componentes en un elemento raíz.</p><p>Next.js no se limita a CSR: puede entregar HTML generado previamente o en el servidor y añadir interacción en el cliente. Un Client Component también puede participar en el HTML inicial generado en el servidor.</p><a href="https://nextjs.org/docs/app/getting-started/server-and-client-components">Leer sobre componentes de servidor y cliente ↗</a></details>
     </section>
-    <section aria-labelledby="reflexion">
-      <h2 id="reflexion">Reflexión personal</h2>
-      <p>Pendiente de completar.</p>
+    <section class="week-section" id="estructura">
+      <span class="section-marker">03 / RECONOCER EL PROYECTO</span><h2>Las carpetas también<br /><em>cuentan una historia.</em></h2>
+      <p class="section-lead">Estas estructuras ilustran dos formas de organizar una aplicación React. Los nombres pueden variar según la plantilla y las opciones elegidas.</p>
+      <div class="structure-grid"><article class="file-card"><h3>React con Vite</h3><pre><code>mi-proyecto/
+├── index.html       # Documento de entrada
+├── package.json     # Dependencias y scripts
+├── public/          # Recursos públicos
+└── src/
+    ├── main.jsx     # Montaje de React
+    ├── App.jsx      # Componente principal
+    └── index.css    # Estilos</code></pre></article><article class="file-card"><h3>Next.js · App Router</h3><pre><code>mi-proyecto/
+├── package.json     # Dependencias y scripts
+├── public/          # Recursos públicos
+└── app/             # Puede estar en src/app
+    ├── layout.tsx   # Estructura compartida
+    ├── page.tsx     # Página de inicio
+    └── globals.css  # Estilos globales</code></pre></article></div>
+      <div class="dependency-note"><h3>¿Dónde se gestionan las dependencias?</h3><p><code>package.json</code> declara paquetes y scripts. El archivo de bloqueo, como <code>package-lock.json</code> con npm, registra versiones resueltas; <code>node_modules</code> contiene los paquetes instalados y normalmente se excluye de Git.</p><p>El comando para iniciar el proyecto depende de sus scripts. Conviene leer <code>package.json</code> antes de asumir cómo ejecutarlo.</p></div>
     </section>
+    <section class="week-section" id="silabo">
+      <span class="section-marker">04 / LA RUTA DEL SÍLABO</span><h2>Lo que viene<br /><em>después del inicio.</em></h2>
+      <p class="section-lead">La semana plantea un recorrido más amplio. Estos temas quedan como referencia para continuar; no se presentan como ejercicios realizados en la sesión.</p>
+      <div class="syllabus-list">
+        <details><summary>01 · Estructura, operación y CSR <span>Referencia</span></summary><p>Comprender cómo se inicia una aplicación, cómo se gestionan sus dependencias y dónde se renderiza la interfaz.</p></details>
+        <details><summary>02 · Componentes, JSX, props y children <span>Por desarrollar</span></summary><p>JSX permite expresar marcado dentro de JavaScript. Las props transmiten información a un componente; children recibe el contenido anidado entre sus etiquetas.</p></details>
+        <details><summary>03 · Estilos en una aplicación <span>Por desarrollar</span></summary><p>El sílabo incluye estilos inline, hojas CSS, CSS Modules, styled-components y frameworks CSS. Son alternativas con diferentes formas de organizar y aplicar los estilos.</p></details>
+        <details><summary>04 · Laboratorio 05A <span>Pendiente</span></summary><p>Pasar datos con props y children para mostrarlos en un componente hijo. Este laboratorio no se desarrolló en la actividad descrita.</p><a href="https://react.dev/learn/passing-props-to-a-component">Consultar props y children en React ↗</a></details>
+      </div>
+    </section>
+    <section class="week-section reflection" id="reflexion"><span class="section-marker">05 / MI REFLEXIÓN</span><h2>Crear la plantilla<br />es el <em>primer paso.</em></h2><p class="section-lead">Esta sesión fue un primer acercamiento a tres formas de iniciar un proyecto. La diferencia central es el papel de cada herramienta: React aporta los componentes, Vite prepara el entorno y Next.js organiza una aplicación basada en React.</p><p>El siguiente paso será dar contenido a esas estructuras y practicar la comunicación entre componentes con props y children.</p></section>
+    <nav class="week-links" aria-label="Navegación entre semanas"><a href="../semana-04/index.html">← Semana 04</a><a href="../index.html">Volver al cuaderno ↗</a><a href="../semana-06/index.html">Semana 06 →</a></nav>
   </main>
+  <footer class="wrap footer"><a class="brand" href="../../../index.html" aria-label="Zair Ken, inicio">zk<span>.</span></a><p>Zair Ken Rojas Cerron<br /><span>Semana 05 · Aprender desde la base</span></p><a href="#contenido">Volver arriba ↑</a></footer>
 </body>
 </html>

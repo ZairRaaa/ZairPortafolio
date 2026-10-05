@@ -331,3 +331,35 @@
     gap: 5px;
   }
 }
+
+/* Repaso accesible con controles nativos. */
+#tool-quiz fieldset {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 25px;
+}
+#tool-quiz legend {
+  padding-inline: 8px;
+  font-size: 16px;
+}
+#tool-quiz label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+#tool-quiz input {
+  accent-color: var(--green);
+}
+#tool-quiz input:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 4px;
+}
+#tool-quiz button {
+  border: 0;
+}
+#quiz-feedback {
+  min-height: 3em;
+  color: var(--green);
+}

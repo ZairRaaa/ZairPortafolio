@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../../../assets/css/home.css" />
   <link rel="stylesheet" href="css/semana-05.css" />
   <script src="../../../assets/js/appearance.js" defer></script>
+  <script src="js/semana-05.js" defer></script>
 </head>
 <body class="week-five">
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -108,6 +109,21 @@
         <details><summary>03 · Estilos en una aplicación <span>Por desarrollar</span></summary><p>El sílabo incluye estilos inline, hojas CSS, CSS Modules, styled-components y frameworks CSS. Son alternativas con diferentes formas de organizar y aplicar los estilos.</p></details>
         <details><summary>04 · Laboratorio 05A <span>Pendiente</span></summary><p>Pasar datos con props y children para mostrarlos en un componente hijo. Este laboratorio no se desarrolló en la actividad descrita.</p><a href="https://react.dev/learn/passing-props-to-a-component">Consultar props y children en React ↗</a></details>
       </div>
+    </section>
+    <section class="week-section" aria-labelledby="review-title">
+      <span class="section-marker">UNA PAUSA PARA REPASAR</span>
+      <h2 id="review-title">¿Quién hace <em>qué?</em></h2>
+      <form id="tool-quiz">
+        <fieldset>
+          <legend>¿Cuál aporta el servidor de desarrollo y el build, y puede trabajar con React?</legend>
+          <label><input type="radio" name="tool" value="react" required /> React</label>
+          <label><input type="radio" name="tool" value="vite" /> Vite</label>
+          <label><input type="radio" name="tool" value="next" /> Next.js</label>
+        </fieldset>
+        <button class="week-cta" type="submit" hidden>Comprobar respuesta →</button>
+        <p id="quiz-feedback" role="status"></p>
+      </form>
+      <noscript><p>Respuesta: Vite proporciona las herramientas de desarrollo y construcción; React se ocupa de la interfaz.</p></noscript>
     </section>
     <section class="week-section reflection" id="reflexion"><span class="section-marker">05 / MI REFLEXIÓN</span><h2>Crear la plantilla<br />es el <em>primer paso.</em></h2><p class="section-lead">Esta sesión fue un primer acercamiento a tres formas de iniciar un proyecto. La diferencia central es el papel de cada herramienta: React aporta los componentes, Vite prepara el entorno y Next.js organiza una aplicación basada en React.</p><p>El siguiente paso será dar contenido a esas estructuras y practicar la comunicación entre componentes con props y children.</p></section>
     <nav class="week-links" aria-label="Navegación entre semanas"><a href="../semana-04/index.html">← Semana 04</a><a href="../index.html">Volver al cuaderno ↗</a><a href="../semana-06/index.html">Semana 06 →</a></nav>

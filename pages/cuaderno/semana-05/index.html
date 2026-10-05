@@ -57,7 +57,20 @@
         <p>Una biblioteca, una herramienta y un framework. Cada uno cumple un papel.</p>
       </div>
     </section>
-    <nav class="week-index" aria-label="Contenido de la semana"><a href="#actividad">01 / En clase</a><a href="#herramientas">02 / Diferencias</a><a href="#estructura">03 / Estructura</a><a href="#silabo">04 / Sílabo</a><a href="#reflexion">05 / Reflexión</a></nav>
+    <div class="notebook-layout">
+      <aside class="week-index">
+        <span class="section-marker">MI RECORRIDO</span>
+        <nav aria-label="Índice de contenidos">
+          <a href="#actividad">01 · Lo que hicimos</a>
+          <a href="#herramientas">02 · Las diferencias</a>
+          <a href="#estructura">03 · El proyecto por dentro</a>
+          <a href="#silabo">04 · La ruta del sílabo</a>
+          <a href="#repaso">05 · Un repaso</a>
+          <a href="#reflexion">06 · Lo que aprendí</a>
+        </nav>
+        <p>Entender la base.<br />Construir desde ahí.</p>
+      </aside>
+      <div class="week-content">
     <section class="week-section" id="actividad">
       <span class="section-marker">01 / LO QUE HICIMOS</span>
       <h2>Primero, preparar<br /><em>el terreno.</em></h2>
@@ -110,8 +123,8 @@
         <details><summary>04 · Laboratorio 05A <span>Pendiente</span></summary><p>Pasar datos con props y children para mostrarlos en un componente hijo. Este laboratorio no se desarrolló en la actividad descrita.</p><a href="https://react.dev/learn/passing-props-to-a-component">Consultar props y children en React ↗</a></details>
       </div>
     </section>
-    <section class="week-section" aria-labelledby="review-title">
-      <span class="section-marker">UNA PAUSA PARA REPASAR</span>
+    <section class="week-section" id="repaso" aria-labelledby="review-title">
+      <span class="section-marker">05 / UNA PAUSA PARA REPASAR</span>
       <h2 id="review-title">¿Quién hace <em>qué?</em></h2>
       <form id="tool-quiz">
         <fieldset>
@@ -125,8 +138,14 @@
       </form>
       <noscript><p>Respuesta: Vite proporciona las herramientas de desarrollo y construcción; React se ocupa de la interfaz.</p></noscript>
     </section>
-    <section class="week-section reflection" id="reflexion"><span class="section-marker">05 / MI REFLEXIÓN</span><h2>Crear la plantilla<br />es el <em>primer paso.</em></h2><p class="section-lead">Esta sesión fue un primer acercamiento a tres formas de iniciar un proyecto. La diferencia central es el papel de cada herramienta: React aporta los componentes, Vite prepara el entorno y Next.js organiza una aplicación basada en React.</p><p>El siguiente paso será dar contenido a esas estructuras y practicar la comunicación entre componentes con props y children.</p></section>
-    <nav class="week-links" aria-label="Navegación entre semanas"><a href="../semana-04/index.html">← Semana 04</a><a href="../index.html">Volver al cuaderno ↗</a><a href="../semana-06/index.html">Semana 06 →</a></nav>
+    <section class="week-section reflection" id="reflexion"><span class="section-marker">06 / MI REFLEXIÓN</span><h2>Crear la plantilla<br />es el <em>primer paso.</em></h2><p class="section-lead">Esta sesión fue un primer acercamiento a tres formas de iniciar un proyecto. La diferencia central es el papel de cada herramienta: React aporta los componentes, Vite prepara el entorno y Next.js organiza una aplicación basada en React.</p><p>El siguiente paso será dar contenido a esas estructuras y practicar la comunicación entre componentes con props y children.</p></section>
+        <nav class="week-pagination" aria-label="Navegación del cuaderno">
+          <a href="../semana-04/index.html"><small>SEMANA ANTERIOR</small>← Semana 04</a>
+          <a href="../index.html"><small>VOLVER AL CUADERNO</small>Las 15 semanas ↗</a>
+          <a href="../semana-06/index.html"><small>SEMANA SIGUIENTE</small>Semana 06 →</a>
+        </nav>
+      </div>
+    </div>
   </main>
   <footer class="wrap footer"><a class="brand" href="../../../index.html" aria-label="Zair Ken, inicio">zk<span>.</span></a><p>Zair Ken Rojas Cerron<br /><span>Semana 05 · Aprender desde la base</span></p><a href="#contenido">Volver arriba ↑</a></footer>
 </body>

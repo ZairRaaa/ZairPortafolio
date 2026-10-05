@@ -21,11 +21,11 @@
   grid-template-columns: 1.2fr 1fr;
   gap: 65px;
   align-items: center;
-  padding-block: 65px 75px;
+  padding-block: 30px 65px;
 }
 .week-hero h1 {
-  font-size: clamp(44px, 5.8vw, 80px);
-  letter-spacing: -3px;
+  font-size: clamp(36px, 4.3vw, 58px);
+  letter-spacing: -2.4px;
   line-height: 1.1;
 }
 .hero-summary, .section-lead {
@@ -101,18 +101,7 @@
   margin: 25px 0 0;
   color: var(--muted);
 }
-.week-index {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px 30px;
-  border-block: 1px solid var(--line);
-  padding: 22px 0;
-  font-size: 12px;
-}
-.week-index a:hover {
-  color: var(--green);
-  text-decoration: underline;
-}
+
 .week-section {
   padding-block: 70px;
   border-bottom: 1px solid var(--line);
@@ -279,14 +268,7 @@
 .reflection > p {
   max-width: 740px;
 }
-.week-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 18px;
-  padding-block: 30px;
-  font-size: 13px;
-}
+
 @media (max-width: 950px) {
   .week-hero {
     gap: 30px;
@@ -362,4 +344,145 @@
 #quiz-feedback {
   min-height: 3em;
   color: var(--green);
+}
+
+/* Layout del cuaderno con barra lateral */
+.notebook-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 55px;
+  align-items: start;
+  padding-bottom: 40px;
+}
+.week-index {
+  position: sticky;
+  top: 30px;
+  border-top: 2px solid var(--green);
+  padding-top: 20px;
+}
+.week-index .section-marker {
+  display: block;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.week-index nav {
+  display: grid;
+  gap: 4px;
+}
+.week-index a {
+  font-size: 13.5px;
+  padding: 10px 12px;
+  border-left: 2px solid transparent;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 0 6px 6px 0;
+  transition: all 0.2s ease;
+}
+.week-index a:hover {
+  color: var(--green);
+  background: var(--soft);
+}
+.week-index a.active,
+.week-index a[aria-current="location"],
+.week-index a[aria-current="true"] {
+  background: rgba(140, 200, 160, 0.12);
+  color: var(--green);
+  border-left-color: var(--green);
+  font-weight: 550;
+}
+[data-theme="dark"] .week-index a.active,
+[data-theme="dark"] .week-index a[aria-current="location"],
+[data-theme="dark"] .week-index a[aria-current="true"] {
+  background: rgba(180, 230, 200, 0.1);
+  color: var(--green);
+}
+.week-index > p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: 32px;
+}
+
+/* Paginación */
+.week-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding: 32px 0 60px;
+  margin-top: 40px;
+}
+.week-pagination a {
+  font-size: 17px;
+  font-family: var(--display);
+  font-weight: 500;
+  color: var(--green);
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.week-pagination a:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+.week-pagination small {
+  display: block;
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+
+/* Ajustes de lectura para las secciones de la semana 5. */
+.week-content {
+  min-width: 0;
+}
+.week-content .week-section {
+  padding-block: 48px;
+}
+.week-content .week-section:first-child {
+  padding-top: 0;
+}
+.week-content h2 {
+  font-size: clamp(30px, 3.3vw, 42px);
+  letter-spacing: -1.6px;
+}
+.hero-summary, .section-lead {
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+.week-content .activity-layout, .week-content .structure-grid {
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+.tool-card-week {
+  padding: 20px;
+}
+.tool-card-week h3 {
+  font-size: 25px;
+}
+.week-pagination {
+  flex-wrap: wrap;
+}
+@media (max-width: 960px) {
+  .notebook-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .week-index {
+    position: static;
+  }
+  .week-index nav {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .week-index > p {
+    display: none;
+  }
 }

@@ -1,38 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Semana 06 | Portafolio electrónico</title>
-  <link rel="stylesheet" href="../../../assets/css/styles.css">
-  <script src="../../../assets/js/main.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Semana 6: componentes y props con Órbita, una SPA con Nido y la recuperación de TecnoAndes. Proyectos y evidencias de React." />
+  <meta name="theme-color" content="#173f35" />
+  <title>Semana 06 · Componentes que conectan | Zair Ken</title>
+  <link rel="icon" href="../../../assets/images/logos/Logo_uncp.webp" />
+  <script src="../../../assets/js/theme.js"></script>
+  <link rel="stylesheet" href="../../../assets/css/home.css" />
+  <link rel="stylesheet" href="css/semana-06.css" />
+  <script src="../../../assets/js/appearance.js" defer></script>
+  <script src="js/semana-06.js" defer></script>
 </head>
-<body>
-  <header>
-    <nav aria-label="Navegación principal">
-      <a href="../../../index.html">Inicio</a>
-      <a href="../../../pages/cuaderno/index.html">Cuaderno</a>
-    </nav>
-  </header>
-  <main>
-    <h1>Semana 06</h1>
-    <!-- Completar con el contenido de esta semana. -->
-    <section aria-labelledby="tema">
-      <h2 id="tema">Tema de la semana</h2>
-      <p>Pendiente de completar.</p>
+<body class="week-six">
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+    <header class="header">
+      <a class="brand" href="../../../index.html" aria-label="Zair Ken, inicio"
+        >zk<span>.</span></a
+      >
+      <nav aria-label="Navegación principal">
+        <a href="../../../index.html">Portafolio</a>
+        <a href="../index.html">Cuaderno<span class="nav-count">15</span></a>
+      </nav>
+      <div class="appearance-controls">
+        <button class="theme-toggle" type="button" aria-pressed="false" hidden>
+          <span aria-hidden="true">◐</span>Modo oscuro
+        </button>
+        <button
+          class="palette-toggle"
+          type="button"
+          aria-pressed="false"
+          hidden
+        >
+          <span aria-hidden="true"></span>Paleta roja
+        </button>
+      </div>
+    </header>
+
+
+  <main id="contenido" class="wrap">
+    <nav class="breadcrumbs" aria-label="Ruta de la página"><a href="../index.html">Cuaderno</a><span>/</span><span aria-current="page">Semana 06</span></nav>
+    <section class="week-hero" aria-labelledby="week-title">
+      <div>
+        <p class="eyebrow">BITÁCORA DE APRENDIZAJE / SEMANA 06</p>
+        <h1 id="week-title">Las piezas toman forma.<br /><em>Los datos conectan.</em></h1>
+        <p class="hero-summary">De preparar una plantilla a construir con React: tres trabajos para explorar componentes, navegación y formas de compartir información.</p>
+        <a class="week-cta" href="#recorrido">Explorar mis trabajos <span aria-hidden="true">↘</span></a>
+        <div class="topic-tags"><span>React + Vite</span><span>Props y children</span><span>Rutas y APIs</span></div>
+      </div>
+      <div class="project-cover">
+        <div class="cover-label"><span>DEL COMPONENTE A LA APLICACIÓN</span><span>06 / WEB</span></div>
+        <img src="images/Practica_1 (3).png" alt="Portada de Órbita, academia de exploración espacial" width="1917" height="961" />
+        <div class="cover-caption"><span>Tres proyectos.<br /><strong>Un aprendizaje que se conecta.</strong></span><span aria-hidden="true">{ }</span></div>
+      </div>
     </section>
-    <section aria-labelledby="aprendizajes">
-      <h2 id="aprendizajes">Lo que aprendí</h2>
-      <p>Pendiente de completar.</p>
-    </section>
-    <section aria-labelledby="evidencias">
-      <h2 id="evidencias">Actividades y evidencias</h2>
-      <p>Pendiente de completar.</p>
-    </section>
-    <section aria-labelledby="reflexion">
-      <h2 id="reflexion">Reflexión personal</h2>
-      <p>Pendiente de completar.</p>
-    </section>
+    <div class="notebook-layout">
+      <aside class="week-index">
+        <span class="section-marker">MI RECORRIDO</span>
+        <nav aria-label="Índice de contenidos">
+          <a href="#recorrido">01 · El recorrido</a>
+          <a href="#orbita">02 · Órbita</a>
+          <a href="#nido">03 · Nido</a>
+          <a href="#tecnoandes">04 · TecnoAndes</a>
+          <a href="#reflexion">05 · Lo que aprendí</a>
+        </nav>
+        <p>Dividir en componentes.<br />Conectar con datos.<br />Aprender construyendo.</p>
+      </aside>
+      <div class="week-content">
+        <section class="lesson" id="recorrido">
+          <span class="section-marker">01 / EL PUNTO DE PARTIDA</span>
+          <h2>De la estructura<br />a la <em>experiencia.</em></h2>
+          <p class="section-lead">En la semana 5 creamos las plantillas. Ahora el recorrido se centra en organizar interfaces, transmitir datos y dar respuesta a las acciones del usuario.</p>
+          <div class="project-directory">
+            <a href="#orbita"><span>01 / COMPONENTES</span><h3>Órbita ↗</h3><p>Una interfaz espacial y cuatro niveles de props.</p></a>
+            <a href="#nido"><span>02 / SPA</span><h3>Nido ↗</h3><p>Inicio, catálogo y consultas en una aplicación.</p></a>
+            <a href="#tecnoandes"><span>03 / RECUPERACIÓN</span><h3>TecnoAndes ↗</h3><p>Composición y estilos en un panel de ventas.</p></a>
+          </div>
+          <aside class="context-note"><strong>Una recuperación que completa el recorrido</strong><p>TecnoAndes corresponde a la práctica de la semana 5. Lo incluyo aquí porque se realizó como recuperación durante la semana 6.</p></aside>
+        </section>
+        <section class="lesson" id="orbita">
+          <span class="section-marker">02 / TRABAJO 1</span>
+          <h2>Órbita: una interfaz,<br /><em>muchas piezas.</em></h2>
+          <p class="section-lead">La temática de exploración espacial reúne el diseño por secciones y el paso de información entre componentes.</p>
+          <a class="repo-link" href="https://github.com/ZairRaaa/Semana_6_practica_1"><span><small>EXPLORAR EL CÓDIGO</small><strong>Semana_6_practica_1</strong></span><span aria-hidden="true">↗</span></a>
+          <div class="concept-grid"><article><h3>Una sección, un componente</h3><p>El enunciado pide siete componentes y CSS puro, con una distribución diferente para escritorio, tablet y móvil. La separación permite pensar cada sección como una pieza de la interfaz.</p></article><article><h3>Un objeto, cuatro niveles</h3><p>El segundo ejercicio transmite nombre, dirección y ciudad desde el primer componente hasta el cuarto. La captura muestra a Jaime, Jr. Junín 450 y Huancayo en la credencial final.</p></article></div>
+          <div class="props-flow" aria-label="Recorrido de datos entre cuatro componentes"><span>01 · Centro de control</span><span aria-hidden="true">→</span><span>02 · Estación orbital</span><span aria-hidden="true">→</span><span>03 · Tripulación</span><span aria-hidden="true">→</span><strong>04 · Credencial</strong></div>
+          <details class="lesson-details"><summary>¿Qué explica este recorrido? <span aria-hidden="true">+</span></summary><p>Las props permiten que un componente reciba información de su padre. En este ejercicio, los componentes intermedios trasladan el objeto hasta la tarjeta que lo muestra. La estructura visual anidada ayuda a reconocer los cuatro niveles.</p></details>
+          <!-- Galería de orbita -->
+        </section>
+        <section class="lesson" id="nido">
+          <span class="section-marker">03 / TRABAJO 2</span>
+          <h2>Nido: cada ruta<br />abre una <em>posibilidad.</em></h2>
+          <p class="section-lead">Una propuesta de catálogo que organiza la experiencia en tres vistas: descubrir, explorar productos y realizar una consulta.</p>
+          <a class="repo-link" href="https://github.com/ZairRaaa/Semana_6_practica_2"><span><small>EXPLORAR EL CÓDIGO</small><strong>Semana_6_practica_2</strong></span><span aria-hidden="true">↗</span></a>
+          <div class="concept-grid"><article><h3>Navegar entre vistas</h3><p>Las capturas muestran Inicio, Catálogo y Consultas. La guía plantea routing del lado del cliente con React Router, además de una página para rutas no encontradas.</p></article><article><h3>Dar forma a los datos</h3><p>El catálogo muestra productos, precios, búsqueda y categoría. La guía conecta esta vista con Axios, async/await y estados de carga, datos y error.</p></article></div>
+          <details class="lesson-details"><summary>Eventos, listas y formularios <span aria-hidden="true">+</span></summary><p>El trabajo propone listas con claves estables, renderizado condicional y un formulario controlado. Cada cambio de campo actualiza el estado; la interfaz debe informar cuándo carga o cuándo falla una petición.</p><p>Las imágenes documentan las vistas disponibles. La cancelación de peticiones, los estados de error y la navegación sin recarga requieren comprobar el proyecto en ejecución.</p></details>
+          <!-- Galería de nido -->
+        </section>
+        <section class="lesson" id="tecnoandes">
+          <span class="section-marker">04 / TRABAJO 3 · RECUPERACIÓN</span>
+          <h2>TecnoAndes: componer<br />para <em>comprender.</em></h2>
+          <p class="section-lead">El panel de ventas reúne métricas, gráficos, pedidos y un laboratorio de estilos. Recuperación de la práctica de la semana 5, documentada en esta semana.</p>
+          <a class="repo-link" href="https://github.com/taangel687-netizen/ZAIR-ROJAS-SEMANA_05"><span><small>EXPLORAR EL CÓDIGO</small><strong>ZAIR-ROJAS-SEMANA_05</strong></span><span aria-hidden="true">↗</span></a>
+          <div class="concept-grid"><article><h3>Props y composición</h3><p>El informe describe App como organizador y Dashboard como estructura compartida. Panel y MetricCard reciben datos mediante props y contenido mediante children.</p></article><article><h3>Tres formas de aplicar estilos</h3><p>CSS Modules organiza los estilos por componente; Tailwind aporta utilidades; los estilos inline permiten expresar valores dinámicos. La captura de StyleLab compara las tres estrategias.</p></article></div>
+          <details class="lesson-details"><summary>Del HTML inicial al DOM de React <span aria-hidden="true">+</span></summary><p>El documento describe un inspector de CSR que compara el HTML inicial con el DOM después del montaje. Su objetivo es observar cómo React incorpora la interfaz en el navegador.</p><p>Las evidencias incluidas muestran el panel, su vista móvil y el laboratorio de estilos. No incluyen una captura del inspector ni nuevas mediciones de rendimiento.</p></details>
+          <!-- Galería de tecnoandes -->
+        </section>
+        <section class="lesson" id="reflexion">
+          <span class="section-marker">05 / LO QUE APRENDÍ</span>
+          <h2>Construir también es<br /><em>conectar ideas.</em></h2>
+          <div class="reflection-grid"><article><h3>¿Qué conecta los trabajos?</h3><p>Separar responsabilidades: los componentes organizan la interfaz, las props transportan información y las rutas ordenan la experiencia.</p></article><article><h3>¿Cómo se complementan?</h3><p>Órbita hace visible el recorrido de un objeto. Nido lleva el trabajo hacia páginas y datos. TecnoAndes reúne composición y estilos dentro de un panel.</p></article><article><h3>¿Qué seguir revisando?</h3><p>La adaptación a distintas pantallas, los estados de carga y error, la claridad del formulario y la separación entre datos, presentación y comportamiento.</p></article></div>
+          <p class="source-note">Contenido basado en las guías y el informe reunidos en practica6.md, junto con las capturas de los tres trabajos.</p>
+        </section>
+        <nav class="week-pagination" aria-label="Navegación del cuaderno"><a href="../semana-05/index.html"><small>SEMANA ANTERIOR</small>← Semana 05</a><a href="../index.html"><small>VOLVER AL CUADERNO</small>Las 15 semanas ↗</a><a href="../semana-07/index.html"><small>SEMANA SIGUIENTE</small>Semana 07 →</a></nav>
+      </div>
+    </div>
   </main>
+  <footer class="wrap footer"><a class="brand" href="../../../index.html" aria-label="Zair Ken, inicio">zk<span>.</span></a><p>Zair Ken Rojas Cerron<br /><span>Semana 06 · Componentes que conectan</span></p><a href="#contenido">Volver arriba ↑</a></footer>
 </body>
 </html>

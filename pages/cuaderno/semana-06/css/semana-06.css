@@ -1,0 +1,360 @@
+/* Semana 06: presentación y proyectos. Colores heredados del portafolio. */
+.week-six .header {
+  flex-wrap: wrap;
+}
+.week-six .header nav {
+  order: initial;
+  flex-basis: auto;
+}
+.week-six [id] {
+  scroll-margin-top: 32px;
+}
+.breadcrumbs {
+  display: flex;
+  gap: 12px;
+  padding-top: 30px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.week-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 50px;
+  padding: 35px 0 65px;
+}
+.week-hero h1 {
+  font-size: clamp(36px, 4.3vw, 58px);
+  letter-spacing: -2.4px;
+  line-height: 1.12;
+  font-weight: 500;
+  margin: 18px 0;
+}
+.eyebrow {
+  color: var(--green);
+  font-size: 11px;
+}
+.hero-summary, .section-lead {
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.75;
+}
+.week-cta {
+  display: inline-flex;
+  gap: 25px;
+  align-items: center;
+  background: var(--green);
+  color: var(--paper);
+  padding: 13px 22px;
+  border-radius: 28px;
+  margin: 12px 0 24px;
+  font-size: 14px;
+}
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.topic-tags span {
+  border: 1px solid var(--line);
+  border-radius: 25px;
+  padding: 5px 12px;
+  font-size: 11px;
+}
+.project-cover {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 22px;
+  transform: rotate(2deg);
+}
+.cover-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 1px;
+  margin-bottom: 22px;
+}
+.project-cover img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transform: rotate(-3deg);
+  box-shadow: 0 15px 25px #0002;
+}
+.cover-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+  font-size: 13px;
+}
+.cover-caption > span:last-child {
+  color: var(--green);
+  font-size: 35px;
+}
+.week-content {
+  min-width: 0;
+}
+.lesson {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+.lesson:first-child {
+  padding-top: 0;
+}
+.lesson > .section-marker {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+.lesson h2 {
+  font-size: clamp(30px, 3.3vw, 42px);
+  letter-spacing: -1.6px;
+}
+.project-directory {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 28px 0;
+}
+.project-directory a {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 14px;
+  padding: 20px;
+  transition: transform .2s, border-color .2s;
+}
+.project-directory a:hover {
+  transform: translateY(-4px);
+  border-color: var(--green);
+}
+.project-directory span {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+.project-directory h3 {
+  font-size: 21px;
+  margin: 15px 0 8px;
+}
+.project-directory p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+.context-note {
+  padding: 22px;
+  border-left: 3px solid var(--green);
+  background: var(--soft);
+  border-radius: 0 12px 12px 0;
+}
+.context-note p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 8px 0 0;
+}
+.repo-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 25px 0;
+  background: var(--soft);
+  color: var(--green);
+}
+.repo-link:hover {
+  border-color: var(--green);
+}
+.repo-link small {
+  display: block;
+  color: var(--muted);
+  letter-spacing: 1px;
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+.repo-link strong {
+  overflow-wrap: anywhere;
+  font-size: 15px;
+}
+.repo-link > span:last-child {
+  font-size: 26px;
+}
+.concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 30px;
+}
+.concept-grid h3, .reflection-grid h3 {
+  font-size: 20px;
+}
+.concept-grid p, .reflection-grid p, .lesson-details p {
+  font-size: 14px;
+  color: var(--muted);
+}
+.props-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  background: var(--soft);
+  border-radius: 12px;
+  font-size: 12px;
+  color: var(--green);
+}
+.lesson-details {
+  border-block: 1px solid var(--line);
+  margin: 25px 0;
+}
+.lesson-details summary {
+  font-size: 14px;
+}
+.reflection-grid {
+  display: grid;
+  gap: 18px;
+}
+.source-note {
+  color: var(--muted);
+  font-size: 12px;
+}
+.week-pagination {
+  flex-wrap: wrap;
+}
+/* Layout del cuaderno con barra lateral */
+.notebook-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 55px;
+  align-items: start;
+  padding-bottom: 40px;
+}
+.week-index {
+  position: sticky;
+  top: 30px;
+  border-top: 2px solid var(--green);
+  padding-top: 20px;
+}
+.week-index .section-marker {
+  display: block;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.week-index nav {
+  display: grid;
+  gap: 4px;
+}
+.week-index a {
+  font-size: 13.5px;
+  padding: 10px 12px;
+  border-left: 2px solid transparent;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 0 6px 6px 0;
+  transition: all 0.2s ease;
+}
+.week-index a:hover {
+  color: var(--green);
+  background: var(--soft);
+}
+.week-index a.active,
+.week-index a[aria-current="location"],
+.week-index a[aria-current="true"] {
+  background: rgba(140, 200, 160, 0.12);
+  color: var(--green);
+  border-left-color: var(--green);
+  font-weight: 550;
+}
+[data-theme="dark"] .week-index a.active,
+[data-theme="dark"] .week-index a[aria-current="location"],
+[data-theme="dark"] .week-index a[aria-current="true"] {
+  background: rgba(180, 230, 200, 0.1);
+  color: var(--green);
+}
+.week-index > p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: 32px;
+}
+/* Paginación */
+.week-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding: 32px 0 60px;
+  margin-top: 40px;
+}
+.week-pagination a {
+  font-size: 17px;
+  font-family: var(--display);
+  font-weight: 500;
+  color: var(--green);
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.week-pagination a:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+.week-pagination small {
+  display: block;
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+@media (max-width: 960px) {
+  .week-hero, .notebook-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .project-cover {
+    max-width: 600px;
+    transform: none;
+  }
+  .week-index {
+    position: static;
+  }
+  .week-index nav {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .week-index > p {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .project-directory, .concept-grid {
+    grid-template-columns: 1fr;
+  }
+  .week-six .header nav {
+    padding: 0;
+  }
+  .week-six .appearance-controls {
+    flex-basis: 100%;
+    justify-content: flex-end;
+  }
+  .lesson {
+    padding-block: 35px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-directory a:hover {
+    transform: none;
+  }
+}

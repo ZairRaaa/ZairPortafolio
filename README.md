@@ -67,7 +67,8 @@ Sistema de rastreo GPS de vehículos de residuos sólidos para la **Municipalida
 | [Semana 04](pages/cuaderno/semana-04/index.html) | Aula Virtual (ruleta y sorteo de equipos en JS puro) y Órbita (animaciones en Canvas API con closures y Delta Time). | ✅ Desarrollada |
 | [Semana 05](pages/cuaderno/semana-05/index.html) | Creación de plantillas: React, Vite y Next.js. Comparación de sus funciones y temas del sílabo pendientes. | ✅ Documentada |
 | [Semana 06](pages/cuaderno/semana-06/index.html) | Órbita: componentes y props. Nido: SPA y catálogo. TecnoAndes: recuperación de la semana 5. Nueve capturas ampliables. | ✅ Documentada |
-| Semanas 07–15 | Páginas preparadas para documentar los siguientes aprendizajes. | 📝 Por desarrollar |
+| [Semana 07](pages/cuaderno/semana-07/index.html) | Biblioteca universitaria, Apex Motors y TaskMaster Pro. Mapa de hooks y quince capturas ampliables. | ✅ Documentada |
+| Semanas 08–15 | Páginas preparadas para documentar los siguientes aprendizajes. | 📝 Por desarrollar |
 
 La primera semana incluye un recorrido interactivo de una petición web, una pregunta de repaso y fuentes de consulta.
 

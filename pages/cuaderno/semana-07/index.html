@@ -1,38 +1,241 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Semana 07 | Portafolio electrónico</title>
-  <link rel="stylesheet" href="../../../assets/css/styles.css">
-  <script src="../../../assets/js/main.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Semana 7: evaluación parcial de biblioteca universitaria, Apex Motors y TaskMaster Pro. React Hooks, estado y evidencias de aprendizaje." />
+  <meta name="theme-color" content="#173f35" />
+  <title>Semana 07 · Estado que transforma | Zair Ken</title>
+  <link rel="icon" href="../../../assets/images/logos/Logo_uncp.webp" />
+  <script src="../../../assets/js/theme.js"></script>
+  <link rel="stylesheet" href="../../../assets/css/home.css" />
+  <link rel="stylesheet" href="css/semana-07.css" />
+  <script src="../../../assets/js/appearance.js" defer></script>
+  <script src="js/semana-07.js" defer></script>
+  <script src="js/evidencias.js" defer></script>
 </head>
-<body>
-  <header>
-    <nav aria-label="Navegación principal">
-      <a href="../../../index.html">Inicio</a>
-      <a href="../../../pages/cuaderno/index.html">Cuaderno</a>
-    </nav>
-  </header>
-  <main>
-    <h1>Semana 07</h1>
-    <!-- Completar con el contenido de esta semana. -->
-    <section aria-labelledby="tema">
-      <h2 id="tema">Tema de la semana</h2>
-      <p>Pendiente de completar.</p>
+<body class="week-seven">
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+    <header class="header">
+      <a class="brand" href="../../../index.html" aria-label="Zair Ken, inicio"
+        >zk<span>.</span></a
+      >
+      <nav aria-label="Navegación principal">
+        <a href="../../../index.html">Portafolio</a>
+        <a href="../index.html">Cuaderno<span class="nav-count">15</span></a>
+      </nav>
+      <div class="appearance-controls">
+        <button class="theme-toggle" type="button" aria-pressed="false" hidden>
+          <span aria-hidden="true">◐</span>Modo oscuro
+        </button>
+        <button
+          class="palette-toggle"
+          type="button"
+          aria-pressed="false"
+          hidden
+        >
+          <span aria-hidden="true"></span>Paleta roja
+        </button>
+      </div>
+    </header>
+
+
+  <main id="contenido" class="wrap">
+    <nav class="breadcrumbs" aria-label="Ruta de la página"><a href="../index.html">Cuaderno</a><span>/</span><span aria-current="page">Semana 07</span></nav>
+    <section class="week-hero" aria-labelledby="week-title">
+      <div>
+        <p class="eyebrow">BITÁCORA DE APRENDIZAJE / SEMANA 07</p>
+        <h1 id="week-title">La interfaz responde.<br /><em>El estado transforma.</em></h1>
+        <p class="hero-summary">Una biblioteca, un catálogo y un panel de tareas. Tres escenarios para conectar lo aprendido y comprender cómo React responde a cada interacción.</p>
+        <a class="week-cta" href="#recorrido">Explorar mis trabajos <span aria-hidden="true">↘</span></a>
+        <div class="topic-tags"><span>Evaluación parcial</span><span>React Hooks</span><span>Estado y persistencia</span></div>
+      </div>
+      <div class="project-cover">
+        <div class="cover-label"><span>DEL COMPONENTE AL ESTADO</span><span>07 / WEB</span></div>
+        <img src="images/Practica 3 (6).webp" alt="TaskMaster Pro en modo oscuro: indicadores, gráficos y gestión de tareas" width="1192" height="550" />
+        <div class="cover-caption"><span>Tres retos.<br /><strong>Una interfaz que evoluciona.</strong></span><span aria-hidden="true">{07}</span></div>
+      </div>
     </section>
-    <section aria-labelledby="aprendizajes">
-      <h2 id="aprendizajes">Lo que aprendí</h2>
-      <p>Pendiente de completar.</p>
-    </section>
-    <section aria-labelledby="evidencias">
-      <h2 id="evidencias">Actividades y evidencias</h2>
-      <p>Pendiente de completar.</p>
-    </section>
-    <section aria-labelledby="reflexion">
-      <h2 id="reflexion">Reflexión personal</h2>
-      <p>Pendiente de completar.</p>
-    </section>
+    <div class="notebook-layout">
+      <aside class="week-index"><span class="section-marker">MI RECORRIDO</span><nav aria-label="Índice de contenidos">
+        <a href="#recorrido">01 · El recorrido</a>
+        <a href="#biblioteca">02 · Biblioteca</a>
+        <a href="#apex">03 · Apex Motors</a>
+        <a href="#taskmaster">04 · TaskMaster Pro</a>
+        <a href="#hooks">05 · Mapa de hooks</a>
+        <a href="#reflexion">06 · Lo que aprendí</a>
+      </nav><p>Organizar el estado.<br />Entender los efectos.<br />Medir antes de optimizar.</p></aside>
+      <div class="week-content">
+        <section class="lesson" id="recorrido">
+          <span class="section-marker">01 / EL PUNTO DE PARTIDA</span>
+          <h2>De conectar piezas<br />a gestionar <em>cambios.</em></h2>
+          <p class="section-lead">En la <a href="../semana-06/index.html">semana 6</a> trabajé componentes, props y navegación. Esta semana el foco pasa a los datos que cambian, su persistencia y el ciclo de renderizado.</p>
+          <div class="project-directory">
+            <a href="#biblioteca"><span>01 / EVALUACIÓN PARCIAL</span><h3>Biblioteca ↗</h3><p>Libros, usuarios y préstamos en un sistema universitario.</p></a>
+            <a href="#apex"><span>02 / LABORATORIO</span><h3>Apex Motors ↗</h3><p>Un catálogo automotriz para trabajar los hooks.</p></a>
+            <a href="#taskmaster"><span>03 / ESTADO COMPLEJO</span><h3>TaskMaster Pro ↗</h3><p>Tareas, métricas y una auditoría de hooks.</p></a>
+          </div>
+          <aside class="context-note"><strong>Aplicar, comprender y comprobar</strong><p>El parcial integra lo aprendido con React, Vite y TypeScript. Las dos prácticas profundizan en efectos, contexto, reducers y optimización del renderizado.</p></aside>
+        </section>
+        <section class="lesson" id="biblioteca">
+          <span class="section-marker">02 / TRABAJO 1 · PARCIAL</span>
+          <h2>Una biblioteca,<br /><em>muchas conexiones.</em></h2>
+          <p class="section-lead">La evaluación parcial plantea un sistema de biblioteca universitaria con dos perfiles: administración y usuarios registrados. El reto reúne formularios, inventario, préstamos y almacenamiento local.</p>
+          <a class="repo-link" href="https://github.com/ZairRaaa/EVALUACION_PARCIAL_S7_DAW"><span><small>EXPLORAR EL CÓDIGO</small><strong>EVALUACION_PARCIAL_S7_DAW</strong></span><span aria-hidden="true">↗</span></a>
+          <div class="concept-grid"><article><h3>Administrar el catálogo</h3><p>Categorías y libros se organizan con título, autor, ISBN y stock. El enunciado solicita registrar, editar y eliminar datos con formularios validados.</p></article><article><h3>Conectar usuarios y préstamos</h3><p>Estudiantes y docentes buscan libros y consultan su historial. La guía exige impedir préstamos sin stock y actualizar la disponibilidad al registrar una solicitud.</p></article></div>
+          <div class="props-flow" aria-label="Proceso planteado para un préstamo"><span>Buscar un libro</span><span aria-hidden="true">→</span><span>Consultar stock</span><span aria-hidden="true">→</span><span>Registrar préstamo</span><span aria-hidden="true">→</span><strong>Comprobante e historial</strong></div>
+          <details class="lesson-details"><summary>Persistencia y comprobantes <span aria-hidden="true">+</span></summary><p>El caso propone Local Storage para simular la persistencia sin una base de datos externa. Cada comprobante debe incluir usuario, libro, fechas y código único, con opción de descarga en PDF. Las capturas muestran el historial y sus acciones; no documentan la descarga del PDF.</p></details>
+          <div class="evidence-heading"><h3>El trabajo en imágenes.</h3><p>Abre una captura y recorre la galería con las flechas.</p></div>
+          <div class="evidence-grid">
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 1 (1).webp" data-gallery="biblioteca" data-title="Organizar las categorías" data-description="Vista de administración con formulario y listado de categorías." aria-label="Ampliar: Organizar las categorías">
+                <div class="evidence-image"><img src="images/Practica 1 (1).webp" alt="Vista de administración con formulario y listado de categorías." width="1112" height="900" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>Organizar las categorías</h4><p>Vista de administración con formulario y listado de categorías.</p></div>
+              </a>
+            </article>
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 1 (6).webp" data-gallery="biblioteca" data-title="Gestionar los libros" data-description="Registro de libros y tabla con categoría, disponibilidad y acciones." aria-label="Ampliar: Gestionar los libros">
+                <div class="evidence-image"><img src="images/Practica 1 (6).webp" alt="Registro de libros y tabla con categoría, disponibilidad y acciones." width="1145" height="880" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>Gestionar los libros</h4><p>Registro de libros y tabla con categoría, disponibilidad y acciones.</p></div>
+              </a>
+            </article>
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 1 (5).webp" data-gallery="biblioteca" data-title="Registrar a los lectores" data-description="Formulario de usuario y listado de estudiantes y docentes." aria-label="Ampliar: Registrar a los lectores">
+                <div class="evidence-image"><img src="images/Practica 1 (5).webp" alt="Formulario de usuario y listado de estudiantes y docentes." width="925" height="895" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>Registrar a los lectores</h4><p>Formulario de usuario y listado de estudiantes y docentes.</p></div>
+              </a>
+            </article>
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 1 (3).webp" data-gallery="biblioteca" data-title="Explorar el catálogo" data-description="Vista de usuario con búsqueda, categorías y solicitud de préstamo." aria-label="Ampliar: Explorar el catálogo">
+                <div class="evidence-image"><img src="images/Practica 1 (3).webp" alt="Vista de usuario con búsqueda, categorías y solicitud de préstamo." width="1002" height="883" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>Explorar el catálogo</h4><p>Vista de usuario con búsqueda, categorías y solicitud de préstamo.</p></div>
+              </a>
+            </article>
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 1 (4).webp" data-gallery="biblioteca" data-title="Cambiar de perspectiva" data-description="Catálogo desde el modo administrador y selector de usuario." aria-label="Ampliar: Cambiar de perspectiva">
+                <div class="evidence-image"><img src="images/Practica 1 (4).webp" alt="Catálogo desde el modo administrador y selector de usuario." width="1112" height="882" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>Cambiar de perspectiva</h4><p>Catálogo desde el modo administrador y selector de usuario.</p></div>
+              </a>
+            </article>
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 1 (2).webp" data-gallery="biblioteca" data-title="Consultar el historial" data-description="Préstamo registrado con fechas, estado y acciones de comprobante y devolución." aria-label="Ampliar: Consultar el historial">
+                <div class="evidence-image"><img src="images/Practica 1 (2).webp" alt="Préstamo registrado con fechas, estado y acciones de comprobante y devolución." width="1040" height="647" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>Consultar el historial</h4><p>Préstamo registrado con fechas, estado y acciones de comprobante y devolución.</p></div>
+              </a>
+            </article>
+          </div>
+        </section>
+        <section class="lesson" id="apex">
+          <span class="section-marker">03 / TRABAJO 2 · LABORATORIO</span>
+          <h2>Apex Motors:<br /><em>explorar con intención.</em></h2>
+          <p class="section-lead">Un catálogo de vehículos deportivos sirve como escenario visual para la primera práctica de hooks: entender el renderizado, trabajar efectos y separar lógica reutilizable.</p>
+          <a class="repo-link" href="https://github.com/ZairRaaa/Semana_7_practica_1"><span><small>EXPLORAR EL CÓDIGO</small><strong>Semana_7_practica_1</strong></span><span aria-hidden="true">↗</span></a>
+          <div class="concept-grid"><article><h3>Efectos con un ciclo claro</h3><p>La guía propone async/await dentro de useEffect, dependencias explícitas y AbortController para cancelar peticiones durante la limpieza.</p></article><article><h3>Compartir y reutilizar</h3><p>El ejercicio conecta useContext para el tema, useRef para el foco y un hook personalizado para encapsular lógica. useMemo y useCallback se estudian junto al Profiler.</p></article></div>
+          <details class="lesson-details"><summary>¿Qué observar durante el renderizado? <span aria-hidden="true">+</span></summary><p>Una actualización de estado puede volver a renderizar el componente. La práctica invita a revisar qué cambió con React DevTools y a comprobar las dependencias de los efectos. En desarrollo, StrictMode puede repetir un ciclo de preparación y limpieza para detectar problemas.</p><p>Las evidencias muestran la portada y el catálogo. La cancelación de peticiones y las mejoras de rendimiento se comprueban en el código y con mediciones, no solo con la apariencia de la página.</p></details>
+          <div class="evidence-heading"><h3>El trabajo en imágenes.</h3><p>Abre una captura y recorre la galería con las flechas.</p></div>
+          <div class="evidence-grid">
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 2 (1).webp" data-gallery="apex" data-title="Velocidad desde la portada" data-description="Portada de Apex Motors con vehículo destacado y acceso al catálogo." aria-label="Ampliar: Velocidad desde la portada">
+                <div class="evidence-image"><img src="images/Practica 2 (1).webp" alt="Portada de Apex Motors con vehículo destacado y acceso al catálogo." width="1257" height="627" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>Velocidad desde la portada</h4><p>Portada de Apex Motors con vehículo destacado y acceso al catálogo.</p></div>
+              </a>
+            </article>
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 2 (3).webp" data-gallery="apex" data-title="Un catálogo para explorar" data-description="Tarjetas de vehículos con búsqueda, filtros y controles del catálogo." aria-label="Ampliar: Un catálogo para explorar">
+                <div class="evidence-image"><img src="images/Practica 2 (3).webp" alt="Tarjetas de vehículos con búsqueda, filtros y controles del catálogo." width="1247" height="587" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>Un catálogo para explorar</h4><p>Tarjetas de vehículos con búsqueda, filtros y controles del catálogo.</p></div>
+              </a>
+            </article>
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 2 (2).webp" data-gallery="apex" data-title="Detalles de cada vehículo" data-description="Sección de tarjetas con imágenes, especificaciones y botones de acción." aria-label="Ampliar: Detalles de cada vehículo">
+                <div class="evidence-image"><img src="images/Practica 2 (2).webp" alt="Sección de tarjetas con imágenes, especificaciones y botones de acción." width="1247" height="607" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>Detalles de cada vehículo</h4><p>Sección de tarjetas con imágenes, especificaciones y botones de acción.</p></div>
+              </a>
+            </article>
+          </div>
+        </section>
+        <section class="lesson" id="taskmaster">
+          <span class="section-marker">04 / TRABAJO 3 · DASHBOARD</span>
+          <h2>TaskMaster Pro:<br /><em>ordenar la complejidad.</em></h2>
+          <p class="section-lead">El segundo laboratorio reúne gestión de tareas, preferencias y estadísticas. El informe describe una arquitectura de estado unidireccional y documenta su revisión con ESLint y React DevTools.</p>
+          <a class="repo-link" href="https://github.com/ZairRaaa/Semana_7_practica_2"><span><small>EXPLORAR EL CÓDIGO</small><strong>Semana_7_practica_2</strong></span><span aria-hidden="true">↗</span></a>
+          <div class="concept-grid"><article><h3>Acciones que transforman el estado</h3><p>useReducer centraliza las transiciones de la lista; useState mantiene la interfaz local. Los filtros y las métricas se calculan a partir de los datos existentes.</p></article><article><h3>Preferencias que permanecen</h3><p>El informe describe ThemeContext y useLocalStorage para compartir el tema, persistir datos y sincronizar cambios entre pestañas con limpieza de listeners.</p></article></div>
+          <div class="props-flow" aria-label="Flujo de estado de TaskMaster Pro"><span>Interacción</span><span aria-hidden="true">→</span><span>dispatch(acción)</span><span aria-hidden="true">→</span><span>Reducer</span><span aria-hidden="true">→</span><strong>Nuevo estado e interfaz</strong></div>
+          <details class="lesson-details"><summary>Validar antes de optimizar <span aria-hidden="true">+</span></summary><p>El informe registra una revisión de ESLint sin errores ni advertencias y una sesión de Profiler con un lote adicional de tareas. Las capturas incluyen herramientas de desarrollo, un diagrama de estado y la auditoría de hooks.</p><p>useCallback estabiliza los handlers y React.memo puede evitar renders de hijos cuyas props no cambiaron. El resultado depende de las interacciones y las dependencias; estas evidencias recogen la validación del trabajo, no una nueva medición desde el portafolio.</p></details>
+          <div class="evidence-heading"><h3>El trabajo en imágenes.</h3><p>Abre una captura y recorre la galería con las flechas.</p></div>
+          <div class="evidence-grid">
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 3 (6).webp" data-gallery="taskmaster" data-title="El panel en conjunto" data-description="TaskMaster Pro en modo oscuro con métricas, gráficos y controles de tareas." aria-label="Ampliar: El panel en conjunto">
+                <div class="evidence-image"><img src="images/Practica 3 (6).webp" alt="TaskMaster Pro en modo oscuro con métricas, gráficos y controles de tareas." width="1192" height="550" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>El panel en conjunto</h4><p>TaskMaster Pro en modo oscuro con métricas, gráficos y controles de tareas.</p></div>
+              </a>
+            </article>
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 3 (2).webp" data-gallery="taskmaster" data-title="Gestionar en modo claro" data-description="Formulario, filtros y lista de tareas en la apariencia clara." aria-label="Ampliar: Gestionar en modo claro">
+                <div class="evidence-image"><img src="images/Practica 3 (2).webp" alt="Formulario, filtros y lista de tareas en la apariencia clara." width="1217" height="601" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>Gestionar en modo claro</h4><p>Formulario, filtros y lista de tareas en la apariencia clara.</p></div>
+              </a>
+            </article>
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 3 (3).webp" data-gallery="taskmaster" data-title="Explicar cada decisión" data-description="Auditoría técnica de hooks junto a las herramientas del navegador." aria-label="Ampliar: Explicar cada decisión">
+                <div class="evidence-image"><img src="images/Practica 3 (3).webp" alt="Auditoría técnica de hooks junto a las herramientas del navegador." width="1220" height="600" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>Explicar cada decisión</h4><p>Auditoría técnica de hooks junto a las herramientas del navegador.</p></div>
+              </a>
+            </article>
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 3 (1).webp" data-gallery="taskmaster" data-title="Dibujar el flujo de estado" data-description="Diagrama del flujo de estado y ciclo de render incluido en la documentación." aria-label="Ampliar: Dibujar el flujo de estado">
+                <div class="evidence-image"><img src="images/Practica 3 (1).webp" alt="Diagrama del flujo de estado y ciclo de render incluido en la documentación." width="717" height="647" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>Dibujar el flujo de estado</h4><p>Diagrama del flujo de estado y ciclo de render incluido en la documentación.</p></div>
+              </a>
+            </article>
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 3 (4).webp" data-gallery="taskmaster" data-title="Observar el renderizado" data-description="Dashboard acompañado por una captura de React DevTools Profiler." aria-label="Ampliar: Observar el renderizado">
+                <div class="evidence-image"><img src="images/Practica 3 (4).webp" alt="Dashboard acompañado por una captura de React DevTools Profiler." width="1197" height="585" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>Observar el renderizado</h4><p>Dashboard acompañado por una captura de React DevTools Profiler.</p></div>
+              </a>
+            </article>
+            <article class="evidence-card">
+              <a class="evidence-link" href="images/Practica 3 (5).webp" data-gallery="taskmaster" data-title="Revisar una interacción" data-description="Segunda evidencia del panel y del análisis en las herramientas de desarrollo." aria-label="Ampliar: Revisar una interacción">
+                <div class="evidence-image"><img src="images/Practica 3 (5).webp" alt="Segunda evidencia del panel y del análisis en las herramientas de desarrollo." width="1203" height="563" loading="lazy" /><span class="image-expand" aria-hidden="true">↗</span></div>
+                <div class="evidence-caption"><h4>Revisar una interacción</h4><p>Segunda evidencia del panel y del análisis en las herramientas de desarrollo.</p></div>
+              </a>
+            </article>
+          </div>
+        </section>
+        <section class="lesson" id="hooks">
+          <span class="section-marker">05 / MAPA DE HOOKS</span>
+          <h2>Una necesidad.<br /><em>Una herramienta.</em></h2>
+          <p class="section-lead">Abre cada tarjeta para repasar qué responsabilidad cumple cada hook en los trabajos de esta semana.</p>
+          <div class="hooks-grid">
+            <details><summary>useState · Interfaz local</summary><p>Mantiene valores que afectan a la interfaz, como un campo de formulario o un control abierto.</p></details>
+            <details><summary>useReducer · Transiciones</summary><p>Organiza acciones sobre un estado complejo en una función reducer, conservando actualizaciones inmutables.</p></details>
+            <details><summary>useEffect · Sincronización</summary><p>Conecta el componente con sistemas externos. La limpieza libera listeners o cancela operaciones cuando corresponde.</p></details>
+            <details><summary>useContext · Datos compartidos</summary><p>Permite consumir el tema desde un proveedor sin pasar esa información manualmente por cada nivel.</p></details>
+            <details><summary>useMemo · Cálculos derivados</summary><p>Puede reutilizar un cálculo de filtrado u ordenación mientras no cambien sus dependencias. Se aplica cuando aporta una mejora medible.</p></details>
+            <details><summary>useCallback · Referencias estables</summary><p>Puede mantener la identidad de un handler entre renders, por ejemplo al enviarlo a un hijo memoizado.</p></details>
+            <details><summary>useRef · Referencias persistentes</summary><p>Conserva una referencia al input para darle foco. Cambiar ref.current no provoca un render.</p></details>
+            <details><summary>Hook personalizado · Reutilización</summary><p>useLocalStorage encapsula lectura, escritura y sincronización. Un hook comparte lógica, no convierte automáticamente su estado en global.</p></details>
+          </div>
+        </section>
+        <section class="lesson" id="reflexion">
+          <span class="section-marker">06 / LO QUE APRENDÍ</span>
+          <h2>El cambio tiene<br /><em>su propia lógica.</em></h2>
+          <div class="reflection-grid">
+            <article><h3>Separar responsabilidades</h3><p>La interfaz, las transiciones de estado y la persistencia resuelven problemas distintos. Organizar cada responsabilidad hace más fácil entender qué ocurre cuando el usuario interactúa.</p></article>
+            <article><h3>Evitar datos duplicados</h3><p>Una lista filtrada o una métrica se puede obtener del estado original. Mantener una sola fuente de datos reduce la necesidad de sincronizar valores manualmente.</p></article>
+            <article><h3>Medir con una pregunta concreta</h3><p>Antes de añadir memoización, conviene identificar qué componente se renderiza, por qué y cuánto cuesta. La optimización tiene sentido cuando responde a un problema observado.</p></article>
+          </div>
+          <p class="source-note">Contenido elaborado a partir de practica7.md y las 15 capturas de los trabajos. Los resultados de validación citados corresponden al informe de la práctica.</p>
+        </section>
+        <nav class="week-pagination" aria-label="Navegación del cuaderno"><a href="../semana-06/index.html"><small>SEMANA ANTERIOR</small>← Semana 06</a><a href="../index.html"><small>VOLVER AL CUADERNO</small>Las 15 semanas ↗</a><a href="../semana-08/index.html"><small>SEMANA SIGUIENTE</small>Semana 08 →</a></nav>
+      </div>
+    </div>
   </main>
+  <dialog class="evidence-dialog" id="evidence-dialog" aria-labelledby="evidence-title" aria-describedby="evidence-description">
+    <div class="viewer-header"><span id="evidence-position" aria-live="polite"></span><button type="button" id="evidence-close" autofocus>Cerrar ×</button></div>
+    <div class="viewer-stage"><img id="evidence-full" alt="" /></div>
+    <div class="viewer-caption"><div><h2 id="evidence-title"></h2><p id="evidence-description"></p></div><div class="viewer-controls"><button type="button" id="evidence-prev" aria-label="Captura anterior">←</button><button type="button" id="evidence-next" aria-label="Captura siguiente">→</button></div></div>
+  </dialog>
+  <footer class="wrap footer"><a class="brand" href="../../../index.html" aria-label="Zair Ken, inicio">zk<span>.</span></a><p>Zair Ken Rojas Cerron<br /><span>Semana 07 · Estado que transforma</span></p><a href="#contenido">Volver arriba ↑</a></footer>
 </body>
 </html>

@@ -1,6 +1,6 @@
 # Plan de migración gradual a React
 
-Estado: propuesta para ejecutar por etapas. Este documento no inicia la migración.
+Estado: preparación iniciada en `codex/migracion-react`, con respaldo y worktree separado. Ver `docs/migracion/INICIO.md` y `ENTORNO.md`. Ninguna sección está convertida todavía.
 Fecha: 27 de octubre de 2026.
 
 ## 1. ¿Conviene migrar?
@@ -79,22 +79,22 @@ Cada casilla representa un avance revisable; puede necesitar más de un commit p
 ### Etapa 0 · Registrar la referencia
 
 - [ ] Capturar portada y páginas representativas en escritorio y móvil, con las dos paletas y ambos temas.
-- [ ] Inventariar enlaces, recursos y anclas, incluida la página de laboratorio.
-- [ ] Identificar scripts que comparten selectores y responsabilidades.
-- [ ] Registrar el commit estable previo a la migración como referencia de regreso.
+- [x] Inventariar enlaces, recursos y anclas, incluida la página de laboratorio.
+- [x] Identificar scripts que comparten selectores y responsabilidades.
+- [x] Registrar el commit estable previo a la migración como referencia de regreso.
 
 Salida: listado de comportamientos que deben mantenerse y comparación visual de referencia.
 Commit sugerido: `Registro la base de mi migración`.
 
 ### Etapa 1 · Preparar React y Vite
 
-- [ ] Verificar la versión de Node compatible con Vite en el momento de comenzar.
-- [ ] Añadir React, React DOM y las herramientas de desarrollo, con archivo de bloqueo.
-- [ ] Configurar `dev`, `build`, `preview` y `lint`; ignorar `node_modules/` y `dist/`.
-- [ ] Declarar todas las entradas HTML actuales, incluidas las semanas pendientes y el laboratorio.
-- [ ] Resolver imágenes y enlaces para el prefijo `/ZairPortafolio/`.
-- [ ] Auditar los recursos que no procesa Vite, como enlaces de galería: copiarlos explícitamente o importarlos mediante un catálogo de URL. No copiar el repositorio completo a `dist/`.
-- [ ] Validar la construcción sin alterar todavía la publicación de Pages.
+- [x] Verificar la versión de Node compatible con Vite en el momento de comenzar.
+- [x] Añadir React, React DOM y las herramientas de desarrollo, con archivo de bloqueo.
+- [x] Configurar `dev`, `build`, `preview` y `lint`; ignorar `node_modules/` y `dist/`.
+- [x] Declarar todas las entradas HTML actuales, incluidas las semanas pendientes y el laboratorio.
+- [x] Resolver imágenes y enlaces para el prefijo `/ZairPortafolio/`.
+- [x] Auditar los recursos que no procesa Vite, como enlaces de galería: copiarlos explícitamente o importarlos mediante un catálogo de URL. No copiar el repositorio completo a `dist/`.
+- [x] Validar la construcción sin alterar todavía la publicación de Pages.
 
 Salida: el sitio completo abre desde la vista previa de producción; ninguna página desaparece del resultado.
 Commit sugerido: `Preparo React y Vite`.

@@ -1,1 +1,5 @@
 /[Ii]nformacion/
+
+node_modules/
+dist/
+.vite/

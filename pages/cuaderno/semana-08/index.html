@@ -1,38 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Semana 08 | Portafolio electrónico</title>
-  <link rel="stylesheet" href="../../../assets/css/styles.css">
-  <script src="../../../assets/js/main.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Semana 8: consolidación de notas por parte del docente. Cierre de etapa y recorrido por los aprendizajes anteriores." />
+  <meta name="theme-color" content="#173f35" />
+  <title>Semana 08 · Una pausa para consolidar | Zair Ken</title>
+  <link rel="icon" href="../../../assets/images/logos/Logo_uncp.webp" />
+  <script src="../../../assets/js/theme.js"></script>
+  <link rel="stylesheet" href="../../../assets/css/home.css" />
+  <link rel="stylesheet" href="css/semana-08.css" />
+  <script src="../../../assets/js/appearance.js" defer></script>
+  <script src="js/semana-08.js" defer></script>
 </head>
-<body>
-  <header>
-    <nav aria-label="Navegación principal">
-      <a href="../../../index.html">Inicio</a>
-      <a href="../../../pages/cuaderno/index.html">Cuaderno</a>
-    </nav>
-  </header>
-  <main>
-    <h1>Semana 08</h1>
-    <!-- Completar con el contenido de esta semana. -->
-    <section aria-labelledby="tema">
-      <h2 id="tema">Tema de la semana</h2>
-      <p>Pendiente de completar.</p>
+<body class="week-eight">
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+    <header class="header">
+      <a class="brand" href="../../../index.html" aria-label="Zair Ken, inicio"
+        >zk<span>.</span></a
+      >
+      <nav aria-label="Navegación principal">
+        <a href="../../../index.html">Portafolio</a>
+        <a href="../index.html">Cuaderno<span class="nav-count">15</span></a>
+      </nav>
+      <div class="appearance-controls">
+        <button class="theme-toggle" type="button" aria-pressed="false" hidden>
+          <span aria-hidden="true">◐</span>Modo oscuro
+        </button>
+        <button
+          class="palette-toggle"
+          type="button"
+          aria-pressed="false"
+          hidden
+        >
+          <span aria-hidden="true"></span>Paleta roja
+        </button>
+      </div>
+    </header>
+
+
+  <main id="contenido" class="wrap">
+    <nav class="breadcrumbs" aria-label="Ruta de la página"><a href="../index.html">Cuaderno</a><span>/</span><span aria-current="page">Semana 08</span></nav>
+    <section class="week-hero" aria-labelledby="week-title">
+      <div>
+        <p class="eyebrow">BITÁCORA DE APRENDIZAJE / SEMANA 08</p>
+        <h1 id="week-title">Una pausa para mirar<br /><em>lo construido.</em></h1>
+        <p class="hero-summary">Esta semana el ingeniero realizó la consolidación de notas. El examen parcial ya se había desarrollado en la semana 7, por lo que no hubo una nueva práctica.</p>
+        <a class="week-cta" href="#balance">Recorrer esta etapa <span aria-hidden="true">↘</span></a>
+        <div class="topic-tags"><span>Consolidación de notas</span><span>Cierre de etapa</span></div>
+      </div>
+      <div class="chapter-card" aria-label="Semana 8: consolidación de notas; parcial realizado en la semana 7">
+        <div class="cover-label"><span>CUADERNO DE APRENDIZAJE</span><span>08 / 15</span></div>
+        <span class="chapter-number" aria-hidden="true">08<span>.</span></span>
+        <p class="chapter-caption">Cada avance cuenta.<br /><strong>También detenerse a observar.</strong></p>
+        <div class="chapter-status"><span>07 · Parcial realizado</span><span>08 · Consolidación</span></div>
+      </div>
     </section>
-    <section aria-labelledby="aprendizajes">
-      <h2 id="aprendizajes">Lo que aprendí</h2>
-      <p>Pendiente de completar.</p>
-    </section>
-    <section aria-labelledby="evidencias">
-      <h2 id="evidencias">Actividades y evidencias</h2>
-      <p>Pendiente de completar.</p>
-    </section>
-    <section aria-labelledby="reflexion">
-      <h2 id="reflexion">Reflexión personal</h2>
-      <p>Pendiente de completar.</p>
-    </section>
+    <div class="notebook-layout">
+      <aside class="week-index">
+        <span class="section-marker">MI RECORRIDO</span>
+        <nav aria-label="Índice de contenidos">
+          <a href="#semana">01 · Esta semana</a>
+          <a href="#balance">02 · El camino recorrido</a>
+          <a href="#continuidad">03 · Lo que sigue</a>
+        </nav>
+        <p>Mirar el recorrido.<br />Reconocer las conexiones.<br />Continuar aprendiendo.</p>
+      </aside>
+      <div class="week-content">
+        <section class="lesson" id="semana">
+          <span class="section-marker">01 / ESTA SEMANA</span>
+          <h2>Un espacio para<br /><em>consolidar.</em></h2>
+          <p class="section-lead">La actividad de la semana estuvo a cargo del docente: consolidar las notas. Esta entrada deja constancia de ese momento dentro del cuaderno.</p>
+          <div class="concept-grid">
+            <article><h3>El parcial fue en la S7</h3><p>La evaluación de biblioteca universitaria y sus evidencias están documentadas en la semana anterior, junto con los trabajos de hooks.</p></article>
+            <article><h3>Sin nuevas actividades</h3><p>No se desarrollaron nuevas prácticas ni se incorporaron entregables durante esta semana. Por eso, este espacio funciona como una pausa entre etapas.</p></article>
+          </div>
+          <a class="repo-link" href="../semana-07/index.html#biblioteca"><span><small>VOLVER A LA EVALUACIÓN</small><strong>El parcial de biblioteca universitaria</strong></span><span aria-hidden="true">↗</span></a>
+        </section>
+        <section class="lesson" id="balance">
+          <span class="section-marker">02 / EL CAMINO RECORRIDO</span>
+          <h2>De la primera idea<br />a una <em>aplicación.</em></h2>
+          <p class="section-lead">Una mirada a las entradas anteriores del cuaderno. Abre cada etapa para recordar sus temas y volver a los trabajos.</p>
+          <div class="journey">
+            <details class="journey-step">
+              <summary><span class="journey-number">01–02</span><span><strong>Entender la web</strong><small>Fundamentos, requerimientos e interfaces</small></span><span class="journey-toggle" aria-hidden="true">+</span></summary>
+              <div class="journey-body"><p>El recorrido comienza con el funcionamiento de la web y la organización de interfaces con HTML y CSS.</p><div class="journey-links"><a href="../semana-01/index.html">S01 · Fundamentos web ↗</a><a href="../semana-02/index.html">S02 · Primeras interfaces ↗</a></div></div>
+            </details>
+            <details class="journey-step">
+              <summary><span class="journey-number">03–04</span><span><strong>Dar vida a la interfaz</strong><small>Interacción y JavaScript</small></span><span class="journey-toggle" aria-hidden="true">+</span></summary>
+              <div class="journey-body"><p>Los trabajos pasan de la composición visual a los eventos, la manipulación del DOM y las animaciones en Canvas.</p><div class="journey-links"><a href="../semana-03/index.html">S03 · Huellitas y evidencias ↗</a><a href="../semana-04/index.html">S04 · JavaScript en acción ↗</a></div></div>
+            </details>
+            <details class="journey-step">
+              <summary><span class="journey-number">05–06</span><span><strong>Construir con componentes</strong><small>Plantillas, props y navegación</small></span><span class="journey-toggle" aria-hidden="true">+</span></summary>
+              <div class="journey-body"><p>React, Vite y Next.js introducen el entorno de trabajo. Después, los componentes y las props conectan las piezas de la aplicación.</p><div class="journey-links"><a href="../semana-05/index.html">S05 · El entorno de desarrollo ↗</a><a href="../semana-06/index.html">S06 · Componentes que conectan ↗</a></div></div>
+            </details>
+            <details class="journey-step">
+              <summary><span class="journey-number">07</span><span><strong>Integrar lo aprendido</strong><small>Parcial y React Hooks</small></span><span class="journey-toggle" aria-hidden="true">+</span></summary>
+              <div class="journey-body"><p>La biblioteca universitaria integra lo aprendido. Apex Motors y TaskMaster Pro amplían el recorrido hacia estado, efectos y persistencia.</p><div class="journey-links"><a href="../semana-07/index.html">S07 · Estado que transforma ↗</a></div></div>
+            </details>
+          </div>
+          <p class="source-note">Este recorrido resume contenido ya documentado; no representa actividades nuevas de la semana 8.</p>
+        </section>
+        <section class="lesson" id="continuidad">
+          <span class="section-marker">03 / LO QUE SIGUE</span>
+          <h2>El cuaderno<br /><em>continúa abierto.</em></h2>
+          <p class="section-lead">Hasta aquí, el recorrido conecta estructura, interacción, componentes y estado. Las siguientes entradas recogerán los nuevos temas y prácticas conforme se desarrollen.</p>
+          <div class="closing-note"><span aria-hidden="true">↗</span><p>Una semana sin una nueva práctica también forma parte del proceso.<br /><strong>Queda registrado el cierre; el aprendizaje continúa.</strong></p></div>
+        </section>
+        <nav class="week-pagination" aria-label="Navegación del cuaderno">
+          <a href="../semana-07/index.html"><small>SEMANA ANTERIOR</small>← Semana 07</a>
+          <a href="../index.html"><small>VOLVER AL CUADERNO</small>Las 15 semanas ↗</a>
+          <a href="../semana-09/index.html"><small>SEMANA SIGUIENTE</small>Semana 09 →</a>
+        </nav>
+      </div>
+    </div>
   </main>
+  <footer class="wrap footer"><a class="brand" href="../../../index.html" aria-label="Zair Ken, inicio">zk<span>.</span></a><p>Zair Ken Rojas Cerron<br /><span>Semana 08 · Una pausa para consolidar</span></p><a href="#contenido">Volver arriba ↑</a></footer>
 </body>
 </html>

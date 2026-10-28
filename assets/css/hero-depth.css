@@ -1,0 +1,62 @@
+/* Capas decorativas exclusivas de la portada. */
+.hero { position: relative; isolation: isolate; }
+.hero-depth {
+  position: absolute;
+  inset: 0 -35px;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+.depth-word {
+  position: absolute;
+  color: var(--green);
+  font-family: var(--display);
+  font-weight: 650;
+  letter-spacing: -.045em;
+  line-height: 1;
+  opacity: .14;
+  transform: translate(var(--word-x, 0px), var(--word-y, 0px));
+  transition: transform .7s ease-out;
+}
+.depth-word > span {
+  display: block;
+  animation: word-float 12s ease-in-out infinite alternate;
+}
+.word-code { left: 2%; top: 2%; font-size: 58px; filter: blur(2px); }
+.word-react { left: 48%; top: 12%; font-size: 38px; opacity: .22; }
+.word-data { left: 36%; top: 39%; font-size: 72px; filter: blur(4px); opacity: .09; }
+.word-build { right: 0; bottom: 7%; font-size: 44px; filter: blur(2px); }
+.word-ideas { left: 42%; top: 65%; font-size: 36px; opacity: .2; }
+.word-learn { left: 7%; bottom: 1%; font-size: 60px; filter: blur(3px); }
+.word-react > span, .word-build > span { animation-delay: -5s; animation-duration: 16s; }
+.word-data > span, .word-learn > span { animation-delay: -8s; animation-duration: 19s; }
+.hero-motion {
+  position: absolute;
+  bottom: 12px;
+  right: 0;
+  color: var(--muted);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  font-size: 11px;
+  padding: 5px 12px;
+}
+.hero[data-motion-paused] .depth-word > span { animation-play-state: paused; }
+.hero[data-motion-paused] .depth-word { transition: none; }
+@keyframes word-float {
+  from { transform: translate3d(-6px, 5px, 0) rotate(-5deg); }
+  to { transform: translate3d(12px, -13px, 0) rotate(3deg); }
+}
+@media (max-width: 700px) {
+  .hero-depth { inset-inline: -12px; }
+  .word-data, .word-ideas, .word-build { display: none; }
+  .word-code { font-size: 34px; top: 1%; }
+  .word-react { left: auto; right: 4%; top: 35%; font-size: 30px; }
+  .word-learn { font-size: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .depth-word { transform: none; transition: none; }
+  .depth-word > span { animation: none; }
+  .hero-motion { display: none; }
+}

@@ -9,8 +9,10 @@
   <link rel="icon" href="assets/images/logos/Logo_uncp.webp" type="image/png">
   <script src="assets/js/theme.js"></script>
   <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/hero-depth.css">
   <script src="assets/js/appearance.js" defer></script>
   <script src="assets/js/home.js" defer></script>
+  <script src="assets/js/hero-depth.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -29,6 +31,15 @@
   </header>
   <main id="contenido">
     <section class="hero wrap" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-depth" aria-hidden="true">
+        <span class="depth-word word-code" data-depth="18"><span>&lt;code /&gt;</span></span>
+        <span class="depth-word word-react" data-depth="32"><span>React</span></span>
+        <span class="depth-word word-data" data-depth="12"><span>datos.</span></span>
+        <span class="depth-word word-build" data-depth="25"><span>construir</span></span>
+        <span class="depth-word word-ideas" data-depth="40"><span>ideas</span></span>
+        <span class="depth-word word-learn" data-depth="16"><span>aprender</span></span>
+      </div>
+      <button class="hero-motion" type="button" aria-pressed="false" hidden>Pausar fondo</button>
       <div class="hero-copy">
         <div class="eyebrow">PORTAFOLIO PERSONAL · INGENIERÍA DE SISTEMAS</div>
         <h1 id="hero-title">Hola, soy<br><span>Zair Ken</span><span class="name-dot">.</span></h1>

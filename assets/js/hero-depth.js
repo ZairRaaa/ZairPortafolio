@@ -25,7 +25,7 @@
     hero.toggleAttribute('data-motion-paused', paused || reduced.matches || document.hidden);
     button.hidden = reduced.matches;
     button.setAttribute('aria-pressed', String(paused));
-    button.textContent = paused ? 'Activar fondo' : 'Pausar fondo';
+    button.textContent = paused ? 'Activar animación' : 'Pausar animación';
     reset();
   }
 

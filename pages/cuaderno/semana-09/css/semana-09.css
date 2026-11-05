@@ -1,0 +1,113 @@
+/* Semana 09: base editorial del portafolio y evidencias de backend. */
+.week-nine .header { flex-wrap: wrap; }
+.week-nine .header nav { order: initial; flex-basis: auto; }
+.week-nine :is(.lesson, main) { scroll-margin-top: 16px; }
+
+.breadcrumbs { display: flex; gap: 12px; padding-top: 30px; color: var(--muted); font-size: 13px; }
+.breadcrumbs a:hover, .lesson p a:hover { text-decoration: underline; }
+.week-hero {
+  display: grid;
+  grid-template-columns: 1.15fr minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(30px, 5vw, 65px);
+  padding: 35px 0 65px;
+}
+.week-hero h1 { font-size: clamp(36px, 4.2vw, 58px); letter-spacing: -.045em; line-height: 1.12; font-weight: 500; margin: 18px 0; }
+.week-hero .eyebrow { color: var(--green); font-size: 11px; }
+.hero-summary, .section-lead { color: var(--muted); font-size: 15.5px; line-height: 1.75; }
+.week-cta { display: inline-flex; align-items: center; gap: 24px; background: var(--green); color: var(--paper); padding: 13px 22px; border-radius: 28px; margin: 10px 0 24px; font-size: 14px; }
+.week-cta:hover { text-decoration: underline; }
+.topic-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.topic-tags span { border: 1px solid var(--line); border-radius: 25px; padding: 5px 12px; font-size: 11px; }
+.project-cover { margin: 0; min-width: 0; padding: clamp(14px, 2vw, 24px); background: var(--soft); border: 1px solid var(--line); border-radius: 20px; transform: rotate(2deg); }
+.cover-label { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 10px; letter-spacing: 1px; margin-bottom: 18px; }
+.project-cover img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 12px 25px #0002; }
+.cover-caption { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 18px; font-size: 13px; }
+.cover-caption > span:last-child { color: var(--green); font: 500 28px var(--display); }
+
+.notebook-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: clamp(30px, 4vw, 55px); align-items: start; }
+.week-index { position: sticky; top: 30px; border-top: 2px solid var(--green); padding-top: 20px; }
+.week-index .section-marker, .lesson > .section-marker { display: block; font-size: 11px; margin-bottom: 18px; }
+.week-index nav { display: grid; gap: 4px; }
+.week-index a { border-left: 2px solid transparent; border-radius: 0 6px 6px 0; padding: 10px 12px; color: var(--muted); font-size: 13.5px; }
+.week-index a:hover, .week-index a[aria-current="location"] { background: var(--soft); color: var(--green); }
+.week-index a[aria-current="location"] { border-left-color: var(--green); font-weight: 650; }
+.week-index > p { color: var(--muted); font-size: 13px; margin-top: 24px; }
+.lesson { padding-block: 48px; border-bottom: 1px solid var(--line); }
+.lesson:first-child { padding-top: 0; }
+.lesson h2 { font-size: clamp(30px, 3.3vw, 42px); letter-spacing: -.04em; }
+.concept-grid, .project-directory { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+.project-directory a, .repo-link { border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+.project-directory a { background: var(--card); }
+.project-directory a:hover, .repo-link:hover { border-color: var(--green); }
+.project-directory span, .repo-link small { color: var(--muted); font-size: 10px; letter-spacing: 1px; }
+.project-directory h3 { font-size: 20px; margin: 10px 0 4px; }
+.project-directory p, .concept-grid p, .reflection-grid p, .context-note p { margin: 0; color: var(--muted); font-size: 14px; }
+.concept-grid h3, .reflection-grid h3 { font-size: 19px; margin-bottom: 6px; }
+.reflection-grid { display: grid; gap: 22px; margin-bottom: 26px; }
+.repo-link { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: var(--soft); color: var(--green); }
+.repo-link small { display: block; }
+.repo-link strong, .lesson code { overflow-wrap: anywhere; }
+.context-note { padding: 18px; border-left: 3px solid var(--green); border-radius: 0 12px 12px 0; background: var(--soft); }
+.context-note p { margin-top: 5px; }
+.source-note { color: var(--muted); font-size: 12px; }
+.request-flow { display: flex; flex-wrap: wrap; gap: 8px 26px; padding: 16px 18px 16px 38px; border-radius: 12px; background: var(--soft); font-size: 13px; color: var(--green); }
+
+.comparison { border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+.comparison table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 14px; }
+.comparison caption { text-align: left; font-weight: 650; padding: 12px; }
+.comparison th, .comparison td { text-align: left; vertical-align: top; padding: 10px 12px; border-top: 1px solid var(--line); overflow-wrap: anywhere; }
+.comparison thead th { background: var(--soft); color: var(--green); }
+.comparison th:first-child { width: 25%; }
+
+.evidence-heading { margin-top: 32px; }
+.evidence-heading h3 { margin-bottom: 4px; }
+.evidence-heading p { color: var(--muted); font-size: 14px; }
+.evidence-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.evidence-card { display: block; border: 1px solid var(--line); border-radius: 12px; background: var(--card); overflow: hidden; }
+.evidence-card:hover, .evidence-card:focus-visible { border-color: var(--green); }
+.evidence-card img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: var(--soft); }
+.evidence-caption { padding: 12px; }
+.evidence-caption h4 { font: 700 14px var(--display); margin: 0 0 6px; }
+.evidence-caption h4 span { color: var(--green); }
+.evidence-caption p { color: var(--muted); font-size: 12px; margin: 0; }
+.evidence-open { overflow: hidden; }
+.evidence-dialog { width: min(960px, calc(100% - 24px)); max-height: calc(100dvh - 24px); padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--card); color: var(--ink); }
+.evidence-dialog::backdrop { background: #101514cb; }
+.viewer-header, .viewer-caption { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 16px; }
+.viewer-header { font-size: 13px; color: var(--muted); }
+.viewer-stage { overflow: auto; max-height: 65dvh; background: var(--soft); }
+.viewer-stage img { width: auto; max-width: 100%; height: auto; margin: auto; }
+.viewer-caption h2 { font-size: 20px; letter-spacing: -.02em; margin: 0 0 4px; }
+.viewer-caption p { color: var(--muted); font-size: 13px; margin: 0; }
+.viewer-controls { display: flex; gap: 8px; }
+.evidence-dialog button { min-width: 40px; min-height: 40px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 7px; background: var(--soft); color: var(--ink); }
+.evidence-dialog button:hover { border-color: var(--green); }
+
+.week-pagination { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding: 32px 0 60px; }
+.week-pagination a { color: var(--green); font: 600 16px var(--display); }
+.week-pagination a:hover { text-decoration: underline; }
+.week-pagination small { display: block; color: var(--muted); font: 650 10px var(--font); letter-spacing: 1px; margin-bottom: 5px; }
+
+@media (max-width: 960px) {
+  .week-hero, .notebook-layout { grid-template-columns: 1fr; }
+  .project-cover { transform: none; max-width: 630px; }
+  .week-index { position: static; }
+  .week-index nav { grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); }
+  .week-index > p { display: none; }
+}
+@media (max-width: 600px) {
+  .week-nine .header nav { padding: 0; }
+  .week-nine .appearance-controls { flex-basis: 100%; justify-content: flex-end; }
+  .week-hero { padding-bottom: 38px; }
+  .lesson { padding-block: 35px; }
+  .concept-grid, .project-directory { grid-template-columns: 1fr; }
+  .evidence-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .comparison table { font-size: 12px; }
+  .comparison th, .comparison td { padding: 8px 6px; }
+  .viewer-caption { flex-wrap: wrap; }
+  .viewer-controls { margin-left: auto; }
+}
+@media (max-width: 360px) {
+  .evidence-grid { grid-template-columns: 1fr; }
+}

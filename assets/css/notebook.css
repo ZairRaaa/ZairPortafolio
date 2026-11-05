@@ -1,7 +1,7 @@
-/* Semana 09: base editorial del portafolio y evidencias de backend. */
-.week-nine .header { flex-wrap: wrap; }
-.week-nine .header nav { order: initial; flex-basis: auto; }
-.week-nine :is(.lesson, main) { scroll-margin-top: 16px; }
+/* Estilos de la bitácora para las semanas con índice y galerías. */
+.notebook-week .header { flex-wrap: wrap; }
+.notebook-week .header nav { order: initial; flex-basis: auto; }
+.notebook-week :is(.lesson, main) { scroll-margin-top: 16px; }
 
 .breadcrumbs { display: flex; gap: 12px; padding-top: 30px; color: var(--muted); font-size: 13px; }
 .breadcrumbs a:hover, .lesson p a:hover { text-decoration: underline; }
@@ -97,8 +97,8 @@
   .week-index > p { display: none; }
 }
 @media (max-width: 600px) {
-  .week-nine .header nav { padding: 0; }
-  .week-nine .appearance-controls { flex-basis: 100%; justify-content: flex-end; }
+  .notebook-week .header nav { padding: 0; }
+  .notebook-week .appearance-controls { flex-basis: 100%; justify-content: flex-end; }
   .week-hero { padding-bottom: 38px; }
   .lesson { padding-block: 35px; }
   .concept-grid, .project-directory { grid-template-columns: 1fr; }

@@ -70,7 +70,8 @@ Sistema de rastreo GPS de vehículos de residuos sólidos para la **Municipalida
 | [Semana 07](pages/cuaderno/semana-07/index.html) | Biblioteca universitaria, Apex Motors y TaskMaster Pro. Mapa de hooks y quince capturas ampliables. | ✅ Documentada |
 | [Semana 08](pages/cuaderno/semana-08/index.html) | Consolidación de notas y recorrido desplegable por las semanas anteriores. El parcial se realizó en la semana 7. | ✅ Documentada |
 | [Semana 09](pages/cuaderno/semana-09/index.html) | Patio y Registro de contactos: PHP, JSP, sesiones, ciclo HTTP y despliegue local. Quince capturas ampliables. | ✅ Documentada |
-| Semanas 10–15 | Páginas preparadas para documentar los siguientes aprendizajes. | 📝 Por desarrollar |
+| [Semana 10](pages/cuaderno/semana-10/index.html) | Gestor de productos en Python y Almacén, una API REST con Express y MySQL. Doce capturas ampliables. | ✅ Documentada |
+| Semanas 11–15 | Páginas preparadas para documentar los siguientes aprendizajes. | 📝 Por desarrollar |
 
 La primera semana incluye un recorrido interactivo de una petición web, una pregunta de repaso y fuentes de consulta.
 

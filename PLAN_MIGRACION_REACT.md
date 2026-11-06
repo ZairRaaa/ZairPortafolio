@@ -1,6 +1,6 @@
 # Plan de migración gradual a React
 
-La portada, el índice del cuaderno y las semanas 6 a 8 ya se generan con React en `codex/migracion-react`. La rama incorpora también las semanas 9 y 10 desde `main`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
+La portada, el índice del cuaderno y las semanas 5 a 8 ya se generan con React en `codex/migracion-react`. La rama incorpora también las semanas 9 y 10 desde `main`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
 Fecha: 27 de octubre de 2026.
 
 ## 1. ¿Conviene migrar?
@@ -151,7 +151,7 @@ Commits sugeridos: `Organizo mi cuaderno en React`, `Migro mi semana ocho`.
 - [x] Mantener título, descripción, contador, anterior/siguiente, Escape y retorno del foco.
 - [x] Migrar la semana 6 y sus tres galerías.
 - [x] Migrar la semana 7 y sus tres galerías.
-- [ ] Migrar semana 5 reutilizando únicamente las piezas que encajen.
+- [x] Migrar la semana 5 con el layout compartido, su tabla y el repaso interactivo.
 - [ ] Migrar semanas 9 y 10 al layout y al visor compartidos, conservando sus prácticas y evidencias WebP.
 
 Salida: galerías independientes, rutas WebP válidas y ninguna captura perdida.

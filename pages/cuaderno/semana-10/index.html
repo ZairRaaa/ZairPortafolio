@@ -1,38 +1,206 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Semana 10 | Portafolio electrónico</title>
-  <link rel="stylesheet" href="../../../assets/css/styles.css">
-  <script src="../../../assets/js/main.js" defer></script>
+  <meta name="description" content="Semana 10 del cuaderno. Gestión de productos en Python y API REST de inventario con Node.js, Express y MySQL.">
+  <meta name="theme-color" content="#173f35">
+  <title>Semana 10 · Del modelo a la API | Zair Ken</title>
+  <link rel="icon" href="../../../assets/images/logos/Logo_uncp.webp">
+  <script src="../../../assets/js/theme.js"></script>
+  <link rel="stylesheet" href="../../../assets/css/home.css">
+  <link rel="stylesheet" href="../../../assets/css/notebook.css">
+  <script src="../../../assets/js/appearance.js" defer></script>
+  <script src="../../../assets/js/week-index.js" defer></script>
+  <script src="../../../assets/js/evidence-gallery.js" defer></script>
 </head>
-<body>
-  <header>
+<body class="notebook-week">
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="header">
+    <a class="brand" href="../../../index.html" aria-label="Zair Ken, inicio">zk<span>.</span></a>
     <nav aria-label="Navegación principal">
-      <a href="../../../index.html">Inicio</a>
-      <a href="../../../pages/cuaderno/index.html">Cuaderno</a>
+      <a href="../../../index.html">Portafolio</a>
+      <a href="../index.html">Cuaderno<span class="nav-count">15</span></a>
     </nav>
+    <div class="appearance-controls">
+      <button class="theme-toggle" type="button" aria-pressed="false" hidden><span aria-hidden="true">◐</span>Modo oscuro</button>
+      <button class="palette-toggle" type="button" aria-pressed="false" hidden><span aria-hidden="true"></span>Paleta roja</button>
+    </div>
   </header>
-  <main>
-    <h1>Semana 10</h1>
-    <!-- Completar con el contenido de esta semana. -->
-    <section aria-labelledby="tema">
-      <h2 id="tema">Tema de la semana</h2>
-      <p>Pendiente de completar.</p>
+
+  <main id="contenido" class="wrap">
+    <nav class="breadcrumbs" aria-label="Ruta de la página"><a href="../index.html">Cuaderno</a><span aria-hidden="true">/</span><span aria-current="page">Semana 10</span></nav>
+
+    <section class="week-hero" aria-labelledby="week-title">
+      <div>
+        <p class="eyebrow">BITÁCORA DE APRENDIZAJE / SEMANA 10</p>
+        <h1 id="week-title">Del modelo<br><em>a la API.</em></h1>
+        <p class="hero-summary">Un gestor de productos en Python y una API de inventario con Express y MySQL. Dos prácticas para modelar datos, validarlos y decidir cómo responder cuando una operación falla.</p>
+        <a class="week-cta" href="#recorrido">Explorar mis trabajos <span aria-hidden="true">↘</span></a>
+        <div class="topic-tags"><span>Python y POO</span><span>API REST</span><span>Express y MySQL</span></div>
+      </div>
+      <figure class="project-cover">
+        <div class="cover-label"><span>GESTIÓN DE PRODUCTOS</span><span>10 / 15</span></div>
+        <img src="images/trabajo-2-01.webp" alt="Panel de Almacén con indicadores de inventario, catálogo y formulario de productos" width="1351" height="1044">
+        <figcaption class="cover-caption"><span>Dos formas de gestionar productos.<br><strong>De la consola al inventario web.</strong></span><span aria-hidden="true">{10}</span></figcaption>
+      </figure>
     </section>
-    <section aria-labelledby="aprendizajes">
-      <h2 id="aprendizajes">Lo que aprendí</h2>
-      <p>Pendiente de completar.</p>
-    </section>
-    <section aria-labelledby="evidencias">
-      <h2 id="evidencias">Actividades y evidencias</h2>
-      <p>Pendiente de completar.</p>
-    </section>
-    <section aria-labelledby="reflexion">
-      <h2 id="reflexion">Reflexión personal</h2>
-      <p>Pendiente de completar.</p>
-    </section>
+
+    <div class="notebook-layout">
+      <aside class="week-index">
+        <span class="section-marker">MI RECORRIDO</span>
+        <nav aria-label="Índice de contenidos">
+          <a href="#recorrido">01 · El punto de partida</a>
+          <a href="#python">02 · Gestor en Python</a>
+          <a href="#api">03 · API de inventario</a>
+          <a href="#pruebas">04 · Pruebas HTTP</a>
+          <a href="#reflexion">05 · Lo que aprendí</a>
+        </nav>
+        <p>Modelar productos.<br>Validar entradas.<br>Comprobar respuestas.</p>
+      </aside>
+      <div class="week-content">
+        <section class="lesson" id="recorrido">
+          <span class="section-marker">01 / EL PUNTO DE PARTIDA</span>
+          <h2>El mismo recurso,<br><em>dos formas de trabajarlo.</em></h2>
+          <p class="section-lead">En la semana 9 seguí una petición desde el formulario hasta el servidor. Esta semana trabajé primero las reglas de un producto en Python y después gestioné un inventario mediante peticiones HTTP y una base de datos.</p>
+          <div class="project-directory">
+            <a href="#python"><span>01 / PRÁCTICA GRUPAL</span><h3>Gestor en Python ↗</h3><p>Clases, precios y stock desde un menú de consola.</p></a>
+            <a href="#api"><span>02 / PRÁCTICA INDIVIDUAL</span><h3>Almacén ↗</h3><p>API REST de productos con Express, MySQL y pruebas en Postman.</p></a>
+          </div>
+        </section>
+
+        <section class="lesson" id="python">
+          <span class="section-marker">02 / TRABAJO 1 · <time datetime="2026-11-04">4 DE NOVIEMBRE</time></span>
+          <h2>Un producto base,<br><em>distintas reglas de precio.</em></h2>
+          <p class="section-lead">Junto con Ángel Tocas Anglas desarrollé un gestor por consola para registrar electrónicos y libros, listar sus precios finales, buscar productos y actualizar el stock.</p>
+          <a class="repo-link" href="https://github.com/taangel687-netizen/PRACTICA-SEM-10-AGUILAR1"><span><small>EXPLORAR EL CÓDIGO</small><strong>PRACTICA-SEM-10-AGUILAR1</strong></span><span aria-hidden="true">↗</span></a>
+          <div class="concept-grid">
+            <article><h3>Herencia y polimorfismo</h3><p><code>Producto</code> reúne los atributos comunes. <code>Electronico</code> y <code>Libro</code> implementan <code>calcular_precio_final()</code> con sus propias reglas. Así, el menú puede llamar al mismo método al listar ambos tipos.</p></article>
+            <article><h3>Encapsulamiento y validación</h3><p>La guía propone usar <code>@property</code> y setters para controlar valores como el precio y el stock. Las pruebas muestran cómo el menú presenta <code>ValidationError</code> ante un precio negativo y <code>NotFoundError</code> si el identificador no existe.</p></article>
+          </div>
+          <aside class="context-note"><strong>Organizar el código por responsabilidad</strong><p>La guía separa el menú en <code>main.py</code>, las clases en <code>models/</code> y las validaciones y excepciones en <code>utils/</code>. El diagrama incluye <code>DescuentoMixin</code> y permite estudiar el orden de resolución de métodos que sigue <code>super()</code>.</p></aside>
+          <div class="evidence-heading"><h3>El trabajo en imágenes.</h3><p>3 capturas. Abre una y recorre la galería con las flechas.</p></div>
+          <div class="evidence-grid">
+            <a class="evidence-card" href="images/trabajo-1-01.webp" data-gallery="python" data-title="Diseñar la jerarquía" data-description="Diagrama de Producto, Electrónico, Libro y DescuentoMixin, con los atributos y métodos de cada clase." aria-label="Ampliar: Diseñar la jerarquía">
+              <img src="images/trabajo-1-01.webp" alt="Diagrama de Producto, Electrónico, Libro y DescuentoMixin, con los atributos y métodos de cada clase." width="1018" height="652" loading="lazy">
+              <div class="evidence-caption"><h4>Diseñar la jerarquía <span aria-hidden="true">↗</span></h4><p>Diagrama de Producto, Electrónico, Libro y DescuentoMixin, con los atributos y métodos de cada clase.</p></div>
+            </a>
+            <a class="evidence-card" href="images/trabajo-1-02.webp" data-gallery="python" data-title="Registrar y listar productos" data-description="La consola muestra el registro de un monitor y un libro, el cálculo de sus precios finales y una actualización de stock." aria-label="Ampliar: Registrar y listar productos">
+              <img src="images/trabajo-1-02.webp" alt="La consola muestra el registro de un monitor y un libro, el cálculo de sus precios finales y una actualización de stock." width="642" height="663" loading="lazy">
+              <div class="evidence-caption"><h4>Registrar y listar productos <span aria-hidden="true">↗</span></h4><p>La consola muestra el registro de un monitor y un libro, el cálculo de sus precios finales y una actualización de stock.</p></div>
+            </a>
+            <a class="evidence-card" href="images/trabajo-1-03.webp" data-gallery="python" data-title="Probar las excepciones" data-description="El menú se recupera después de un ValidationError por precio negativo y un NotFoundError por un identificador inexistente." aria-label="Ampliar: Probar las excepciones">
+              <img src="images/trabajo-1-03.webp" alt="El menú se recupera después de un ValidationError por precio negativo y un NotFoundError por un identificador inexistente." width="640" height="588" loading="lazy">
+              <div class="evidence-caption"><h4>Probar las excepciones <span aria-hidden="true">↗</span></h4><p>El menú se recupera después de un ValidationError por precio negativo y un NotFoundError por un identificador inexistente.</p></div>
+            </a>
+          </div>
+        </section>
+
+        <section class="lesson" id="api">
+          <span class="section-marker">03 / TRABAJO 2 · <time datetime="2026-11-05">5 DE NOVIEMBRE</time></span>
+          <h2>Almacén conecta<br><em>la interfaz con los datos.</em></h2>
+          <p class="section-lead">En la práctica individual trabajé con Node.js y Express para exponer un CRUD de productos respaldado por MySQL. La interfaz de Almacén presenta el catálogo y el formulario de registro.</p>
+          <a class="repo-link" href="https://github.com/ZairRaaa/Semana_10_practica_2"><span><small>EXPLORAR EL CÓDIGO</small><strong>Semana_10_practica_2</strong></span><span aria-hidden="true">↗</span></a>
+          <ol class="request-flow" aria-label="Recorrido de una petición de inventario">
+            <li>Cliente HTTP</li><li>Ruta de Express</li><li>Validación y controlador</li><li>Consulta a MySQL</li><li>Respuesta JSON</li>
+          </ol>
+          <div class="concept-grid">
+            <article><h3>Separar rutas y controladores</h3><p>Las rutas vinculan cada método HTTP con su operación. Los controladores consultan o modifican la tabla <code>productos</code> y devuelven el resultado con un código HTTP.</p></article>
+            <article><h3>Reutilizar conexiones</h3><p><code>mysql2/promise</code> permite compartir un pool de conexiones. Los controladores usan <code>await</code> para ejecutar consultas y pasan los datos de entrada como parámetros en las operaciones que los necesitan.</p></article>
+          </div>
+          <div class="evidence-heading"><h3>El trabajo en imágenes.</h3><p>9 capturas. Abre una y recorre la galería con las flechas.</p></div>
+          <div class="evidence-grid">
+            <a class="evidence-card" href="images/trabajo-2-01.webp" data-gallery="api" data-title="Explorar Almacén" data-description="La interfaz de inventario muestra indicadores, un catálogo y un formulario para registrar productos." aria-label="Ampliar: Explorar Almacén">
+              <img src="images/trabajo-2-01.webp" alt="La interfaz de inventario muestra indicadores, un catálogo y un formulario para registrar productos." width="1351" height="1044" loading="lazy">
+              <div class="evidence-caption"><h4>Explorar Almacén <span aria-hidden="true">↗</span></h4><p>La interfaz de inventario muestra indicadores, un catálogo y un formulario para registrar productos.</p></div>
+            </a>
+            <a class="evidence-card" href="images/trabajo-2-02.webp" data-gallery="api" data-title="Definir rutas en Express" data-description="El router conecta GET, POST, PUT y DELETE con los controladores y los validadores correspondientes." aria-label="Ampliar: Definir rutas en Express">
+              <img src="images/trabajo-2-02.webp" alt="El router conecta GET, POST, PUT y DELETE con los controladores y los validadores correspondientes." width="1250" height="818" loading="lazy">
+              <div class="evidence-caption"><h4>Definir rutas en Express <span aria-hidden="true">↗</span></h4><p>El router conecta GET, POST, PUT y DELETE con los controladores y los validadores correspondientes.</p></div>
+            </a>
+            <a class="evidence-card" href="images/trabajo-2-05.webp" data-gallery="api" data-title="Configurar el pool de MySQL" data-description="La conexión se configura con mysql2/promise y lee los parámetros de la base de datos desde variables de entorno." aria-label="Ampliar: Configurar el pool de MySQL">
+              <img src="images/trabajo-2-05.webp" alt="La conexión se configura con mysql2/promise y lee los parámetros de la base de datos desde variables de entorno." width="1250" height="818" loading="lazy">
+              <div class="evidence-caption"><h4>Configurar el pool de MySQL <span aria-hidden="true">↗</span></h4><p>La conexión se configura con mysql2/promise y lee los parámetros de la base de datos desde variables de entorno.</p></div>
+            </a>
+            <a class="evidence-card" href="images/trabajo-2-04.webp" data-gallery="api" data-title="Consultar y crear productos" data-description="El controlador muestra las funciones para listar, registrar y buscar productos por identificador." aria-label="Ampliar: Consultar y crear productos">
+              <img src="images/trabajo-2-04.webp" alt="El controlador muestra las funciones para listar, registrar y buscar productos por identificador." width="1250" height="818" loading="lazy">
+              <div class="evidence-caption"><h4>Consultar y crear productos <span aria-hidden="true">↗</span></h4><p>El controlador muestra las funciones para listar, registrar y buscar productos por identificador.</p></div>
+            </a>
+            <a class="evidence-card" href="images/trabajo-2-03.webp" data-gallery="api" data-title="Actualizar y eliminar productos" data-description="El controlador usa consultas con parámetros y comprueba si la operación afectó algún registro." aria-label="Ampliar: Actualizar y eliminar productos">
+              <img src="images/trabajo-2-03.webp" alt="El controlador usa consultas con parámetros y comprueba si la operación afectó algún registro." width="1250" height="818" loading="lazy">
+              <div class="evidence-caption"><h4>Actualizar y eliminar productos <span aria-hidden="true">↗</span></h4><p>El controlador usa consultas con parámetros y comprueba si la operación afectó algún registro.</p></div>
+            </a>
+            <a class="evidence-card" href="images/trabajo-2-09.webp" data-gallery="api" data-title="Listar con 200 OK" data-description="Postman muestra una consulta GET exitosa que devuelve una lista vacía en JSON." aria-label="Ampliar: Listar con 200 OK">
+              <img src="images/trabajo-2-09.webp" alt="Postman muestra una consulta GET exitosa que devuelve una lista vacía en JSON." width="1280" height="800" loading="lazy">
+              <div class="evidence-caption"><h4>Listar con 200 OK <span aria-hidden="true">↗</span></h4><p>Postman muestra una consulta GET exitosa que devuelve una lista vacía en JSON.</p></div>
+            </a>
+            <a class="evidence-card" href="images/trabajo-2-06.webp" data-gallery="api" data-title="Crear con 201 Created" data-description="Postman envía un producto por POST y recibe los datos del registro creado." aria-label="Ampliar: Crear con 201 Created">
+              <img src="images/trabajo-2-06.webp" alt="Postman envía un producto por POST y recibe los datos del registro creado." width="1280" height="800" loading="lazy">
+              <div class="evidence-caption"><h4>Crear con 201 Created <span aria-hidden="true">↗</span></h4><p>Postman envía un producto por POST y recibe los datos del registro creado.</p></div>
+            </a>
+            <a class="evidence-card" href="images/trabajo-2-08.webp" data-gallery="api" data-title="Buscar un producto inexistente" data-description="La consulta por un identificador sin coincidencias devuelve 404 Not Found." aria-label="Ampliar: Buscar un producto inexistente">
+              <img src="images/trabajo-2-08.webp" alt="La consulta por un identificador sin coincidencias devuelve 404 Not Found." width="1280" height="800" loading="lazy">
+              <div class="evidence-caption"><h4>Buscar un producto inexistente <span aria-hidden="true">↗</span></h4><p>La consulta por un identificador sin coincidencias devuelve 404 Not Found.</p></div>
+            </a>
+            <a class="evidence-card" href="images/trabajo-2-07.webp" data-gallery="api" data-title="Observar un error interno" data-description="Postman recibe 500 Internal Server Error y un mensaje genérico en JSON." aria-label="Ampliar: Observar un error interno">
+              <img src="images/trabajo-2-07.webp" alt="Postman recibe 500 Internal Server Error y un mensaje genérico en JSON." width="1280" height="800" loading="lazy">
+              <div class="evidence-caption"><h4>Observar un error interno <span aria-hidden="true">↗</span></h4><p>Postman recibe 500 Internal Server Error y un mensaje genérico en JSON.</p></div>
+            </a>
+          </div>
+        </section>
+
+        <section class="lesson" id="pruebas">
+          <span class="section-marker">04 / PRUEBAS HTTP</span>
+          <h2>Cada respuesta<br><em>dice qué pasó.</em></h2>
+          <p class="section-lead">Las capturas de Postman documentan las consultas y el registro de un producto. La actualización y eliminación aparecen en el código del controlador.</p>
+          <div class="comparison">
+            <table>
+              <caption>Operaciones del recurso <code>/api/productos</code></caption>
+              <thead><tr><th scope="col">Método</th><th scope="col">Operación</th><th scope="col">Evidencia</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">GET</th><td>Listar productos o buscar por <code>/:id</code>.</td><td>Postman muestra <code>200</code> al listar y <code>404</code> para un ID inexistente.</td></tr>
+                <tr><th scope="row">POST</th><td>Registrar un producto con datos JSON.</td><td>Postman muestra <code>201</code> y el producto creado.</td></tr>
+                <tr><th scope="row">PUT</th><td>Actualizar el producto de <code>/:id</code>.</td><td>La captura del controlador muestra la consulta de actualización.</td></tr>
+                <tr><th scope="row">DELETE</th><td>Eliminar el producto de <code>/:id</code>.</td><td>La captura del controlador muestra la consulta de eliminación.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="source-note">La prueba adicional con <code>500</code> registra la respuesta genérica que recibe el cliente ante un fallo interno.</p>
+        </section>
+
+        <section class="lesson" id="reflexion">
+          <span class="section-marker">05 / LO QUE APRENDÍ</span>
+          <h2>Una regla clara<br><em>facilita probar el sistema.</em></h2>
+          <div class="reflection-grid">
+            <article><h3>Dar a cada clase su responsabilidad</h3><p>El polimorfismo me permitió conservar una sola forma de listar productos y dejar las reglas de precio en la clase que conoce cada tipo.</p></article>
+            <article><h3>Hacer visible el motivo del error</h3><p>En consola, las excepciones separan un precio inválido de una búsqueda sin resultados. En la API, el código HTTP y el cuerpo JSON ayudan al cliente a decidir cómo reaccionar.</p></article>
+            <article><h3>Comprobar el resultado desde el cliente</h3><p>Postman me permitió revisar el estado HTTP y el cuerpo de la respuesta de forma independiente de la interfaz del inventario.</p></article>
+          </div>
+          <p class="source-note">Entrada elaborada a partir de la guía de la semana y las 12 capturas de ambos trabajos.</p>
+        </section>
+
+        <nav class="week-pagination" aria-label="Navegación del cuaderno">
+          <a href="../semana-09/index.html"><small>SEMANA ANTERIOR</small>← Semana 09</a>
+          <a href="../index.html"><small>VOLVER AL CUADERNO</small>Las 15 semanas ↗</a>
+          <a href="../semana-11/index.html"><small>SEMANA SIGUIENTE</small>Semana 11 →</a>
+        </nav>
+      </div>
+    </div>
   </main>
+
+  <dialog class="evidence-dialog" id="evidence-dialog" aria-labelledby="evidence-title" aria-describedby="evidence-description">
+    <div class="viewer-header"><span id="evidence-position" aria-live="polite"></span><button type="button" id="evidence-close" autofocus>Cerrar ×</button></div>
+    <div class="viewer-stage"><img id="evidence-full" alt=""></div>
+    <div class="viewer-caption">
+      <div><h2 id="evidence-title"></h2><p id="evidence-description"></p></div>
+      <div class="viewer-controls"><button type="button" id="evidence-prev" aria-label="Captura anterior">←</button><button type="button" id="evidence-next" aria-label="Captura siguiente">→</button></div>
+    </div>
+  </dialog>
+
+  <footer class="wrap footer">
+    <a class="brand" href="../../../index.html" aria-label="Zair Ken, inicio">zk<span>.</span></a>
+    <p>Zair Ken Rojas Cerron<br><span>Semana 10 · Del modelo a la API</span></p>
+    <a href="#contenido">Volver arriba ↑</a>
+  </footer>
 </body>
 </html>

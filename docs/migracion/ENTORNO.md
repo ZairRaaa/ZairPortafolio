@@ -32,7 +32,7 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - Vite genera el índice del cuaderno a partir de `src/pages/NotebookIndex.jsx` y los metadatos de `src/data/weeks.js`. El índice se sirve como HTML estático.
 - Las semanas 5 a 10 usan `WeekLayout`, `WeekIndex` y `WeekPagination`. Se generan como HTML en sus URL habituales y se hidratan con sus entradas en `src/entries/`.
 - Las fotografías comparten un solo ciclo de animación para el desplazamiento. Sus componentes conservan el texto alternativo, las dimensiones y la estrategia de carga.
-- `theme.js` aplica las preferencias antes del primer pintado. Los controles React de la portada y las semanas 5 a 10 usan la misma lógica de apariencia y las mismas claves guardadas que las semanas con controles clásicos.
+- `theme.js` aplica las preferencias antes del primer pintado. Los controles React de la portada y de las semanas migradas usan la misma lógica de apariencia y las mismas claves guardadas que las semanas con controles clásicos.
 - Todos los HTML existentes son entradas de Vite, incluido el laboratorio.
 - Los scripts clásicos conservan su orden y atributos. Vite advierte que no los empaqueta como módulos; el plugin `preserve-legacy-assets` garantiza que existan en sus rutas originales.
 - Los recursos de `assets/` y `pages/` se copian con una lista de extensiones permitidas. En esta fase se conservan también los originales PNG y versiones sin hash, aunque Vite genere otros archivos optimizados. Es una duplicación temporal para proteger enlaces y galerías; reducirla después de migrar sus consumidores.
@@ -134,6 +134,13 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - Las 32 capturas de las páginas y del visor coincidieron con el commit `052c9da` en escritorio y móvil, con ambos temas y paletas y fuentes de reserva.
 - Se comprobó la recarga y la paginación entre las semanas 8 a 11, además de la apariencia guardada al pasar de la 9 a la 10. Lint y build pasaron con 18 páginas y 204 recursos.
 
+## Validación de la semana 1
+
+- La semana conserva su portada, la sección de docentes y el índice de ocho apartados. React reutiliza el índice activo, la apariencia y la barra de lectura dentro de esa estructura.
+- Se verificaron los cinco pasos de la petición web, la vuelta al primer paso, el reinicio y las respuestas de la pregunta de DNS por teclado. El HTML inicial conserva los pasos explicativos y la respuesta de reserva.
+- Se comprobaron las cinco capturas, la barra de lectura, el acceso directo, la recarga y el enlace a la semana 2. Al simular errores de imagen se mantuvo el recuadro de la práctica y se ocultó la infografía que falló.
+- Las 16 capturas coincidieron con el commit `99933bb` en escritorio y móvil, con ambos temas y paletas y fuentes de reserva. Lint y build pasaron con 18 páginas y 203 recursos.
+
 ## Siguiente avance
 
-La etapa 7 comienza por la semana 1 y sus interacciones de repaso.
+La etapa 7 continúa con la semana 2 y su estructura propia.

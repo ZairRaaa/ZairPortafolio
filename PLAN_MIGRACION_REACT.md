@@ -1,6 +1,6 @@
 # Plan de migración gradual a React
 
-La portada, el índice del cuaderno y las semanas 5 a 10 ya se generan con React en `codex/migracion-react`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
+La portada, el índice del cuaderno, la semana 1 y las semanas 5 a 10 ya se generan con React en `codex/migracion-react`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
 Fecha: 27 de octubre de 2026.
 
 ## 1. ¿Conviene migrar?
@@ -159,7 +159,7 @@ Commits sugeridos: `Comparto el visor de mis evidencias`, `Migro mi semana seis`
 
 ### Etapa 7 · Semanas con interacciones particulares
 
-- [ ] Semana 1: revisar y migrar recorrido interactivo y preguntas.
+- [x] Migrar la semana 1, su recorrido interactivo y la pregunta de repaso.
 - [ ] Semana 2: preservar su estructura y contenido propios.
 - [ ] Semana 3: separar la página de evidencias del laboratorio; auditar la configuración de Tailwind y evitar que sus estilos contaminen otras páginas.
 - [ ] Semana 4: inventariar primero las interacciones reales; adaptar las que existan sin implementar de nuevo los proyectos que solo se documentan.

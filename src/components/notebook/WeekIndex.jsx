@@ -1,12 +1,25 @@
 import { useEffect, useState } from 'react';
 
-export function WeekIndex({ items, contentRef, children }) {
+export function WeekIndex({ items, contentRef, heading = 'MI RECORRIDO', observerMargin, children }) {
   const [active, setActive] = useState(null);
 
   useEffect(() => {
     const content = contentRef.current;
     const sections = items.map(({ id }) => document.getElementById(id));
     if (!sections.length || sections.some(section => !section)) return;
+    if (observerMargin) {
+      if (!('IntersectionObserver' in window)) return;
+
+      const observer = new IntersectionObserver(entries => {
+        for (const { target, isIntersecting } of entries) {
+          if (isIntersecting) setActive(target.id);
+        }
+      }, { rootMargin: observerMargin, threshold: 0 });
+
+      for (const section of sections) observer.observe(section);
+      return () => observer.disconnect();
+    }
+
     let frame = 0;
 
     function updateCurrentSection() {
@@ -36,11 +49,11 @@ export function WeekIndex({ items, contentRef, children }) {
       content.removeEventListener('toggle', scheduleUpdate, true);
       cancelAnimationFrame(frame);
     };
-  }, [contentRef, items]);
+  }, [contentRef, items, observerMargin]);
 
   return (
     <aside className="week-index">
-      <span className="section-marker">MI RECORRIDO</span>
+      <span className="section-marker">{heading}</span>
       <nav aria-label="Índice de contenidos">
         {items.map(({ id, label }) => (
           <a key={id} href={'#' + id} aria-current={active === id ? 'location' : undefined}>{label}</a>

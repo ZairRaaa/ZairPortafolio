@@ -15,7 +15,7 @@
     const reveal = new IntersectionObserver(entries => entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.classList.add('revealed'); reveal.unobserve(entry.target); }
     }), { threshold: 0.08 });
-    document.querySelectorAll('.education-grid, .notebook-inner, .contact-grid, .learning-pause').forEach(element => {
+    document.querySelectorAll('.notebook-inner, .contact-grid, .learning-pause').forEach(element => {
       element.classList.add('reveal-ready'); reveal.observe(element);
     });
   }

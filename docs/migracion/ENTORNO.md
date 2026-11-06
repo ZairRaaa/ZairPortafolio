@@ -28,7 +28,7 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 ## Convivencia temporal
 
 - React y React DOM están instalados; el plugin de Vite está preparado para JSX.
-- Vite genera la cabecera, el pie, Sobre mí, Herramientas, Proyectos, Formación, el resumen del cuaderno, Contacto y las cinco fotografías en el HTML de la portada. `src/entries/home-regions.jsx` reúne los componentes que `src/entries/home-layout.jsx` hidrata en el navegador.
+- Vite genera la cabecera, el hero, Sobre mí, Herramientas, Proyectos, Formación, el resumen del cuaderno, Contacto, el pie y las cinco fotografías en el HTML de la portada. `src/entries/home-regions.jsx` reúne los componentes que `src/entries/home-layout.jsx` hidrata en el navegador.
 - Las fotografías comparten un solo ciclo de animación para el desplazamiento. Sus componentes conservan el texto alternativo, las dimensiones y la estrategia de carga.
 - `theme.js` aplica las preferencias antes del primer pintado. `appearance.js` comparte el estado entre la portada y los controles clásicos del cuaderno.
 - Todos los HTML existentes son entradas de Vite, incluido el laboratorio.
@@ -83,6 +83,13 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - Se corrigió el salto directo a secciones posteriores a Proyectos al generar las tarjetas en el HTML inicial. Se probaron `#cuaderno`, `#contacto` y sus animaciones de entrada.
 - Con la API del portapapeles simulada se probaron la copia por teclado, el error, el reintento y el enlace de correo cuando la copia no está disponible. Lint y build pasaron con 18 páginas y 214 recursos.
 
+## Validación del hero
+
+- El título, los enlaces y las imágenes están en el HTML inicial. La fotografía principal conserva su prioridad de carga.
+- Las capturas y la geometría coincidieron con el commit `682b886` en escritorio y móvil, con ambos temas y paletas. Se compararon el estado con movimiento reducido y un fotograma fijo de las animaciones CSS, usando fuentes de reserva.
+- Se verificaron el movimiento por capas, la salida del cursor, la pausa y reanudación por teclado, la visibilidad de la pestaña y el cambio de movimiento reducido. Las posiciones se actualizan por fotograma sin volver a renderizar el hero.
+- Lint y build pasaron con 18 páginas y 213 recursos. El script clásico del hero se retiró.
+
 ## Siguiente avance
 
-La etapa 4 continúa con el hero y sus animaciones.
+El último bloque de la etapa 4 reúne el progreso de lectura y las animaciones de entrada restantes, revisa la navegación activa y consolida la portada en una raíz React.

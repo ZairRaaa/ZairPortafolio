@@ -5,12 +5,13 @@ import { About } from '../sections/home/About.jsx';
 import { Contact } from '../sections/home/Contact.jsx';
 import { Education } from '../sections/home/Education.jsx';
 import { EditorialPhoto } from '../sections/home/EditorialPhoto.jsx';
+import { Hero } from '../sections/home/Hero.jsx';
 import { NotebookSummary } from '../sections/home/NotebookSummary.jsx';
 import { Projects } from '../sections/home/Projects.jsx';
 
 export const homeRegions = {
   'home-header-root': <Header />,
-  'home-intro-photo-root': <EditorialPhoto photo={portraits.intro} />,
+  'home-hero-root': <Hero />,
   'home-about-root': <About />,
   'projects-root': <Projects />,
   'home-city-photo-root': (

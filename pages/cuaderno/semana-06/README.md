@@ -1,6 +1,6 @@
 # Semana 06 · Componentes que conectan
 
-Página estática del cuaderno con el formato de las semanas anteriores: portada, índice lateral con sección activa, tres trabajos, reflexión y navegación entre semanas.
+Página del cuaderno generada con React. Conserva la portada, el índice lateral, los tres trabajos, la reflexión y la navegación entre semanas.
 
 ## Contenido
 
@@ -12,16 +12,15 @@ La redacción se basa en `Informacion/practica6.md` y las nueve capturas proporc
 
 ## Archivos
 
-- `index.html`: contenido y galerías accesibles mediante enlaces nativos.
-- `css/semana-06.css`: diseño adaptable con los colores de `assets/css/home.css`.
-- `js/semana-06.js`: seguimiento de la sección activa del índice.
-- `js/evidencias.js`: visor con galerías independientes, flechas, Escape y devolución del foco.
-- `images/`: tres capturas por trabajo. La portada reutiliza una de Órbita.
+- `index.html` es la entrada de Vite. El HTML generado incluye las galerías y sus enlaces nativos.
+- `css/semana-06.css` conserva el diseño adaptable y los colores de `assets/css/home.css`.
+- `src/pages/weeks/WeekSix.jsx` compone la semana con el layout y el visor compartidos.
+- `src/data/week-six-evidence.js` reúne las tres capturas por trabajo. La portada reutiliza una de Órbita.
 
 ## Verificación
 
 - Rutas locales y anclas sin destinos faltantes; IDs sin duplicados.
-- Sintaxis de ambos scripts verificada con Node.
+- Lint y build verificados.
 - Revisión en navegador a 1440 y 390 px; sin desbordamiento horizontal medido.
 - Las nueve imágenes cargan. Apertura del visor, navegación y cierre con Escape comprobados.
 - Índice lateral identifica TecnoAndes al navegar a su sección.

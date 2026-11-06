@@ -30,9 +30,9 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - React y React DOM están instalados; el plugin de Vite está preparado para JSX.
 - Vite genera la portada completa a partir de `src/pages/Home.jsx`. `src/entries/home.jsx` la hidrata en una sola raíz, `#home-root`.
 - Vite genera el índice del cuaderno a partir de `src/pages/NotebookIndex.jsx` y los metadatos de `src/data/weeks.js`. El índice se sirve como HTML estático.
-- La semana 8 usa `WeekLayout`, `WeekIndex` y `WeekPagination`. Se genera como HTML en su URL habitual y se hidrata con `src/entries/week-eight.jsx`.
+- Las semanas 6 y 8 usan `WeekLayout`, `WeekIndex` y `WeekPagination`. Se generan como HTML en sus URL habituales y se hidratan con sus entradas en `src/entries/`.
 - Las fotografías comparten un solo ciclo de animación para el desplazamiento. Sus componentes conservan el texto alternativo, las dimensiones y la estrategia de carga.
-- `theme.js` aplica las preferencias antes del primer pintado. Los controles React de la portada y la semana 8 usan la misma lógica de apariencia y las mismas claves guardadas que las semanas con controles clásicos.
+- `theme.js` aplica las preferencias antes del primer pintado. Los controles React de la portada y las semanas 6 y 8 usan la misma lógica de apariencia y las mismas claves guardadas que las semanas con controles clásicos.
 - Todos los HTML existentes son entradas de Vite, incluido el laboratorio.
 - Los scripts clásicos conservan su orden y atributos. Vite advierte que no los empaqueta como módulos; el plugin `preserve-legacy-assets` garantiza que existan en sus rutas originales.
 - Los recursos de `assets/` y `pages/` se copian con una lista de extensiones permitidas. En esta fase se conservan también los originales PNG y versiones sin hash, aunque Vite genere otros archivos optimizados. Es una duplicación temporal para proteger enlaces y galerías; reducirla después de migrar sus consumidores.
@@ -106,6 +106,13 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - Se verificaron los desplegables por teclado antes de hidratar, el índice activo, el acceso directo, la recarga y la navegación por teclado entre las semanas 7, 8 y 9. La apariencia elegida en la semana 8 se conserva al pasar a la semana 9 y volver.
 - Lint y build pasaron con 18 páginas y 211 recursos. El script clásico de la semana 8 se retiró.
 
+## Validación del visor y la semana 6
+
+- Los tres proyectos conservan sus nueve WebP, textos y enlaces directos. Se probó el acceso a un WebP por teclado desde el HTML inicial y sin soporte de `showModal()`.
+- Se verificaron los grupos independientes, el contador, las flechas, los botones, el cierre por Escape y clic fuera y el retorno del foco. La paginación a la semana 7 y su visor clásico también se comprobaron.
+- Las capturas completas de la página y las dimensiones del visor coincidieron con el commit `67f60f2` en escritorio y móvil, con ambos temas y paletas. En algunas capturas móviles se observó una diferencia de rasterizado de un píxel en el borde y el contorno de foco.
+- Lint y build pasaron con 18 páginas y 209 recursos. Se retiraron los dos scripts clásicos de la semana 6.
+
 ## Siguiente avance
 
-La etapa 6 empieza por el visor compartido de evidencias y la semana 6.
+La etapa 6 continúa con la semana 7 y sus galerías.

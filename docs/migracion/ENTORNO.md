@@ -30,9 +30,9 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - React y React DOM están instalados; el plugin de Vite está preparado para JSX.
 - Vite genera la portada completa a partir de `src/pages/Home.jsx`. `src/entries/home.jsx` la hidrata en una sola raíz, `#home-root`.
 - Vite genera el índice del cuaderno a partir de `src/pages/NotebookIndex.jsx` y los metadatos de `src/data/weeks.js`. El índice se sirve como HTML estático.
-- Las semanas 6 y 8 usan `WeekLayout`, `WeekIndex` y `WeekPagination`. Se generan como HTML en sus URL habituales y se hidratan con sus entradas en `src/entries/`.
+- Las semanas 6 a 8 usan `WeekLayout`, `WeekIndex` y `WeekPagination`. Se generan como HTML en sus URL habituales y se hidratan con sus entradas en `src/entries/`.
 - Las fotografías comparten un solo ciclo de animación para el desplazamiento. Sus componentes conservan el texto alternativo, las dimensiones y la estrategia de carga.
-- `theme.js` aplica las preferencias antes del primer pintado. Los controles React de la portada y las semanas 6 y 8 usan la misma lógica de apariencia y las mismas claves guardadas que las semanas con controles clásicos.
+- `theme.js` aplica las preferencias antes del primer pintado. Los controles React de la portada y las semanas 6 a 8 usan la misma lógica de apariencia y las mismas claves guardadas que las semanas con controles clásicos.
 - Todos los HTML existentes son entradas de Vite, incluido el laboratorio.
 - Los scripts clásicos conservan su orden y atributos. Vite advierte que no los empaqueta como módulos; el plugin `preserve-legacy-assets` garantiza que existan en sus rutas originales.
 - Los recursos de `assets/` y `pages/` se copian con una lista de extensiones permitidas. En esta fase se conservan también los originales PNG y versiones sin hash, aunque Vite genere otros archivos optimizados. Es una duplicación temporal para proteger enlaces y galerías; reducirla después de migrar sus consumidores.
@@ -113,6 +113,13 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - Las capturas completas de la página y las dimensiones del visor coincidieron con el commit `67f60f2` en escritorio y móvil, con ambos temas y paletas. En algunas capturas móviles se observó una diferencia de rasterizado de un píxel en el borde y el contorno de foco.
 - Lint y build pasaron con 18 páginas y 209 recursos. Se retiraron los dos scripts clásicos de la semana 6.
 
+## Validación de la semana 7
+
+- El índice conserva las seis secciones, incluido el acceso directo a `#biblioteca`. Se comprobó la recarga y la paginación por teclado hacia las semanas 6 y 8.
+- Las 15 imágenes WebP conservan sus enlaces directos. El visor compartido mantiene separados los tres grupos de Biblioteca, Apex Motors y TaskMaster Pro. Se comprobaron el contador, las flechas, los botones, el cierre y el retorno del foco.
+- El mapa de hooks conserva los ocho desplegables nativos. Coincidieron las 16 capturas de la página y el visor en escritorio y móvil, con ambos temas y paletas. La referencia fue el commit `ed2657f` con fuentes de reserva.
+- Lint y build pasaron con 18 páginas y 207 recursos. Se retiraron los dos scripts clásicos de la semana 7.
+
 ## Siguiente avance
 
-La etapa 6 continúa con la semana 7 y sus galerías.
+La etapa 6 continúa con la semana 5 y la adaptación de las piezas compartidas que encajen con su contenido.

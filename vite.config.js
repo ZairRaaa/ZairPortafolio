@@ -5,6 +5,7 @@ import { renderToString } from 'react-dom/server';
 import { Home } from './src/pages/Home.jsx';
 import { NotebookIndex } from './src/pages/NotebookIndex.jsx';
 import { WeekSix } from './src/pages/weeks/WeekSix.jsx';
+import { WeekSeven } from './src/pages/weeks/WeekSeven.jsx';
 import { WeekEight } from './src/pages/weeks/WeekEight.jsx';
 import { readFileSync } from 'node:fs';
 import { pages, staticFiles, relativePath } from './scripts/site-files.mjs';
@@ -26,6 +27,7 @@ const reactPages = {
   'index.html': { rootId: 'home-root', Component: Home },
   'pages/cuaderno/index.html': { rootId: 'notebook-root', Component: NotebookIndex },
   'pages/cuaderno/semana-06/index.html': { rootId: 'week-root', Component: WeekSix },
+  'pages/cuaderno/semana-07/index.html': { rootId: 'week-root', Component: WeekSeven },
   'pages/cuaderno/semana-08/index.html': { rootId: 'week-root', Component: WeekEight },
 };
 

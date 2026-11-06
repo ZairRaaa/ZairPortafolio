@@ -1,6 +1,6 @@
 # Semana 07 · Estado que transforma
 
-Página estática del cuaderno basada en `Informacion/practica7.md` y sus capturas.
+Página del cuaderno generada con React a partir del contenido de `Informacion/practica7.md` y sus capturas.
 
 ## Contenido
 
@@ -13,11 +13,10 @@ Página estática del cuaderno basada en `Informacion/practica7.md` y sus captur
 
 ## Organización
 
-- `index.html`: contenido semántico y enlaces de galería funcionales sin JavaScript.
-- `css/semana-07.css`: diseño adaptable basado en la semana 6 y variables del portafolio.
-- `js/semana-07.js`: seguimiento de la sección activa en el índice.
-- `js/evidencias.js`: visor por proyecto, botones, flechas, Escape y restitución del foco.
-- `images/`: originales PNG y copias WebP sin pérdida; la página usa WebP.
+- `index.html` es la entrada de Vite. El HTML generado incluye el contenido, los desplegables y los enlaces directos de las galerías.
+- `css/semana-07.css` conserva el diseño adaptable y las variables del portafolio.
+- `src/pages/weeks/WeekSeven.jsx` compone la semana con el layout y el visor compartidos.
+- `src/data/week-seven-evidence.js` reúne los datos de las 15 capturas. La página usa las copias WebP de `images/`.
 
 Las quince imágenes pasan de 3 084 784 a 1 864 746 bytes (39,6 % menos).
 Se pueden convertir nuevas imágenes desde la raíz con `python scripts/convertir_webp.py` (requiere Pillow).

@@ -6,6 +6,7 @@ import { Home } from './src/pages/Home.jsx';
 import { NotebookIndex } from './src/pages/NotebookIndex.jsx';
 import { WeekOne } from './src/pages/weeks/WeekOne.jsx';
 import { WeekTwo } from './src/pages/weeks/WeekTwo.jsx';
+import { WeekThree } from './src/pages/weeks/WeekThree.jsx';
 import { WeekFive } from './src/pages/weeks/WeekFive.jsx';
 import { WeekSix } from './src/pages/weeks/WeekSix.jsx';
 import { WeekSeven } from './src/pages/weeks/WeekSeven.jsx';
@@ -33,6 +34,7 @@ const reactPages = {
   'pages/cuaderno/index.html': { rootId: 'notebook-root', Component: NotebookIndex },
   'pages/cuaderno/semana-01/index.html': { rootId: 'week-root', Component: WeekOne },
   'pages/cuaderno/semana-02/index.html': { rootId: 'week-root', Component: WeekTwo },
+  'pages/cuaderno/semana-03/index.html': { rootId: 'week-root', Component: WeekThree },
   'pages/cuaderno/semana-05/index.html': { rootId: 'week-root', Component: WeekFive },
   'pages/cuaderno/semana-06/index.html': { rootId: 'week-root', Component: WeekSix },
   'pages/cuaderno/semana-07/index.html': { rootId: 'week-root', Component: WeekSeven },

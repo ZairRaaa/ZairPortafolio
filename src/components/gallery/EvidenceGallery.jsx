@@ -15,6 +15,7 @@ export function EvidenceGallery({ images, compact = false }) {
         );
         const caption = (
           <div className="evidence-caption">
+            {image.tag && <span className="evidence-tag">{image.tag}</span>}
             <h4>{image.title}{compact && <> <span aria-hidden="true">↗</span></>}</h4>
             <p>{image.description}</p>
           </div>

@@ -31,9 +31,9 @@
     }),
   );
   let previousHeight = 0;
-  const reportHeight = () => {
+  const reportHeight = (force = false) => {
     const height = Math.ceil(document.body.getBoundingClientRect().height) + 2;
-    if (height !== previousHeight) {
+    if (force || height !== previousHeight) {
       previousHeight = height;
       send({ type: "huellitas:height", height });
     }
@@ -60,7 +60,8 @@
       document.documentElement.dataset.bsTheme = data.theme;
     if (["green", "red"].includes(data.palette))
       document.documentElement.dataset.palette = data.palette;
-    requestAnimationFrame(reportHeight);
+    // El panel puede hidratarse después del primer aviso de altura.
+    requestAnimationFrame(() => reportHeight(true));
   });
   const reveal = (step) => {
     const part = parts.find((item) => Number(item.dataset.part) === step);
@@ -149,7 +150,7 @@
     }),
   );
   if ("ResizeObserver" in window)
-    new ResizeObserver(() => requestAnimationFrame(reportHeight)).observe(
+    new ResizeObserver(() => requestAnimationFrame(() => reportHeight())).observe(
       document.body,
     );
   window.addEventListener("load", () => {
@@ -162,7 +163,7 @@
     }
     reportHeight();
   });
-  window.addEventListener("resize", reportHeight);
+  window.addEventListener("resize", () => reportHeight());
   send({ type: "huellitas:ready" });
   reportHeight();
 })();

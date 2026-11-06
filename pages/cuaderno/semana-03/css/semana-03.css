@@ -246,7 +246,7 @@
 .preview-canvas.is-mobile {
   padding: 20px 0;
 }
-.preview-canvas.is-mobile iframe {
+.preview-canvas.is-mobile #dog-preview {
   width: min(390px, 100%);
   border-radius: 12px;
   box-shadow: 0 10px 40px var(--tone-9);

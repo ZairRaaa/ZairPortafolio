@@ -148,6 +148,14 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - Las 24 capturas de la página, la vista filtrada y el visor coincidieron con el commit `415f50d` en escritorio y móvil, con ambos temas y paletas. Se usaron fuentes de reserva.
 - Se verificaron el enlace directo a `#galeria`, la recarga y la navegación. También se volvió a probar la semana 8 en `#balance` y sus desplegables. Lint y build pasaron con 18 páginas y 202 recursos.
 
+## Validación de la semana 3
+
+- La página prerenderizada conserva las tres prácticas, sus repositorios, las anclas y las 12 capturas WebP. Los enlaces directos funcionan antes de hidratar React.
+- Se comprobaron las dos galerías independientes, la navegación con flechas, el cierre con Escape y el retorno del foco. Se compararon la geometría, el contenido y las rutas en escritorio y móvil con ambos temas y paletas.
+- El panel React controla los seis pasos, la vista de hasta 390 px y la apariencia. Se verificaron el contador, el retorno de mensajes desde el iframe, los favoritos y la validación local del formulario. Huellitas devuelve su altura también cuando el panel se hidrata después del primer aviso.
+- Solo `laboratorio.html` carga Bootstrap 5.3.3 y Tailwind Play CDN 3.4.17. Se verificaron el menú móvil y las utilidades con prefijo `tw-`. Preflight sigue desactivado para conservar Bootstrap Reboot.
+- Lint y build pasaron con 18 páginas y 200 recursos.
+
 ## Siguiente avance
 
-La etapa 7 continúa con las evidencias de la semana 3 y la revisión del laboratorio Huellitas.
+La etapa 7 continúa con el inventario y la migración de las interacciones reales de la semana 4.

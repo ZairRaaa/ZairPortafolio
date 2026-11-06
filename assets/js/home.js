@@ -15,17 +15,8 @@
     const reveal = new IntersectionObserver(entries => entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.classList.add('revealed'); reveal.unobserve(entry.target); }
     }), { threshold: 0.08 });
-    document.querySelectorAll('.notebook-inner, .contact-grid, .learning-pause').forEach(element => {
-      element.classList.add('reveal-ready'); reveal.observe(element);
-    });
-  }
-  const copy = document.querySelector('.copy-email');
-  const status = document.querySelector('.copy-status');
-  if (navigator.clipboard && window.isSecureContext) {
-    copy.hidden = false;
-    copy.addEventListener('click', async () => {
-      try { await navigator.clipboard.writeText('a3278811@gmail.com'); status.textContent = 'Correo copiado. ¡Conversemos!'; }
-      catch { status.textContent = 'No se pudo copiar. Puedes seleccionar el correo o pulsarlo para escribir.'; }
-    });
+    const pause = document.querySelector('.learning-pause');
+    pause.classList.add('reveal-ready');
+    reveal.observe(pause);
   }
 })();

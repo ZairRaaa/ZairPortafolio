@@ -1,6 +1,6 @@
 # Plan de migración gradual a React
 
-La cabecera, el pie, Proyectos, Sobre mí, Herramientas, las fotografías y Formación ya funcionan en React en `codex/migracion-react`. La rama incorpora también las semanas 9 y 10 desde `main`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
+El resumen del cuaderno y Contacto ya funcionan en React junto con los bloques anteriores de la portada en `codex/migracion-react`. La rama incorpora también las semanas 9 y 10 desde `main`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
 Fecha: 27 de octubre de 2026.
 
 ## 1. ¿Conviene migrar?
@@ -126,7 +126,7 @@ Orden propuesto, con un commit por bloque:
 1. Sobre mí y fotografías (completado).
 2. Herramientas (completado). Proyectos quedó listo en la etapa 2.
 3. Formación y certificados (completado).
-4. Resumen del cuaderno y contacto.
+4. Resumen del cuaderno y Contacto (completado).
 5. Hero: palabras continuas, destello, pausa y reacción al cursor.
 6. Progreso de lectura, aparición de secciones y navegación activa.
 

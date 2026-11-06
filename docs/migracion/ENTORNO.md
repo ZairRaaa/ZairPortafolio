@@ -28,8 +28,7 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 ## Convivencia temporal
 
 - React y React DOM están instalados; el plugin de Vite está preparado para JSX.
-- Proyectos se monta en `#projects-root` desde `src/entries/projects.jsx`. React controla las tarjetas y su aparición al hacer scroll.
-- Vite genera la cabecera, el pie, Sobre mí, Herramientas, Formación y las cinco fotografías en el HTML de la portada. `src/entries/home-regions.jsx` reúne los componentes que `src/entries/home-layout.jsx` hidrata en el navegador.
+- Vite genera la cabecera, el pie, Sobre mí, Herramientas, Proyectos, Formación, el resumen del cuaderno, Contacto y las cinco fotografías en el HTML de la portada. `src/entries/home-regions.jsx` reúne los componentes que `src/entries/home-layout.jsx` hidrata en el navegador.
 - Las fotografías comparten un solo ciclo de animación para el desplazamiento. Sus componentes conservan el texto alternativo, las dimensiones y la estrategia de carga.
 - `theme.js` aplica las preferencias antes del primer pintado. `appearance.js` comparte el estado entre la portada y los controles clásicos del cuaderno.
 - Todos los HTML existentes son entradas de Vite, incluido el laboratorio.
@@ -49,7 +48,7 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - Referencia visual tomada del commit `2da18d0`, con las semanas 9 y 10 ya integradas. Las capturas de la sección coinciden a 1440 y 390 px, en los dos temas y ambas paletas, con fuentes de reserva para aislar las solicitudes externas.
 - Se comprobó el acceso directo a `#proyectos`, la navegación activa, los desplegables por teclado y el movimiento reducido en desarrollo con StrictMode y en la vista previa.
 - `npm run lint` y `npm run build` pasaron. El build verificó 18 páginas y 213 recursos. En las galerías de las semanas 9 y 10 se comprobó la carga de WebP, el avance con flechas y el retorno del foco con Escape.
-- Las tarjetas se renderizan en el navegador y requieren JavaScript. La decisión sobre prerenderizado queda pendiente antes de publicar.
+- Desde la migración de Cuaderno y Contacto, las tarjetas se generan en el HTML inicial. Así la sección ocupa su altura antes del salto del navegador a las anclas posteriores.
 
 ## Validación de la estructura y la apariencia
 
@@ -77,6 +76,13 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - Las capturas y la geometría coincidieron con el commit `8ec8d22` en escritorio y móvil, con ambos temas y paletas y el desplegable abierto y cerrado. Se usaron fuentes de reserva.
 - Se verificaron el ancla `#formacion`, la apertura con Enter, el cierre con Espacio y la conservación del estado al hidratar. Lint y build pasaron con 18 páginas y 214 recursos.
 
+## Validación de Cuaderno y Contacto
+
+- Las capturas y la geometría coincidieron con el commit `24f4af3` en escritorio y móvil, con ambos temas y paletas. Se usaron fuentes de reserva.
+- El índice y las 15 semanas se verificaron bajo `/ZairPortafolio/`. También se comprobó la navegación por teclado a una semana antes de hidratar React.
+- Se corrigió el salto directo a secciones posteriores a Proyectos al generar las tarjetas en el HTML inicial. Se probaron `#cuaderno`, `#contacto` y sus animaciones de entrada.
+- Con la API del portapapeles simulada se probaron la copia por teclado, el error, el reintento y el enlace de correo cuando la copia no está disponible. Lint y build pasaron con 18 páginas y 214 recursos.
+
 ## Siguiente avance
 
-La etapa 4 continúa con el resumen del cuaderno y Contacto.
+La etapa 4 continúa con el hero y sus animaciones.

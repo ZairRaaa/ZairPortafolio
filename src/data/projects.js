@@ -1,0 +1,27 @@
+export const projects = [
+  {
+    id: 'rastreo-gps',
+    label: '01 / TECNOLOGÍA PARA LA CIUDAD',
+    year: '2025',
+    symbol: '↗',
+    title: 'Datos en movimiento.',
+    subtitle: 'Sistema de rastreo GPS de vehículos de residuos sólidos',
+    description: 'Módulos de análisis de rutas y tableros de indicadores para apoyar el monitoreo de procesos operativos de la Municipalidad de Chilca.',
+    tags: ['Python', 'SQL', 'Power BI'],
+    role: 'Analista y desarrollador',
+    contribution: 'Desarrollé módulos de análisis y control de datos de rutas, implementé tableros de Power BI y participé en la documentación técnica aplicando Scrum.',
+  },
+  {
+    id: 'qhichwa-band',
+    label: '02 / INNOVACIÓN CON IDENTIDAD',
+    year: '2025',
+    symbol: '↔',
+    alternative: true,
+    title: 'Tecnología que conecta.',
+    subtitle: 'Qhichwa-Band · Brazalete traductor inteligente de quechua',
+    description: 'Proyecto de innovación de la UNCP con inteligencia artificial aplicada a la traducción de voz y al intercambio de información.',
+    tags: ['Inteligencia artificial', 'Base de datos'],
+    role: 'Documentador y apoyo técnico',
+    contribution: 'Contribuí al diseño de la base de datos, la estandarización del flujo de información y la redacción técnica para la presentación ante comités académicos.',
+  },
+];

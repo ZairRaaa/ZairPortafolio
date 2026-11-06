@@ -1,6 +1,6 @@
 # Plan de migración gradual a React
 
-Estado: preparación iniciada en `codex/migracion-react`, con respaldo y worktree separado. Ver `docs/migracion/INICIO.md` y `ENTORNO.md`. Ninguna sección está convertida todavía.
+La sección Proyectos ya funciona en React en `codex/migracion-react`, que también incorpora las semanas 9 y 10 desde `main`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
 Fecha: 27 de octubre de 2026.
 
 ## 1. ¿Conviene migrar?
@@ -19,10 +19,10 @@ React no es automáticamente mejor para todo: el sitio actual es estático, func
 - `assets/js/home.js`: menú, progreso de lectura, aparición de secciones, movimiento de fotos y copia del correo.
 - `assets/js/theme.js` y `appearance.js`: tema claro/oscuro, paleta verde/roja y preferencias persistidas.
 - `pages/cuaderno/index.html`: índice de quince semanas.
-- Semanas 1–8: contenido desarrollado, con estructuras e interacciones distintas.
-- Semanas 9–15: plantillas pendientes; no inventar contenido al migrarlas.
+- Las semanas 1–10 tienen contenido, con estructuras e interacciones distintas.
+- Las semanas 11–15 siguen como plantillas pendientes y conservarán su estado al migrar.
 - Semana 3: incluye `laboratorio.html`, CSS propio y configuración de Tailwind; requiere revisión independiente.
-- Semanas 3, 6 y 7: galerías que pueden compartir un visor.
+- Las semanas 3, 6 y 7 tienen galerías con visores propios. Las semanas 9 y 10 comparten el visor estático de evidencias y la navegación de semana.
 - `scripts/convertir_webp.py`: herramienta independiente que se conserva.
 - `Informacion/`: material local excluido de Git; nunca incluirlo en el artefacto publicado.
 
@@ -101,9 +101,9 @@ Commit sugerido: `Preparo React y Vite`.
 
 ### Etapa 2 · Migrar una sección sencilla
 
-- [ ] Migrar primero herramientas o proyectos a componentes y datos locales.
-- [ ] Mantener clases CSS, textos, enlaces e imágenes originales.
-- [ ] Comprobar las interacciones existentes y evitar montajes dentro de nodos que otro script reemplaza.
+- [x] Migrar Proyectos a componentes y datos locales.
+- [x] Mantener las clases CSS, los textos, el ancla y los desplegables nativos.
+- [x] Comprobar las interacciones existentes y trasladar al componente la animación de entrada de las tarjetas.
 
 Salida: una sección real en React, visualmente equivalente y aislada del resto.
 Commit sugerido: `Convierto mis proyectos en componentes`.
@@ -151,6 +151,7 @@ Commits sugeridos: `Organizo mi cuaderno en React`, `Migro mi semana ocho`.
 - [ ] Mantener título, descripción, contador, anterior/siguiente, Escape y retorno del foco.
 - [ ] Migrar semana 6 y después semana 7, cada una en su avance.
 - [ ] Migrar semana 5 reutilizando únicamente las piezas que encajen.
+- [ ] Migrar semanas 9 y 10 al layout y al visor compartidos, conservando sus prácticas y evidencias WebP.
 
 Salida: galerías independientes, rutas WebP válidas y ninguna captura perdida.
 Commits sugeridos: `Comparto el visor de mis evidencias`, `Migro mi semana seis`.
@@ -161,7 +162,7 @@ Commits sugeridos: `Comparto el visor de mis evidencias`, `Migro mi semana seis`
 - [ ] Semana 2: preservar su estructura y contenido propios.
 - [ ] Semana 3: separar la página de evidencias del laboratorio; auditar la configuración de Tailwind y evitar que sus estilos contaminen otras páginas.
 - [ ] Semana 4: inventariar primero las interacciones reales; adaptar las que existan sin implementar de nuevo los proyectos que solo se documentan.
-- [ ] Pasar las plantillas 9–15 al layout compartido, conservando su estado pendiente.
+- [ ] Pasar las plantillas 11–15 al layout compartido, conservando su estado pendiente.
 
 Salida: las diferencias entre semanas se mantienen; no todo se reduce a una plantilla genérica.
 Commits sugeridos: `Migro mi semana uno`, `Adapto mi laboratorio de la semana tres`.

@@ -41,7 +41,7 @@
       const reveal = new IntersectionObserver(entries => entries.forEach(entry => {
         if (entry.isIntersecting) { entry.target.classList.add('revealed'); reveal.unobserve(entry.target); }
       }), { threshold: 0.08 });
-      document.querySelectorAll('.about-grid, .skills, .project-card, .education-grid, .notebook-inner, .contact-grid, .personal-note, .learning-pause').forEach(element => {
+      document.querySelectorAll('.about-grid, .skills, .education-grid, .notebook-inner, .contact-grid, .personal-note, .learning-pause').forEach(element => {
         element.classList.add('reveal-ready'); reveal.observe(element);
       });
     }

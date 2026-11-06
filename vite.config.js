@@ -1,8 +1,9 @@
-import { defineConfig, normalizePath } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
 import { Home } from './src/pages/Home.jsx';
+import { NotebookIndex } from './src/pages/NotebookIndex.jsx';
 import { readFileSync } from 'node:fs';
 import { pages, staticFiles, relativePath } from './scripts/site-files.mjs';
 
@@ -19,15 +20,21 @@ function legacyAssets() {
   };
 }
 
-function renderHome() {
-  return {
-    name: 'render-home',
-    transformIndexHtml(html, { filename }) {
-      if (normalizePath(filename) !== normalizePath(pages[0])) return;
+const reactPages = {
+  'index.html': { rootId: 'home-root', Component: Home },
+  'pages/cuaderno/index.html': { rootId: 'notebook-root', Component: NotebookIndex },
+};
 
-      const marker = '<!-- home-root -->';
-      if (!html.includes(marker)) throw new Error('Falta la raíz de la portada');
-      return html.replace(marker, () => renderToString(createElement(Home)));
+function renderReactPages() {
+  return {
+    name: 'render-react-pages',
+    transformIndexHtml(html, { filename }) {
+      const page = reactPages[relativePath(filename)];
+      if (!page) return;
+
+      const marker = '<!-- ' + page.rootId + ' -->';
+      if (!html.includes(marker)) throw new Error('Falta la raíz de ' + relativePath(filename));
+      return html.replace(marker, () => renderToString(createElement(page.Component)));
     },
   };
 }
@@ -35,7 +42,7 @@ function renderHome() {
 export default defineConfig({
   base: '/ZairPortafolio/',
   publicDir: false,
-  plugins: [react(), renderHome(), legacyAssets()],
+  plugins: [react(), renderReactPages(), legacyAssets()],
   build: {
     rolldownOptions: { input: pages },
   },

@@ -1,7 +1,6 @@
 import { useLayoutEffect, useRef } from 'react';
+import { weeks } from '../../data/weeks.js';
 import { observeReveal } from './reveal.js';
-
-const weeks = Array.from({ length: 15 }, (_, index) => index + 1);
 
 export function NotebookSummary() {
   const panel = useRef(null);
@@ -19,14 +18,11 @@ export function NotebookSummary() {
       <div className="week-panel">
         <div className="week-panel-heading"><span>EL RECORRIDO</span><span>{weeks.length + ' SEMANAS'}</span></div>
         <div className="week-grid">
-          {weeks.map(week => {
-            const number = String(week).padStart(2, '0');
-            return (
-              <a key={week} href={'pages/cuaderno/semana-' + number + '/index.html'} aria-label={'Abrir semana ' + week}>
-                {number}<span aria-hidden="true">↗</span>
-              </a>
-            );
-          })}
+          {weeks.map(week => (
+            <a key={week.number} href={'pages/cuaderno/' + week.path} aria-label={'Abrir semana ' + week.number}>
+              {week.code}<span aria-hidden="true">↗</span>
+            </a>
+          ))}
         </div>
         <p><span className="small-dot"></span> Un espacio en construcción, semana a semana.</p>
       </div>

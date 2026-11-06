@@ -137,7 +137,7 @@ Commits sugeridos: `Migro mi formación a React`, `Integro las animaciones de mi
 
 ### Etapa 5 · Cuaderno y semana piloto
 
-- [ ] Convertir el índice de semanas en una lista de metadatos.
+- [x] Generar el índice desde los metadatos que comparte con la portada.
 - [ ] Crear `WeekLayout`, índice activo y paginación compartidos.
 - [ ] Migrar primero la semana 8: es pequeña y permite validar la estructura sin galerías complejas.
 - [ ] Conservar su consolidación de notas y sus desplegables nativos.

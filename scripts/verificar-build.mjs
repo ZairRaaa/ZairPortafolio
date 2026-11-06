@@ -14,8 +14,9 @@ for (const source of pages) {
   if (!existsSync(page)) continue;
   const tree = walk(parse(readFileSync(page, 'utf8')));
   if (source === pages[0]) {
-    for (const tag of ['header', 'footer']) {
-      if (!tree.some(node => node.tagName === tag)) errors.push('Falta ' + tag + ' en el HTML de la portada');
+    const home = tree.find(node => node.attrs?.some(attr => attr.name === 'id' && attr.value === 'home-root'));
+    for (const tag of ['header', 'main', 'footer']) {
+      if (!home?.childNodes.some(node => node.tagName === tag)) errors.push('Falta ' + tag + ' en la raíz de la portada');
     }
   }
   for (const node of tree) {

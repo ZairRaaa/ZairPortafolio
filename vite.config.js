@@ -1,7 +1,8 @@
 import { defineConfig, normalizePath } from 'vite';
 import react from '@vitejs/plugin-react';
+import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
-import { homeRegions } from './src/entries/home-regions.jsx';
+import { Home } from './src/pages/Home.jsx';
 import { readFileSync } from 'node:fs';
 import { pages, staticFiles, relativePath } from './scripts/site-files.mjs';
 
@@ -18,18 +19,15 @@ function legacyAssets() {
   };
 }
 
-function renderHomeRegions() {
+function renderHome() {
   return {
-    name: 'render-home-regions',
+    name: 'render-home',
     transformIndexHtml(html, { filename }) {
       if (normalizePath(filename) !== normalizePath(pages[0])) return;
 
-      for (const [id, content] of Object.entries(homeRegions)) {
-        const marker = '<!-- ' + id + ' -->';
-        if (!html.includes(marker)) throw new Error('Falta la región de portada ' + id);
-        html = html.replace(marker, () => renderToString(content));
-      }
-      return html;
+      const marker = '<!-- home-root -->';
+      if (!html.includes(marker)) throw new Error('Falta la raíz de la portada');
+      return html.replace(marker, () => renderToString(createElement(Home)));
     },
   };
 }
@@ -37,7 +35,7 @@ function renderHomeRegions() {
 export default defineConfig({
   base: '/ZairPortafolio/',
   publicDir: false,
-  plugins: [react(), renderHomeRegions(), legacyAssets()],
+  plugins: [react(), renderHome(), legacyAssets()],
   build: {
     rolldownOptions: { input: pages },
   },

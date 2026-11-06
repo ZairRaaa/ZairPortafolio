@@ -28,7 +28,7 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 ## Convivencia temporal
 
 - React y React DOM están instalados; el plugin de Vite está preparado para JSX.
-- Vite genera la cabecera, el hero, Sobre mí, Herramientas, Proyectos, Formación, el resumen del cuaderno, Contacto, el pie y las cinco fotografías en el HTML de la portada. `src/entries/home-regions.jsx` reúne los componentes que `src/entries/home-layout.jsx` hidrata en el navegador.
+- Vite genera la portada completa a partir de `src/pages/Home.jsx`. `src/entries/home.jsx` la hidrata en una sola raíz, `#home-root`.
 - Las fotografías comparten un solo ciclo de animación para el desplazamiento. Sus componentes conservan el texto alternativo, las dimensiones y la estrategia de carga.
 - `theme.js` aplica las preferencias antes del primer pintado. `appearance.js` comparte el estado entre la portada y los controles clásicos del cuaderno.
 - Todos los HTML existentes son entradas de Vite, incluido el laboratorio.
@@ -90,6 +90,13 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - Se verificaron el movimiento por capas, la salida del cursor, la pausa y reanudación por teclado, la visibilidad de la pestaña y el cambio de movimiento reducido. Las posiciones se actualizan por fotograma sin volver a renderizar el hero.
 - Lint y build pasaron con 18 páginas y 213 recursos. El script clásico del hero se retiró.
 
+## Validación de la portada consolidada
+
+- Ocho capturas completas coincidieron con el commit `5a21e57` en escritorio y móvil, con ambos temas y paletas. También coincidieron la geometría y los enlaces. Se usaron fuentes de reserva.
+- Se comprobó el contenido inicial antes de la hidratación, el menú móvil por teclado, las anclas directas, la navegación activa y las animaciones de entrada con y sin movimiento reducido.
+- La barra de lectura se verificó del 0 al 100 %, al cambiar el tamaño de la ventana y al abrir o cerrar el desplegable de Formación.
+- Lint y build pasaron con 18 páginas y 212 recursos. El build comprueba que la cabecera, el contenido principal y el pie están en la raíz de la portada.
+
 ## Siguiente avance
 
-El último bloque de la etapa 4 reúne el progreso de lectura y las animaciones de entrada restantes, revisa la navegación activa y consolida la portada en una raíz React.
+La etapa 5 empieza por el índice del cuaderno y usa la semana 8 como piloto del layout compartido.

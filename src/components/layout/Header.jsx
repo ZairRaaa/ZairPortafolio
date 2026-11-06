@@ -33,7 +33,7 @@ function AppearanceControls({ appearance }) {
   );
 }
 
-export function Header() {
+export function Header({ main }) {
   const appearance = useAppearance();
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
@@ -61,9 +61,9 @@ export function Header() {
       }
     }, { rootMargin: '-10% 0px -55% 0px', threshold: 0 });
 
-    for (const section of document.querySelectorAll('main section[id]')) observer.observe(section);
+    for (const section of main.current.querySelectorAll('section[id]')) observer.observe(section);
     return () => observer.disconnect();
-  }, []);
+  }, [main]);
 
   return (
     <header className={appearance ? 'header js-menu' : 'header'}>

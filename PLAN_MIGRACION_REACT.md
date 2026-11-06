@@ -1,6 +1,6 @@
 # Plan de migración gradual a React
 
-El hero ya funciona en React junto con los bloques anteriores de la portada en `codex/migracion-react`. La rama incorpora también las semanas 9 y 10 desde `main`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
+La portada completa ya funciona en una sola raíz React en `codex/migracion-react`. La rama incorpora también las semanas 9 y 10 desde `main`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
 Fecha: 27 de octubre de 2026.
 
 ## 1. ¿Conviene migrar?
@@ -16,7 +16,7 @@ React no es automáticamente mejor para todo: el sitio actual es estático, func
 - `index.html`: portada, presentación, herramientas, proyectos, formación, cuaderno y contacto.
 - `assets/css/home.css`: base visual y estilos compartidos; mezcla reglas generales y de portada.
 - `assets/css/hero-depth.css` conserva las palabras en movimiento y el destello del nombre. El hero en React gestiona la pausa y la reacción al cursor.
-- `assets/js/home.js`: menú, progreso de lectura, aparición de secciones, movimiento de fotos y copia del correo.
+- `src/pages/Home.jsx` compone la portada. Los componentes de React gestionan el menú, el progreso de lectura, las animaciones de entrada, el movimiento de las fotos y la copia del correo.
 - `assets/js/theme.js` y `appearance.js`: tema claro/oscuro, paleta verde/roja y preferencias persistidas.
 - `pages/cuaderno/index.html`: índice de quince semanas.
 - Las semanas 1–10 tienen contenido, con estructuras e interacciones distintas.
@@ -128,7 +128,7 @@ Orden propuesto, con un commit por bloque:
 3. Formación y certificados (completado).
 4. Resumen del cuaderno y Contacto (completado).
 5. Hero, palabras continuas, destello, pausa y reacción al cursor (completado).
-6. Progreso de lectura, aparición de secciones y navegación activa.
+6. Progreso de lectura, aparición de secciones y navegación activa (completado).
 
 Las animaciones CSS se conservan. React controla estado y ciclo de vida; las coordenadas del cursor se actualizan con refs y `requestAnimationFrame`, sin renderizar toda la portada por cada movimiento.
 

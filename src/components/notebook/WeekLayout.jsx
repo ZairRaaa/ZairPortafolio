@@ -22,7 +22,7 @@ export function WeekLayout({ week, title, hero, sections, indexNote, children })
       </header>
       <main id="contenido" className="wrap">
         <nav className="breadcrumbs" aria-label="Ruta de la página">
-          <a href="../index.html">Cuaderno</a><span>/</span><span aria-current="page">{week.label}</span>
+          <a href="../index.html">Cuaderno</a><span aria-hidden="true">/</span><span aria-current="page">{week.label}</span>
         </nav>
         {hero}
         <div className="notebook-layout">

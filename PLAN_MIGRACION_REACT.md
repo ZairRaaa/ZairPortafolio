@@ -1,6 +1,6 @@
 # Plan de migración gradual a React
 
-La portada, el índice del cuaderno y las semanas 5 a 8 ya se generan con React en `codex/migracion-react`. La rama incorpora también las semanas 9 y 10 desde `main`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
+La portada, el índice del cuaderno y las semanas 5 a 10 ya se generan con React en `codex/migracion-react`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
 Fecha: 27 de octubre de 2026.
 
 ## 1. ¿Conviene migrar?
@@ -22,7 +22,7 @@ React no es automáticamente mejor para todo: el sitio actual es estático, func
 - Las semanas 1–10 tienen contenido, con estructuras e interacciones distintas.
 - Las semanas 11–15 siguen como plantillas pendientes y conservarán su estado al migrar.
 - Semana 3: incluye `laboratorio.html`, CSS propio y configuración de Tailwind; requiere revisión independiente.
-- La semana 3 conserva su visor propio. Las semanas 6 y 7 usan el visor React. Las semanas 9 y 10 comparten el visor clásico y la navegación de semana.
+- La semana 3 conserva su visor propio. Las semanas 6, 7, 9 y 10 usan el visor compartido de React.
 - `scripts/convertir_webp.py`: herramienta independiente que se conserva.
 - `Informacion/`: material local excluido de Git; nunca incluirlo en el artefacto publicado.
 
@@ -152,7 +152,7 @@ Commits sugeridos: `Organizo mi cuaderno en React`, `Migro mi semana ocho`.
 - [x] Migrar la semana 6 y sus tres galerías.
 - [x] Migrar la semana 7 y sus tres galerías.
 - [x] Migrar la semana 5 con el layout compartido, su tabla y el repaso interactivo.
-- [ ] Migrar semanas 9 y 10 al layout y al visor compartidos, conservando sus prácticas y evidencias WebP.
+- [x] Migrar las semanas 9 y 10 al layout y al visor compartidos, conservando sus prácticas y evidencias WebP.
 
 Salida: galerías independientes, rutas WebP válidas y ninguna captura perdida.
 Commits sugeridos: `Comparto el visor de mis evidencias`, `Migro mi semana seis`.

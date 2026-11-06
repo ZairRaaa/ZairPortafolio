@@ -8,6 +8,8 @@ import { WeekFive } from './src/pages/weeks/WeekFive.jsx';
 import { WeekSix } from './src/pages/weeks/WeekSix.jsx';
 import { WeekSeven } from './src/pages/weeks/WeekSeven.jsx';
 import { WeekEight } from './src/pages/weeks/WeekEight.jsx';
+import { WeekNine } from './src/pages/weeks/WeekNine.jsx';
+import { WeekTen } from './src/pages/weeks/WeekTen.jsx';
 import { readFileSync } from 'node:fs';
 import { pages, staticFiles, relativePath } from './scripts/site-files.mjs';
 
@@ -31,6 +33,8 @@ const reactPages = {
   'pages/cuaderno/semana-06/index.html': { rootId: 'week-root', Component: WeekSix },
   'pages/cuaderno/semana-07/index.html': { rootId: 'week-root', Component: WeekSeven },
   'pages/cuaderno/semana-08/index.html': { rootId: 'week-root', Component: WeekEight },
+  'pages/cuaderno/semana-09/index.html': { rootId: 'week-root', Component: WeekNine },
+  'pages/cuaderno/semana-10/index.html': { rootId: 'week-root', Component: WeekTen },
 };
 
 function renderReactPages() {

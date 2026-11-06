@@ -141,6 +141,13 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - Se comprobaron las cinco capturas, la barra de lectura, el acceso directo, la recarga y el enlace a la semana 2. Al simular errores de imagen se mantuvo el recuadro de la práctica y se ocultó la infografía que falló.
 - Las 16 capturas coincidieron con el commit `99933bb` en escritorio y móvil, con ambos temas y paletas y fuentes de reserva. Lint y build pasaron con 18 páginas y 203 recursos.
 
+## Validación de la semana 2
+
+- Se conservaron las tres prácticas, el desplegable, el índice activo, la barra de lectura y la paginación hacia las semanas 1 y 3.
+- Las 14 capturas WebP se pueden abrir desde el HTML inicial. Los filtros HTML, WAVE y Lighthouse limitan el recorrido del visor a las capturas visibles y conservan las cinco imágenes generales. Se comprobaron Enter, Espacio, las flechas, Escape y el retorno del foco.
+- Las 24 capturas de la página, la vista filtrada y el visor coincidieron con el commit `415f50d` en escritorio y móvil, con ambos temas y paletas. Se usaron fuentes de reserva.
+- Se verificaron el enlace directo a `#galeria`, la recarga y la navegación. También se volvió a probar la semana 8 en `#balance` y sus desplegables. Lint y build pasaron con 18 páginas y 202 recursos.
+
 ## Siguiente avance
 
-La etapa 7 continúa con la semana 2 y su estructura propia.
+La etapa 7 continúa con las evidencias de la semana 3 y la revisión del laboratorio Huellitas.

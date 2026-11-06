@@ -1,26 +1,9 @@
-import { useContext } from 'react';
-import { EvidenceViewerContext } from './EvidenceViewer.jsx';
+import { EvidenceLink } from './EvidenceLink.jsx';
 
 export function EvidenceGallery({ images, compact = false }) {
-  const open = useContext(EvidenceViewerContext);
-
-  function handleClick(event, index) {
-    if (event.defaultPrevented || event.button !== 0 ||
-        event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) {
-      return;
-    }
-
-    if (open?.(images, index, event.currentTarget)) event.preventDefault();
-  }
-
   return (
     <div className="evidence-grid">
-      {images.map((image, index) => {
-        const link = {
-          href: image.src,
-          'aria-label': 'Ampliar: ' + image.title,
-          onClick: event => handleClick(event, index),
-        };
+      {images.map(image => {
         const thumbnail = (
           <img
             src={image.src}
@@ -39,22 +22,22 @@ export function EvidenceGallery({ images, compact = false }) {
 
         if (compact) {
           return (
-            <a key={image.src} className="evidence-card" {...link}>
+            <EvidenceLink key={image.src} className="evidence-card" image={image} images={images}>
               {thumbnail}
               {caption}
-            </a>
+            </EvidenceLink>
           );
         }
 
         return (
           <article className="evidence-card" key={image.src}>
-            <a className="evidence-link" {...link}>
+            <EvidenceLink className="evidence-link" image={image} images={images}>
               <div className="evidence-image">
                 {thumbnail}
                 <span className="image-expand" aria-hidden="true">↗</span>
               </div>
               {caption}
-            </a>
+            </EvidenceLink>
           </article>
         );
       })}

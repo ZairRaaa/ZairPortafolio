@@ -2,7 +2,7 @@ import { createContext, useEffect, useLayoutEffect, useRef, useState } from 'rea
 
 export const EvidenceViewerContext = createContext(null);
 
-export function EvidenceViewer({ children }) {
+export function EvidenceViewer({ children, closeLabel }) {
   const dialog = useRef(null);
   const stage = useRef(null);
   const trigger = useRef(null);
@@ -80,7 +80,9 @@ export function EvidenceViewer({ children }) {
           <span id="evidence-position" aria-live="polite">
             {selection && ((selection.index + 1) + ' / ' + selection.images.length + ' · Evidencias')}
           </span>
-          <button type="button" id="evidence-close" autoFocus onClick={() => dialog.current.close()}>Cerrar ×</button>
+          <button type="button" id="evidence-close" autoFocus onClick={() => dialog.current.close()}>
+            {closeLabel ? <>{closeLabel + ' '}<span aria-hidden="true">×</span></> : 'Cerrar ×'}
+          </button>
         </div>
         <div className="viewer-stage" ref={stage}><img id="evidence-full" src={image?.src} alt={image?.alt ?? image?.description ?? ''} /></div>
         <div className="viewer-caption">

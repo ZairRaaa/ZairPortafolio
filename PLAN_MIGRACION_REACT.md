@@ -1,6 +1,6 @@
 # Plan de migración gradual a React
 
-La portada, el índice del cuaderno, la semana 1 y las semanas 5 a 10 ya se generan con React en `codex/migracion-react`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
+La portada, el índice del cuaderno, las semanas 1, 2 y 5 a 10 ya se generan con React en `codex/migracion-react`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
 Fecha: 27 de octubre de 2026.
 
 ## 1. ¿Conviene migrar?
@@ -22,7 +22,7 @@ React no es automáticamente mejor para todo: el sitio actual es estático, func
 - Las semanas 1–10 tienen contenido, con estructuras e interacciones distintas.
 - Las semanas 11–15 siguen como plantillas pendientes y conservarán su estado al migrar.
 - Semana 3: incluye `laboratorio.html`, CSS propio y configuración de Tailwind; requiere revisión independiente.
-- La semana 3 conserva su visor propio. Las semanas 6, 7, 9 y 10 usan el visor compartido de React.
+- La semana 3 conserva su visor propio. Las semanas 2, 6, 7, 9 y 10 usan el visor compartido de React.
 - `scripts/convertir_webp.py`: herramienta independiente que se conserva.
 - `Informacion/`: material local excluido de Git; nunca incluirlo en el artefacto publicado.
 
@@ -160,7 +160,7 @@ Commits sugeridos: `Comparto el visor de mis evidencias`, `Migro mi semana seis`
 ### Etapa 7 · Semanas con interacciones particulares
 
 - [x] Migrar la semana 1, su recorrido interactivo y la pregunta de repaso.
-- [ ] Semana 2: preservar su estructura y contenido propios.
+- [x] Migrar la semana 2 conservando su estructura, sus filtros y sus evidencias.
 - [ ] Semana 3: separar la página de evidencias del laboratorio; auditar la configuración de Tailwind y evitar que sus estilos contaminen otras páginas.
 - [ ] Semana 4: inventariar primero las interacciones reales; adaptar las que existan sin implementar de nuevo los proyectos que solo se documentan.
 - [ ] Pasar las plantillas 11–15 al layout compartido, conservando su estado pendiente.

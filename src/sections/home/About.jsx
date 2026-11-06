@@ -1,13 +1,15 @@
 import { useLayoutEffect, useRef } from 'react';
 import { portraits } from '../../data/portraits.js';
 import { EditorialPhoto } from './EditorialPhoto.jsx';
+import { Skills } from './Skills.jsx';
 import { observeReveal } from './reveal.js';
 
 export function About() {
   const introduction = useRef(null);
   const personalNote = useRef(null);
+  const skills = useRef(null);
 
-  useLayoutEffect(() => observeReveal([introduction.current, personalNote.current]), []);
+  useLayoutEffect(() => observeReveal([introduction.current, personalNote.current, skills.current]), []);
 
   return (
     <>
@@ -35,6 +37,7 @@ export function About() {
           <p>Este portafolio también guarda un poco de mí: los lugares, las pausas y los momentos que acompañan el camino.</p>
         </div>
       </div>
+      <Skills ref={skills} />
     </>
   );
 }

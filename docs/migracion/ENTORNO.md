@@ -4,14 +4,14 @@ Esta copia pertenece a la rama `codex/migracion-react`. La versión estable perm
 
 ## Ejecutar
 
-Desde la carpeta de esta copia, con Node 22.12 o superior:
+Abre una terminal en esta copia con Node 22.12 o superior. Ejecuta `npm ci` la primera vez o si cambia el archivo de bloqueo, y luego inicia Vite.
 
 ```powershell
 npm ci
 npm run dev
 ```
 
-Abrir la dirección que muestra Vite y añadir `/ZairPortafolio/` si fuera necesario.
+Abre `http://127.0.0.1:5173/ZairPortafolio/` o la dirección que muestre Vite si usa otro puerto. Detén el servidor con `Ctrl+C`.
 
 ## Comprobar la publicación sin publicarla
 
@@ -29,7 +29,7 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 
 - React y React DOM están instalados; el plugin de Vite está preparado para JSX.
 - Proyectos se monta en `#projects-root` desde `src/entries/projects.jsx`. React controla las tarjetas y su aparición al hacer scroll.
-- Vite genera la cabecera, el pie, Sobre mí y las cinco fotografías en el HTML de la portada. `src/entries/home-regions.jsx` reúne los componentes que `src/entries/home-layout.jsx` hidrata en el navegador.
+- Vite genera la cabecera, el pie, Sobre mí, Herramientas y las cinco fotografías en el HTML de la portada. `src/entries/home-regions.jsx` reúne los componentes que `src/entries/home-layout.jsx` hidrata en el navegador.
 - Las fotografías comparten un solo ciclo de animación para el desplazamiento. Sus componentes conservan el texto alternativo, las dimensiones y la estrategia de carga.
 - `theme.js` aplica las preferencias antes del primer pintado. `appearance.js` comparte el estado entre la portada y los controles clásicos del cuaderno.
 - Todos los HTML existentes son entradas de Vite, incluido el laboratorio.
@@ -65,6 +65,12 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - Se probaron el enlace directo a `#sobre-mi`, la animación de entrada y el movimiento de las fotos al hacer scroll, incluido el cambio en vivo a movimiento reducido.
 - Lint y build pasaron. La compilación verificó 18 páginas y 214 recursos.
 
+## Validación de Herramientas
+
+- Las capturas y la geometría coincidieron con el commit `c860c9c` en las distribuciones de una, dos y cuatro columnas con ambos temas y paletas. Se usaron fuentes de reserva para la comparación.
+- Las ocho tarjetas conservaron sus textos, niveles y barras. El HTML inicial incluye las tarjetas y los logos SVG locales con carga diferida.
+- Se comprobaron la animación de entrada y el movimiento reducido en desarrollo y en la vista previa. Lint y build pasaron con 18 páginas y 214 recursos verificados.
+
 ## Siguiente avance
 
-La etapa 4 continúa con Herramientas. Cada bloque de portada se migra y se comprueba por separado.
+La etapa 4 continúa con Formación y certificados. Cada bloque de portada se migra y se comprueba por separado.

@@ -1,6 +1,6 @@
 # Plan de migración gradual a React
 
-Proyectos, la cabecera y el pie de la portada ya funcionan en React en `codex/migracion-react`. La rama incorpora también las semanas 9 y 10 desde `main`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
+Sobre mí, las fotografías, Proyectos, la cabecera y el pie de la portada ya funcionan en React en `codex/migracion-react`. La rama incorpora también las semanas 9 y 10 desde `main`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
 Fecha: 27 de octubre de 2026.
 
 ## 1. ¿Conviene migrar?
@@ -123,7 +123,7 @@ Commit sugerido: `Comparto la apariencia de mi portafolio`.
 
 Orden propuesto, con un commit por bloque:
 
-1. Sobre mí y fotografías.
+1. Sobre mí y fotografías (completado).
 2. Herramientas y proyectos que falten.
 3. Formación y certificados.
 4. Resumen del cuaderno y contacto.

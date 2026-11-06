@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from 'react';
 import { projects } from '../../data/projects.js';
+import { observeReveal } from './reveal.js';
 
 function ProjectCard({ project }) {
   return (
@@ -29,34 +30,7 @@ function ProjectCard({ project }) {
 export function Projects() {
   const grid = useRef(null);
 
-  useLayoutEffect(() => {
-    if (!('IntersectionObserver' in window) ||
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      return;
-    }
-
-    const cards = Array.from(grid.current.children);
-    const reveal = new IntersectionObserver(entries => {
-      for (const { target, isIntersecting } of entries) {
-        if (isIntersecting) {
-          target.classList.add('revealed');
-          reveal.unobserve(target);
-        }
-      }
-    }, { threshold: 0.08 });
-
-    for (const card of cards) {
-      card.classList.add('reveal-ready');
-      reveal.observe(card);
-    }
-
-    return () => {
-      reveal.disconnect();
-      for (const card of cards) {
-        card.classList.remove('reveal-ready', 'revealed');
-      }
-    };
-  }, []);
+  useLayoutEffect(() => observeReveal(grid.current.children), []);
 
   return (
     <>

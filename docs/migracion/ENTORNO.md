@@ -29,7 +29,8 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 
 - React y React DOM están instalados; el plugin de Vite está preparado para JSX.
 - Proyectos se monta en `#projects-root` desde `src/entries/projects.jsx`. React controla las tarjetas y su aparición al hacer scroll.
-- Vite genera la cabecera y el pie en el HTML de la portada. `src/entries/home-layout.jsx` hidrata ambos componentes y activa el menú, la sección actual y los controles de apariencia.
+- Vite genera la cabecera, el pie, Sobre mí y las cinco fotografías en el HTML de la portada. `src/entries/home-regions.jsx` reúne los componentes que `src/entries/home-layout.jsx` hidrata en el navegador.
+- Las fotografías comparten un solo ciclo de animación para el desplazamiento. Sus componentes conservan el texto alternativo, las dimensiones y la estrategia de carga.
 - `theme.js` aplica las preferencias antes del primer pintado. `appearance.js` comparte el estado entre la portada y los controles clásicos del cuaderno.
 - Todos los HTML existentes son entradas de Vite, incluido el laboratorio.
 - Los scripts clásicos conservan su orden y atributos. Vite advierte que no los empaqueta como módulos; el plugin `preserve-legacy-assets` garantiza que existan en sus rutas originales.
@@ -57,6 +58,13 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - Se verificó la persistencia de tema y paleta entre la portada y las diez semanas con controles. También se probaron los cambios del sistema y el funcionamiento con almacenamiento bloqueado.
 - Lint y build pasaron. El build verificó 18 páginas y 214 recursos e incluye una comprobación de la cabecera y el pie en el HTML de la portada.
 
+## Validación de Sobre mí y las fotografías
+
+- Sobre mí y las cinco fotos se compararon con el commit `6ae0bdb` en dos tamaños, ambos temas y ambas paletas. Coincidieron las capturas, la geometría y los atributos de carga. Se usaron fuentes de reserva para aislar las solicitudes externas.
+- Se comprobó que el texto y las cinco imágenes cargan antes de hidratar React, con prioridad alta para la foto del hero y carga diferida para las otras cuatro.
+- Se probaron el enlace directo a `#sobre-mi`, la animación de entrada y el movimiento de las fotos al hacer scroll, incluido el cambio en vivo a movimiento reducido.
+- Lint y build pasaron. La compilación verificó 18 páginas y 214 recursos.
+
 ## Siguiente avance
 
-La etapa 4 continúa con Sobre mí y las fotografías. Cada bloque de portada se migra y se comprueba por separado.
+La etapa 4 continúa con Herramientas. Cada bloque de portada se migra y se comprueba por separado.

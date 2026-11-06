@@ -1,9 +1,7 @@
 import { defineConfig, normalizePath } from 'vite';
 import react from '@vitejs/plugin-react';
-import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
-import { Header } from './src/components/layout/Header.jsx';
-import { Footer } from './src/components/layout/Footer.jsx';
+import { homeRegions } from './src/entries/home-regions.jsx';
 import { readFileSync } from 'node:fs';
 import { pages, staticFiles, relativePath } from './scripts/site-files.mjs';
 
@@ -20,17 +18,18 @@ function legacyAssets() {
   };
 }
 
-function renderHomeLayout() {
+function renderHomeRegions() {
   return {
-    name: 'render-home-layout',
+    name: 'render-home-regions',
     transformIndexHtml(html, { filename }) {
       if (normalizePath(filename) !== normalizePath(pages[0])) return;
 
-      const header = renderToString(createElement(Header));
-      const footer = renderToString(createElement(Footer));
-      return html
-        .replace('<div id="home-header-root"></div>', () => '<div id="home-header-root">' + header + '</div>')
-        .replace('<div id="home-footer-root"></div>', () => '<div id="home-footer-root">' + footer + '</div>');
+      for (const [id, content] of Object.entries(homeRegions)) {
+        const marker = '<!-- ' + id + ' -->';
+        if (!html.includes(marker)) throw new Error('Falta la región de portada ' + id);
+        html = html.replace(marker, () => renderToString(content));
+      }
+      return html;
     },
   };
 }
@@ -38,7 +37,7 @@ function renderHomeLayout() {
 export default defineConfig({
   base: '/ZairPortafolio/',
   publicDir: false,
-  plugins: [react(), renderHomeLayout(), legacyAssets()],
+  plugins: [react(), renderHomeRegions(), legacyAssets()],
   build: {
     rolldownOptions: { input: pages },
   },

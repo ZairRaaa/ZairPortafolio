@@ -1,14 +1,7 @@
 import { StrictMode } from 'react';
 import { hydrateRoot } from 'react-dom/client';
-import { Header } from '../components/layout/Header.jsx';
-import { Footer } from '../components/layout/Footer.jsx';
+import { homeRegions } from './home-regions.jsx';
 
-hydrateRoot(
-  document.getElementById('home-header-root'),
-  <StrictMode><Header /></StrictMode>,
-);
-
-hydrateRoot(
-  document.getElementById('home-footer-root'),
-  <StrictMode><Footer /></StrictMode>,
-);
+for (const [id, content] of Object.entries(homeRegions)) {
+  hydrateRoot(document.getElementById(id), <StrictMode>{content}</StrictMode>);
+}

@@ -1,37 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
+import { weeks } from '../../data/weeks.js';
 import { useAppearance } from '../../hooks/useAppearance.js';
+import { AppearanceControls } from './AppearanceControls.jsx';
 
 const navigation = [
   { id: 'sobre-mi', label: 'Sobre mí' },
   { id: 'proyectos', label: 'Proyectos' },
   { id: 'formacion', label: 'Formación' },
-  { id: 'cuaderno', label: 'Cuaderno', count: 15 },
+  { id: 'cuaderno', label: 'Cuaderno', count: weeks.length },
 ];
-
-function AppearanceControls({ appearance }) {
-  return (
-    <div className="appearance-controls">
-      <button
-        className="theme-toggle"
-        type="button"
-        aria-pressed={appearance?.theme === 'dark'}
-        hidden={!appearance}
-        onClick={() => window.portfolioAppearance.toggleTheme()}
-      >
-        <span aria-hidden="true">◐</span> Modo oscuro
-      </button>
-      <button
-        className="palette-toggle"
-        type="button"
-        aria-pressed={appearance?.palette === 'red'}
-        hidden={!appearance}
-        onClick={() => window.portfolioAppearance.togglePalette()}
-      >
-        <span aria-hidden="true"></span> Paleta roja
-      </button>
-    </div>
-  );
-}
 
 export function Header({ main }) {
   const appearance = useAppearance();

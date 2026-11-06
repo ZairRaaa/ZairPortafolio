@@ -6,8 +6,8 @@ La página mantiene la apariencia del cuaderno, con portada tipográfica, índic
 
 ## Archivos
 
-- `index.html`: contenido y desplegables nativos, funcionales sin JavaScript.
-- `css/semana-08.css`: estilos adaptables y colores heredados del portafolio.
-- `js/semana-08.js`: seguimiento de la sección activa.
+- `index.html` es la entrada multipágina de Vite. El HTML generado incluye el contenido y los desplegables nativos.
+- `css/semana-08.css` conserva los estilos adaptables y los colores heredados del portafolio.
+- `src/pages/weeks/WeekEight.jsx` contiene la semana. Los componentes compartidos en `src/components/notebook/` gestionan su estructura, el índice activo y la paginación.
 
 No se incluyen notas numéricas, prácticas nuevas ni evidencias inventadas. El recorrido resume las entradas anteriores.

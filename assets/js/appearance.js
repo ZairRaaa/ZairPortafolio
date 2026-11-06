@@ -70,7 +70,7 @@
   });
   updateBrowserColor();
 
-  // La portada conecta sus controles desde React. El cuaderno conserva su HTML.
+  // Las páginas migradas conectan sus controles desde React.
   if (document.currentScript?.hasAttribute('data-appearance-store')) return;
 
   const themeButton = document.querySelector('.theme-toggle');

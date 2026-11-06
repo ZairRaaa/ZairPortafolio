@@ -4,6 +4,7 @@ import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
 import { Home } from './src/pages/Home.jsx';
 import { NotebookIndex } from './src/pages/NotebookIndex.jsx';
+import { WeekEight } from './src/pages/weeks/WeekEight.jsx';
 import { readFileSync } from 'node:fs';
 import { pages, staticFiles, relativePath } from './scripts/site-files.mjs';
 
@@ -23,6 +24,7 @@ function legacyAssets() {
 const reactPages = {
   'index.html': { rootId: 'home-root', Component: Home },
   'pages/cuaderno/index.html': { rootId: 'notebook-root', Component: NotebookIndex },
+  'pages/cuaderno/semana-08/index.html': { rootId: 'week-root', Component: WeekEight },
 };
 
 function renderReactPages() {

@@ -1,6 +1,6 @@
 # Plan de migración gradual a React
 
-La portada completa ya funciona en una sola raíz React en `codex/migracion-react`. La rama incorpora también las semanas 9 y 10 desde `main`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
+La portada, el índice del cuaderno y la semana 8 ya se generan con React en `codex/migracion-react`. La rama incorpora también las semanas 9 y 10 desde `main`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
 Fecha: 27 de octubre de 2026.
 
 ## 1. ¿Conviene migrar?
@@ -138,9 +138,9 @@ Commits sugeridos: `Migro mi formación a React`, `Integro las animaciones de mi
 ### Etapa 5 · Cuaderno y semana piloto
 
 - [x] Generar el índice desde los metadatos que comparte con la portada.
-- [ ] Crear `WeekLayout`, índice activo y paginación compartidos.
-- [ ] Migrar primero la semana 8: es pequeña y permite validar la estructura sin galerías complejas.
-- [ ] Conservar su consolidación de notas y sus desplegables nativos.
+- [x] Crear `WeekLayout`, índice activo y paginación compartidos.
+- [x] Migrar la semana 8 como piloto de la estructura compartida.
+- [x] Conservar su consolidación de notas y sus desplegables nativos.
 
 Salida: acceso directo, recarga y navegación S7 → S8 → S9 correctos.
 Commits sugeridos: `Organizo mi cuaderno en React`, `Migro mi semana ocho`.

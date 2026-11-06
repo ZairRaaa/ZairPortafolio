@@ -29,8 +29,10 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 
 - React y React DOM están instalados; el plugin de Vite está preparado para JSX.
 - Vite genera la portada completa a partir de `src/pages/Home.jsx`. `src/entries/home.jsx` la hidrata en una sola raíz, `#home-root`.
+- Vite genera el índice del cuaderno a partir de `src/pages/NotebookIndex.jsx` y los metadatos de `src/data/weeks.js`. El índice se sirve como HTML estático.
+- La semana 8 usa `WeekLayout`, `WeekIndex` y `WeekPagination`. Se genera como HTML en su URL habitual y se hidrata con `src/entries/week-eight.jsx`.
 - Las fotografías comparten un solo ciclo de animación para el desplazamiento. Sus componentes conservan el texto alternativo, las dimensiones y la estrategia de carga.
-- `theme.js` aplica las preferencias antes del primer pintado. `appearance.js` comparte el estado entre la portada y los controles clásicos del cuaderno.
+- `theme.js` aplica las preferencias antes del primer pintado. Los controles React de la portada y la semana 8 usan la misma lógica de apariencia y las mismas claves guardadas que las semanas con controles clásicos.
 - Todos los HTML existentes son entradas de Vite, incluido el laboratorio.
 - Los scripts clásicos conservan su orden y atributos. Vite advierte que no los empaqueta como módulos; el plugin `preserve-legacy-assets` garantiza que existan en sus rutas originales.
 - Los recursos de `assets/` y `pages/` se copian con una lista de extensiones permitidas. En esta fase se conservan también los originales PNG y versiones sin hash, aunque Vite genere otros archivos optimizados. Es una duplicación temporal para proteger enlaces y galerías; reducirla después de migrar sus consumidores.
@@ -97,6 +99,13 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - La barra de lectura se verificó del 0 al 100 %, al cambiar el tamaño de la ventana y al abrir o cerrar el desplegable de Formación.
 - Lint y build pasaron con 18 páginas y 212 recursos. El build comprueba que la cabecera, el contenido principal y el pie están en la raíz de la portada.
 
+## Validación del índice y la semana piloto
+
+- El índice conserva sus 15 enlaces y sus textos. Se comprobó que todas las semanas resuelven bajo `/ZairPortafolio/`.
+- Coincidieron las capturas del índice en escritorio y móvil y las de la semana 8 en ambos temas y paletas, con los cuatro desplegables abiertos y cerrados. La comparación se hizo con el commit `a50a95a` y fuentes de reserva.
+- Se verificaron los desplegables por teclado antes de hidratar, el índice activo, el acceso directo, la recarga y la navegación por teclado entre las semanas 7, 8 y 9. La apariencia elegida en la semana 8 se conserva al pasar a la semana 9 y volver.
+- Lint y build pasaron con 18 páginas y 211 recursos. El script clásico de la semana 8 se retiró.
+
 ## Siguiente avance
 
-La etapa 5 empieza por el índice del cuaderno y usa la semana 8 como piloto del layout compartido.
+La etapa 6 empieza por el visor compartido de evidencias y la semana 6.

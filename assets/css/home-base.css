@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap');
+
+/* Variables compartidas de la portada. */
+:root {
+  --tone-1: #101c18;
+  --tone-2: #10241cc9;
+  --tone-3: #11271fe6;
+  --tone-4: #14231c;
+  --tone-5: #14251b;
+  --tone-6: #173f35;
+  --tone-7: #173f3510;
+  --tone-8: #173f3514;
+  --tone-9: #173f3520;
+  --tone-10: #192a22;
+  --tone-11: #1d382b;
+  --tone-12: #1e3027;
+  --tone-13: #202b27;
+  --tone-14: #243c2d;
+  --tone-15: #243c2d30;
+  --tone-16: #263a2a;
+  --tone-17: #2a3d2c;
+  --tone-18: #30432f;
+  --tone-19: #30472d;
+  --tone-20: #34473b;
+  --tone-21: #38513a;
+  --tone-22: #496a31;
+  --tone-23: #688844;
+  --tone-24: #6e83634d;
+  --tone-25: #6e844a;
+  --tone-26: #738850;
+  --tone-27: #768d26;
+  --tone-28: #78904f;
+  --tone-29: #809654;
+  --tone-30: #819a50;
+  --tone-31: #849b62;
+  --tone-32: #879c5d;
+  --tone-33: #8aa95c;
+  --tone-34: #91a55c;
+  --tone-35: #a6b29e;
+  --tone-36: #a9b29f;
+  --tone-37: #acb9ae;
+  --tone-38: #adc780;
+  --tone-39: #afcc7d;
+  --tone-40: #b5c8b746;
+  --tone-41: #b7beb0;
+  --tone-42: #b9c9bb;
+  --tone-43: #bfcec3;
+  --tone-44: #c0dc99;
+  --tone-45: #c1d0c0;
+  --tone-46: #cad7c8;
+  --tone-47: #cfddcb;
+  --tone-48: #d5ed86;
+  --tone-49: #d9ddd3;
+  --tone-50: #dbe5ce;
+  --tone-51: #dee6cd;
+  --tone-52: #e7ebdf;
+  --tone-53: #e9efdd;
+  --tone-54: #eceee5;
+  --tone-55: #ecf0e8;
+  --tone-56: #edf0e6;
+  --tone-57: #f5f7ef;
+  --tone-58: #f8f8f0;
+  ;
+}
+
+:root[data-palette="red"] {
+  --tone-1: #1c1011;
+  --tone-2: #241011c9;
+  --tone-3: #271112e6;
+  --tone-4: #231415;
+  --tone-5: #251415;
+  --tone-6: #3f1719;
+  --tone-7: #3f171910;
+  --tone-8: #3f171914;
+  --tone-9: #3f171920;
+  --tone-10: #2a191a;
+  --tone-11: #381d1f;
+  --tone-12: #301e1f;
+  --tone-13: #2b2021;
+  --tone-14: #3c2425;
+  --tone-15: #3c242530;
+  --tone-16: #3a2627;
+  --tone-17: #3d2a2b;
+  --tone-18: #432f30;
+  --tone-19: #472d2f;
+  --tone-20: #473435;
+  --tone-21: #513839;
+  --tone-22: #6a3134;
+  --tone-23: #884448;
+  --tone-24: #8363654d;
+  --tone-25: #844a4d;
+  --tone-26: #885053;
+  --tone-27: #8d262c;
+  --tone-28: #904f53;
+  --tone-29: #965458;
+  --tone-30: #9a5054;
+  --tone-31: #9b6265;
+  --tone-32: #9c5d61;
+  --tone-33: #a95c61;
+  --tone-34: #a55c60;
+  --tone-35: #b29e9f;
+  --tone-36: #b29fa0;
+  --tone-37: #b9acad;
+  --tone-38: #c78084;
+  --tone-39: #cc7d82;
+  --tone-40: #c8b5b646;
+  --tone-41: #beb0b1;
+  --tone-42: #c9b9ba;
+  --tone-43: #cebfc0;
+  --tone-44: #dc999d;
+  --tone-45: #d0c0c1;
+  --tone-46: #d7c8c9;
+  --tone-47: #ddcbcc;
+  --tone-48: #ed868c;
+  --tone-49: #ddd3d4;
+  --tone-50: #e5cecf;
+  --tone-51: #e6cdce;
+  --tone-52: #ebdfe0;
+  --tone-53: #efddde;
+  --tone-54: #eee5e6;
+  --tone-55: #f0e8e8;
+  --tone-56: #f0e6e7;
+  --tone-57: #f7efef;
+  --tone-58: #f8f0f0;
+  ;
+}
+
+:root {
+  --paper: var(--tone-58);
+  --ink: var(--tone-13);
+  --green: var(--tone-6);
+  --muted: #657069;
+  --line: var(--tone-49);
+  --accent: var(--tone-48);
+  --font: "DM Sans",sans-serif;
+  --display: "Manrope",sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  --card: #fff;
+  --soft: var(--tone-56);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: var(--tone-1);
+  --ink: var(--tone-55);
+  --green: var(--tone-44);
+  --muted: var(--tone-37);
+  --line: var(--tone-20);
+  --card: var(--tone-10);
+  --soft: var(--tone-12);
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.65;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+button,a,summary {
+  -webkit-tap-highlight-color: transparent;
+}
+a:focus-visible,button:focus-visible,summary:focus-visible {
+  outline: 3px solid var(--tone-27);
+  outline-offset: 6px;
+}
+::selection {
+  background: var(--accent);
+  color: var(--green);
+}

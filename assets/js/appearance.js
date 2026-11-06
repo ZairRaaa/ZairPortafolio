@@ -1,46 +1,91 @@
 (() => {
   'use strict';
-  let appearanceTimer;
-  const animateAppearance = () => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    clearTimeout(appearanceTimer);
-    document.documentElement.classList.add('appearance-transition');
-    appearanceTimer = setTimeout(() => document.documentElement.classList.remove('appearance-transition'), 650);
-  };
-  const updateBrowserColor = () => {
-    document.querySelector('meta[name="theme-color"]').content = getComputedStyle(document.documentElement).getPropertyValue('--paper').trim();
-  };
-  const paletteButton = document.querySelector('.palette-toggle');
-  paletteButton.hidden = false;
-  paletteButton.setAttribute('aria-pressed', String(document.documentElement.dataset.palette === 'red'));
-  paletteButton.addEventListener('click', () => {
-    animateAppearance();
-    const next = document.documentElement.dataset.palette === 'red' ? 'green' : 'red';
-    document.documentElement.dataset.palette = next;
-    paletteButton.setAttribute('aria-pressed', String(next === 'red'));
-    try { localStorage.setItem('portfolio-palette', next); } catch { /* Funciona también sin almacenamiento. */ }
-    updateBrowserColor();
-  });
-  const themeButton = document.querySelector('.theme-toggle');
+
+  const root = document.documentElement;
   const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const browserColor = document.querySelector('meta[name="theme-color"]');
+  const listeners = new Set();
+  let appearanceTimer;
   let themeChosen = false;
-  try { themeChosen = ['light', 'dark'].includes(localStorage.getItem('portfolio-theme')); } catch { /* Storage is optional. */ }
-  const applyTheme = theme => {
-    const dark = theme === 'dark';
-    document.documentElement.dataset.theme = theme;
-    themeButton.setAttribute('aria-pressed', String(dark));
-    updateBrowserColor();
+  let appearance = {
+    theme: root.dataset.theme || (systemTheme.matches ? 'dark' : 'light'),
+    palette: root.dataset.palette || 'green',
   };
-  themeButton.hidden = false;
-  applyTheme(document.documentElement.dataset.theme || (systemTheme.matches ? 'dark' : 'light'));
-  themeButton.addEventListener('click', () => {
-    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+
+  try {
+    themeChosen = ['light', 'dark'].includes(localStorage.getItem('portfolio-theme'));
+  } catch { /* La preferencia del sistema sigue disponible. */ }
+
+  function updateBrowserColor() {
+    if (browserColor) browserColor.content = getComputedStyle(root).getPropertyValue('--paper').trim();
+  }
+
+  function updateAppearance(key, value) {
+    if (appearance[key] === value) return;
+
+    if (!reducedMotion.matches) {
+      clearTimeout(appearanceTimer);
+      root.classList.add('appearance-transition');
+      appearanceTimer = setTimeout(() => root.classList.remove('appearance-transition'), 650);
+    }
+
+    appearance = { ...appearance, [key]: value };
+    root.dataset[key] = value;
+    updateBrowserColor();
+    listeners.forEach(listener => listener());
+  }
+
+  function persist(key, value) {
+    try { localStorage.setItem(key, value); } catch { /* La preferencia dura esta visita. */ }
+  }
+
+  function toggleTheme() {
+    const next = appearance.theme === 'dark' ? 'light' : 'dark';
     themeChosen = true;
-    animateAppearance();
-    applyTheme(next);
-    try { localStorage.setItem('portfolio-theme', next); } catch { /* The theme still works for this visit. */ }
-  });
+    updateAppearance('theme', next);
+    persist('portfolio-theme', next);
+  }
+
+  function togglePalette() {
+    const next = appearance.palette === 'red' ? 'green' : 'red';
+    updateAppearance('palette', next);
+    persist('portfolio-palette', next);
+  }
+
+  function subscribe(listener) {
+    listeners.add(listener);
+    return () => listeners.delete(listener);
+  }
+
+  window.portfolioAppearance = {
+    getSnapshot: () => appearance,
+    subscribe,
+    toggleTheme,
+    togglePalette,
+  };
+
   systemTheme.addEventListener('change', event => {
-    if (!themeChosen) { animateAppearance(); applyTheme(event.matches ? 'dark' : 'light'); }
+    if (!themeChosen) updateAppearance('theme', event.matches ? 'dark' : 'light');
   });
+  updateBrowserColor();
+
+  // La portada conecta sus controles desde React. El cuaderno conserva su HTML.
+  if (document.currentScript?.hasAttribute('data-appearance-store')) return;
+
+  const themeButton = document.querySelector('.theme-toggle');
+  const paletteButton = document.querySelector('.palette-toggle');
+  if (!themeButton || !paletteButton) return;
+
+  function syncButtons() {
+    themeButton.setAttribute('aria-pressed', String(appearance.theme === 'dark'));
+    paletteButton.setAttribute('aria-pressed', String(appearance.palette === 'red'));
+  }
+
+  syncButtons();
+  subscribe(syncButtons);
+  themeButton.hidden = false;
+  paletteButton.hidden = false;
+  themeButton.addEventListener('click', toggleTheme);
+  paletteButton.addEventListener('click', togglePalette);
 })();

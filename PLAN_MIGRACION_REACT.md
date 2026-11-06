@@ -1,6 +1,6 @@
 # Plan de migración gradual a React
 
-La sección Proyectos ya funciona en React en `codex/migracion-react`, que también incorpora las semanas 9 y 10 desde `main`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
+Proyectos, la cabecera y el pie de la portada ya funcionan en React en `codex/migracion-react`. La rama incorpora también las semanas 9 y 10 desde `main`. El respaldo y la referencia original se documentan en `docs/migracion/INICIO.md`.
 Fecha: 27 de octubre de 2026.
 
 ## 1. ¿Conviene migrar?
@@ -110,11 +110,11 @@ Commit sugerido: `Convierto mis proyectos en componentes`.
 
 ### Etapa 3 · Apariencia y estructura común
 
-- [ ] Extraer variables y reglas globales de CSS sin cambiar su valor visual.
-- [ ] Migrar cabecera, menú, controles de apariencia y pie.
-- [ ] Conservar `portfolio-theme` y `portfolio-palette`, la preferencia del sistema y el funcionamiento sin almacenamiento disponible.
-- [ ] Mantener una inicialización mínima del tema antes del render para evitar el destello del tema incorrecto.
-- [ ] Usar un proveedor de apariencia por raíz cuando corresponda. Durante la convivencia, centralizar la actualización del documento y evitar estados independientes que se contradigan.
+- [x] Extraer variables y reglas globales de la portada a `assets/css/home-base.css` conservando sus valores.
+- [x] Migrar cabecera, menú, controles de apariencia y pie. Vite genera la cabecera y el pie en el HTML inicial.
+- [x] Conservar `portfolio-theme` y `portfolio-palette`, la preferencia del sistema y el funcionamiento sin almacenamiento disponible.
+- [x] Mantener una inicialización mínima del tema antes del render para evitar el destello del tema incorrecto.
+- [x] Compartir el estado de apariencia entre la cabecera React y los controles clásicos del cuaderno durante la transición.
 
 Salida: controles sincronizados, navegación por teclado y preferencias persistentes.
 Commit sugerido: `Comparto la apariencia de mi portafolio`.

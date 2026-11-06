@@ -13,6 +13,11 @@ for (const source of pages) {
   const page = resolve(dist, relativePath(source));
   if (!existsSync(page)) continue;
   const tree = walk(parse(readFileSync(page, 'utf8')));
+  if (source === pages[0]) {
+    for (const tag of ['header', 'footer']) {
+      if (!tree.some(node => node.tagName === tag)) errors.push('Falta ' + tag + ' en el HTML de la portada');
+    }
+  }
   for (const node of tree) {
     for (const attr of node.attrs || []) {
       if (!['src', 'href'].includes(attr.name) || !attr.value || /^(?:[a-z]+:|\/\/|#)/i.test(attr.value)) continue;

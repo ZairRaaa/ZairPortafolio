@@ -28,7 +28,9 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 ## Convivencia temporal
 
 - React y React DOM están instalados; el plugin de Vite está preparado para JSX.
-- Proyectos se monta en `#projects-root` desde `src/entries/projects.jsx`. React controla las tarjetas y su aparición al hacer scroll. La navegación activa sigue observando la sección exterior `#proyectos`.
+- Proyectos se monta en `#projects-root` desde `src/entries/projects.jsx`. React controla las tarjetas y su aparición al hacer scroll.
+- Vite genera la cabecera y el pie en el HTML de la portada. `src/entries/home-layout.jsx` hidrata ambos componentes y activa el menú, la sección actual y los controles de apariencia.
+- `theme.js` aplica las preferencias antes del primer pintado. `appearance.js` comparte el estado entre la portada y los controles clásicos del cuaderno.
 - Todos los HTML existentes son entradas de Vite, incluido el laboratorio.
 - Los scripts clásicos conservan su orden y atributos. Vite advierte que no los empaqueta como módulos; el plugin `preserve-legacy-assets` garantiza que existan en sus rutas originales.
 - Los recursos de `assets/` y `pages/` se copian con una lista de extensiones permitidas. En esta fase se conservan también los originales PNG y versiones sin hash, aunque Vite genere otros archivos optimizados. Es una duplicación temporal para proteger enlaces y galerías; reducirla después de migrar sus consumidores.
@@ -48,6 +50,13 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - `npm run lint` y `npm run build` pasaron. El build verificó 18 páginas y 213 recursos. En las galerías de las semanas 9 y 10 se comprobó la carga de WebP, el avance con flechas y el retorno del foco con Escape.
 - Las tarjetas se renderizan en el navegador y requieren JavaScript. La decisión sobre prerenderizado queda pendiente antes de publicar.
 
+## Validación de la estructura y la apariencia
+
+- Las capturas de cabecera y pie coincidieron con el commit `404df61` en dos tamaños, ambos temas y ambas paletas. También coincidieron las capturas del menú abierto en móvil. Se usaron fuentes de reserva para aislar las solicitudes externas.
+- Se comprobó el HTML de cabecera y pie antes de hidratar, el menú por teclado, el retorno del foco con Escape, la navegación por anclas y el movimiento reducido.
+- Se verificó la persistencia de tema y paleta entre la portada y las diez semanas con controles. También se probaron los cambios del sistema y el funcionamiento con almacenamiento bloqueado.
+- Lint y build pasaron. El build verificó 18 páginas y 214 recursos e incluye una comprobación de la cabecera y el pie en el HTML de la portada.
+
 ## Siguiente avance
 
-La etapa 3 abarca la estructura común y la apariencia. El plan detalla cómo conservar la inicialización del tema antes del primer pintado y las preferencias guardadas.
+La etapa 4 continúa con Sobre mí y las fotografías. Cada bloque de portada se migra y se comprueba por separado.

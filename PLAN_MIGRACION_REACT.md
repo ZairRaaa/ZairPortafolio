@@ -171,8 +171,8 @@ Commits sugeridos: `Migro mi semana uno`, `Adapto mi laboratorio de la semana tr
 ### Etapa 8 · Publicación y limpieza
 
 - [ ] Revisar la configuración real de Pages antes de modificarla.
-- [ ] Configurar GitHub Actions para instalar con `npm ci`, comprobar, construir y desplegar solamente `dist/`.
-- [ ] Usar `base: '/ZairPortafolio/'` mientras el sitio se publique bajo ese repositorio; revisar este valor si cambia el dominio o nombre.
+- [x] Preparar el workflow de GitHub Actions para instalar con `npm ci`, verificar, compilar y desplegar solo `dist/` desde `main`.
+- [x] Verificar `base: '/ZairPortafolio/'` con la ruta pública actual y las 18 páginas del build local.
 - [ ] Ejecutar la validación del build completo y publicar cuando el primer lote coherente esté listo. Si se publican fases intermedias, incluir siempre todas las páginas aún no migradas.
 - [ ] Confirmar el éxito de Actions y abrir portada, semana y laboratorio desde sus URL públicas.
 - [ ] Eliminar archivos obsoletos solo después de comprobar que ninguna página depende de ellos.

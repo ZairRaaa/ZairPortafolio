@@ -1,0 +1,233 @@
+.portrait-orbit {
+  position: absolute;
+  z-index: 1;
+  inset: 0 -5% auto -7%;
+  width: 112%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  transform: translate(var(--word-x, 0), var(--word-y, 0));
+  transition: transform .65s ease-out;
+}
+
+.portrait-intro .university-badge { z-index: 2; }
+
+.portrait-orbit path {
+  fill: none;
+  stroke: var(--tone-48);
+  vector-effect: non-scaling-stroke;
+}
+
+.orbit-guide {
+  stroke-width: 1;
+  opacity: .55;
+  filter: drop-shadow(0 1px 1px #101c18);
+}
+
+.portrait-orbit .orbit-secondary { stroke-dasharray: 2 5; opacity: .42; }
+
+.orbit-sweep {
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 5 95;
+  stroke-dashoffset: -14;
+  filter: drop-shadow(0 0 7px var(--tone-48));
+}
+
+.orbit-node { fill: var(--tone-48); stroke: var(--tone-6); stroke-width: 1; }
+.orbit-crosshair { stroke-width: 1; opacity: .85; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .orbit-sweep { animation: orbit-sweep 12s linear infinite; }
+}
+
+@keyframes orbit-sweep {
+  to { stroke-dashoffset: -114; }
+}
+
+.hero[data-motion-paused] .orbit-sweep { animation-play-state: paused; }
+.hero[data-motion-paused] .portrait-orbit { transition: none; }
+
+.journey-section {
+  padding: clamp(28px, 5vw, 52px) 0 clamp(32px, 5vw, 56px);
+  border-block: 1px solid var(--line);
+}
+
+.journey-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-bottom: 24px;
+}
+
+.journey-kicker {
+  margin: 0 0 6px;
+  color: var(--green);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+.journey-intro h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 3.3rem);
+  line-height: 1.14;
+}
+
+.journey-intro > p {
+  max-width: 32ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.journey-board {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: stretch;
+  gap: clamp(16px, 3vw, 30px);
+}
+
+.journey-figure {
+  min-width: 0;
+  margin: 0;
+  padding: clamp(15px, 3vw, 28px);
+  display: grid;
+  align-content: space-between;
+  border: 1px solid var(--tone-21);
+  border-radius: 18px;
+  background: radial-gradient(ellipse at 65% 22%, var(--tone-16), transparent 72%), var(--tone-1);
+  color: var(--tone-58);
+}
+
+.journey-coordinate {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--tone-43);
+  font: 600 .67rem var(--font);
+  letter-spacing: .13em;
+}
+
+.journey-chart {
+  display: block;
+  width: 100%;
+  max-height: 265px;
+}
+
+.journey-axis, .journey-route, .journey-trace { fill: none; vector-effect: non-scaling-stroke; }
+.journey-axis { stroke: var(--tone-43); stroke-width: .75; opacity: .22; }
+.journey-route { stroke: var(--tone-39); stroke-width: 1.5; stroke-dasharray: 3 5; }
+
+.journey-trace {
+  stroke: var(--tone-48);
+  stroke-width: 2;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset .45s ease;
+}
+
+.journey-trace.is-traced { stroke-dashoffset: 0; }
+.journey-point { fill: var(--tone-43); }
+.journey-halo { fill: none; stroke: transparent; stroke-width: 1; }
+.journey-node text { fill: var(--tone-43); font: 650 12px var(--font); }
+.journey-node.is-preview .journey-halo { fill: var(--tone-40); stroke: var(--tone-39); }
+.journey-node.is-preview :is(.journey-point, text) { fill: var(--tone-48); }
+
+.journey-caption {
+  min-height: 4.5rem;
+  padding-top: 12px;
+  border-top: 1px solid var(--tone-21);
+}
+
+.journey-caption span {
+  color: var(--tone-48);
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.journey-caption p {
+  margin: 3px 0 0;
+  color: var(--tone-58);
+  font-size: .88rem;
+}
+
+.journey-nav ol {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.journey-nav li { border-top: 1px solid var(--line); }
+.journey-nav li:last-child { border-bottom: 1px solid var(--line); }
+
+.journey-nav a {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr auto;
+  align-items: center;
+  gap: clamp(8px, 2vw, 18px);
+  min-height: 48px;
+  height: 100%;
+  padding: 9px clamp(8px, 2vw, 20px);
+  font: 650 clamp(1rem, 2vw, 1.22rem) var(--display);
+  transition: background-color .18s ease, color .18s ease;
+}
+
+.journey-nav a:is(:hover, :focus-visible, .is-preview) {
+  color: var(--green);
+  background: var(--soft);
+}
+
+.journey-number {
+  color: var(--muted);
+  font-size: .74rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.journey-arrow { color: var(--green); }
+
+.about > .section-marker,
+.projects > .wrap > .section-marker,
+.education > .section-marker,
+.notebook-copy > .section-marker,
+.contact > .section-marker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+:is(.about, .projects > .wrap, .education, .notebook-copy, .contact) > .section-marker::before {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 auto;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  content: '';
+}
+
+:is(.about, .projects > .wrap, .education, .notebook-copy, .contact) > .section-marker::after {
+  width: clamp(14px, 5vw, 56px);
+  height: 1px;
+  flex-shrink: 0;
+  background: currentColor;
+  opacity: .5;
+  content: '';
+}
+
+@media (max-width: 760px) {
+  .portrait-orbit { inset-inline: 0; width: 100%; }
+  .journey-board { grid-template-columns: 1fr; }
+  .journey-figure { border-radius: 14px; }
+  .journey-nav ol { height: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-orbit, .journey-nav a, .journey-trace { transition: none; }
+}

@@ -172,10 +172,10 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 
 ## Preparación de la etapa 8
 
-- El 6 de noviembre de 2026 se comprobó la [URL pública](https://zairraaa.github.io/ZairPortafolio/). La portada y la semana 10 publicadas coinciden con el HTML de `origin/main`. El README documenta `main` y `/(root)` como fuente. Falta cotejar el selector **Source** en [Settings → Pages](https://github.com/ZairRaaa/ZairPortafolio/settings/pages), ya que la consulta pública no devolvió ese ajuste.
+- El 6 de noviembre de 2026 se comprobó la [URL pública](https://zairraaa.github.io/ZairPortafolio/). La portada y la semana 10 publicadas coinciden con el HTML de `origin/main`. La API autenticada confirmó `build_type: legacy`, fuente `main` y carpeta `/`, sin dominio personalizado. La rama remota `main` apunta a `955a021`.
 - El workflow `.github/workflows/pages.yml` ejecuta `npm ci`, `npm run lint` y `npm run build`. Las pull requests hacia `main` pasan la verificación. El artefacto contiene solo `dist/` y el trabajo de despliegue requiere `main` y el entorno `github-pages`.
 - Se validó el YAML con `actionlint` y se ejecutaron los tres comandos en una copia temporal limpia. Las 18 páginas y los recursos de la portada, las evidencias y Huellitas respondieron bajo `/ZairPortafolio/` en la vista previa.
 
 ## Siguiente avance
 
-Confirmar la fuente en Settings → Pages y coordinar el cambio a GitHub Actions con el primer despliegue de la migración.
+Cambiar **Source** a **GitHub Actions** e integrar la rama de migración en `main` para el primer despliegue. La portada, la semana 10 y el laboratorio Huellitas se comprobarán en sus URL públicas.

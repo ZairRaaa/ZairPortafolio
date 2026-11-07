@@ -62,7 +62,7 @@ Sistema de rastreo GPS de vehículos de residuos sólidos para la **Municipalida
 | Entrada | Contenido | Estado |
 | --- | --- | --- |
 | [Semana 01](pages/cuaderno/semana-01/index.html) | Fundamentos web, estándares, DNS y HTTP, roles de desarrollo, VS Code y reflexión. | ✅ Desarrollada |
-| [Semana 02](pages/cuaderno/semana-02/index.html) | Prácticas de requerimientos, interfaces HTML/CSS y revisión de una galería. Capturas por incorporar. | ✅ Desarrollada |
+| [Semana 02](pages/cuaderno/semana-02/index.html) | Prácticas de requerimientos, interfaces HTML/CSS y revisión de una galería, con 14 capturas. | ✅ Desarrollada |
 | [Semana 03](pages/cuaderno/semana-03/index.html) | Huellitas: laboratorio con seis pasos activables. Evidencias de Pulso y de la práctica calificada 2, con galerías ampliables. | ✅ Desarrollada |
 | [Semana 04](pages/cuaderno/semana-04/index.html) | Aula Virtual (ruleta y sorteo de equipos en JS puro) y Órbita (animaciones en Canvas API con closures y Delta Time). | ✅ Desarrollada |
 | [Semana 05](pages/cuaderno/semana-05/index.html) | Creación de plantillas: React, Vite y Next.js. Comparación de sus funciones y temas del sílabo pendientes. | ✅ Documentada |
@@ -81,96 +81,55 @@ La primera semana incluye un recorrido interactivo de una petición web, una pre
 
 ```text
 ZairPortafolio/
-├── index.html                       # Portada personal
-├── README.md                        # Presentación y guía
-├── .gitignore                       # Material local excluido
-├── assets/
-│   ├── css/
-│   │   ├── home.css                 # Diseño de portada y base visual
-│   │   └── styles.css               # Base del cuaderno pendiente
-│   ├── js/
-│   │   ├── theme.js                 # Apariencia inicial guardada
-│   │   ├── appearance.js            # Controles de modo y paleta
-│   │   ├── home.js                  # Interacciones de portada
-│   │   └── main.js                  # Base para próximas páginas
-│   ├── images/
-│   │   ├── perfil/
-│   │   ├── docentes/
-│   │   ├── herramientas/
-│   │   └── logos/
-│   └── documents/
-└── pages/
-    └── cuaderno/
-        ├── index.html               # Índice de las semanas
-        ├── semana-01/
-        │   ├── index.html
-        │   ├── css/semana-01.css
-        │   ├── js/semana-01.js
-        │   └── images/
-        ├── semana-02/
-        ├── …
-        └── semana-15/
+├── index.html                  # Entrada de la portada
+├── pages/cuaderno/             # Índice, 15 semanas y laboratorio Huellitas
+├── src/
+│   ├── entries/                # Entradas que activan las interacciones de React
+│   ├── pages/                  # Portada, cuaderno y páginas de las semanas
+│   ├── components/             # Layout, navegación y visor de evidencias
+│   ├── data/                   # Datos de semanas, proyectos y evidencias
+│   ├── hooks/
+│   └── sections/home/          # Secciones de la portada
+├── assets/                     # Estilos, scripts compartidos e imágenes
+├── scripts/                    # Inventario y verificación del build
+├── vite.config.js              # Entradas HTML y prefijo de publicación
+└── .github/workflows/pages.yml # Verificación y publicación de dist/
 ```
 
 ## Verlo en tu equipo
 
-No requiere instalar dependencias ni compilar.
-
-1. Clona el repositorio:
-
-   ```bash
-   git clone https://github.com/ZairRaaa/ZairPortafolio.git
-   cd ZairPortafolio
-   ```
-
-2. Abre `index.html` en tu navegador. También puedes abrir la carpeta en VS Code y usar **Live Server**.
-3. Explora la portada y entra al cuaderno.
-
-<details>
-<summary><strong>Alternativa con Python</strong></summary>
-
-Si tienes Python instalado, ejecuta desde la carpeta del proyecto:
+Usa Node.js 22.13 o una versión posterior de la serie 22. Instala las dependencias y arranca Vite.
 
 ```bash
-python -m http.server 5500 --bind 127.0.0.1
+git clone https://github.com/ZairRaaa/ZairPortafolio.git
+cd ZairPortafolio
+npm ci
+npm run dev
 ```
 
-Abre `http://127.0.0.1:5500` en tu navegador. Detén el servidor con `Ctrl + C`.
+Abre [la vista local del portafolio](http://127.0.0.1:5173/ZairPortafolio/) o el puerto que indique Vite. Para comprobar la compilación de producción, ejecuta:
 
-</details>
+```bash
+npm run lint
+npm run build
+npm run preview
+```
 
-Las tipografías de Google Fonts y las insignias de este README necesitan conexión. Las fotografías y los logos de las herramientas están guardados en el proyecto.
+La vista previa suele estar en [el puerto 4173](http://127.0.0.1:4173/ZairPortafolio/). Detén el servidor con `Ctrl+C`.
 
 ## Publicar en GitHub Pages
 
-1. Sube los commits a la rama `main`:
+Selecciona **GitHub Actions** como **Source** en **Settings → Pages** antes de integrar esta versión en `main`. El workflow comprueba las pull requests y publica `dist/` cuando los cambios llegan a `main` y el build pasa. Revisa el resultado en **Actions** y abre la portada, una semana y Huellitas desde el sitio. [Configuración de Pages](https://github.com/ZairRaaa/ZairPortafolio/settings/pages) · [Workflow](.github/workflows/pages.yml) · [Sitio público](https://zairraaa.github.io/ZairPortafolio/)
 
-   ```bash
-   git push -u origin main
-   ```
-
-2. En el repositorio, abre **Settings → Pages**.
-3. En **Build and deployment**, selecciona **Deploy from a branch**.
-4. Elige la rama **main** y la carpeta **/(root)**. Pulsa **Save**.
-5. Espera a que termine el despliegue y utiliza **Visit site** para copiar la dirección pública.
-
-Con el nombre actual del repositorio y sin un dominio personalizado, la dirección esperada es:
-
-**https://ZairRaaa.github.io/ZairPortafolio/**
-
-Esta dirección estará disponible después de activar Pages y completar el primer despliegue. Las siguientes actualizaciones se publicarán al subir nuevos commits a `main`.
-
-GitHub Free permite usar Pages con repositorios públicos. Consulta la [guía oficial de publicación](https://docs.github.com/es/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+El prefijo `/ZairPortafolio/` en `vite.config.js` corresponde a esa URL. Revisa también el prefijo que usa `scripts/verificar-build.mjs` si cambia el dominio o el nombre del repositorio.
 
 ## Continuar el cuaderno
 
-- Completar cada semana con conceptos, procedimientos, evidencias y reflexión.
-- Guardar sus imágenes en la carpeta de la semana correspondiente.
-- Mantener separados HTML, CSS y JavaScript.
-- Registrar avances en commits breves y descriptivos.
-- Actualizar el estado de las semanas en este README.
+- Para completar una semana pendiente, toma `src/pages/weeks/PendingWeek.jsx` como punto de partida y crea una página propia con `WeekLayout`. Dale su entrada en `src/entries/` y añade su ruta después de la lista de plantillas en `vite.config.js` para asignarle el componente nuevo. Apunta el módulo de su HTML a la nueva entrada para hidratar el mismo componente.
+- Conserva la URL de la semana y guarda las evidencias en su carpeta `images/`. Actualiza los datos de `src/data/weeks.js` cuando corresponda y el estado de la semana en este README.
+- Ejecuta lint y build y comprueba en la vista previa el acceso directo a la semana y sus enlaces.
 
-La carpeta local `Informacion` contiene material de referencia y está excluida mediante `.gitignore`; no forma parte del repositorio.
+La carpeta local `Informacion` contiene material de referencia y está excluida mediante `.gitignore`.
 
 ## Créditos
 

@@ -156,6 +156,14 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - Solo `laboratorio.html` carga Bootstrap 5.3.3 y Tailwind Play CDN 3.4.17. Se verificaron el menú móvil y las utilidades con prefijo `tw-`. Preflight sigue desactivado para conservar Bootstrap Reboot.
 - Lint y build pasaron con 18 páginas y 200 recursos.
 
+## Validación de la semana 4
+
+- La demostración del cuaderno es un Canvas 2D de 55 partículas. La ruleta, el sorteo de equipos y los demás módulos de Órbita se presentan mediante las evidencias y los enlaces a sus proyectos.
+- Se comprobó la respuesta al cursor, el ajuste a la densidad de pantalla y la pausa al ocultar la pestaña o preferir movimiento reducido. El indicador muestra mediciones del Canvas del cuaderno. Las cifras de 137 FPS y 7.3 ms pertenecen a las evidencias del proyecto Órbita.
+- Las galerías de Aula Virtual y Órbita conservan sus tres y cinco WebP, los textos de las tarjetas y los del visor. Se verificaron las flechas, Escape, el retorno del foco y la apertura directa de las imágenes antes de hidratar React.
+- El índice compartido sigue la posición de lectura y selecciona la última sección al llegar al pie de página. La reflexión conserva su ancla en el HTML inicial. Se comprobaron los desplegables, la paginación y la apariencia en móvil y escritorio.
+- Lint y build pasaron con 18 páginas y 199 recursos.
+
 ## Siguiente avance
 
-La etapa 7 continúa con el inventario y la migración de las interacciones reales de la semana 4.
+La etapa 7 continúa con las plantillas de las semanas 11–15. Cada semana conserva su estado pendiente.

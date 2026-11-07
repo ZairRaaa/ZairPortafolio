@@ -24,6 +24,13 @@ export function WeekIndex({ items, contentRef, heading = 'MI RECORRIDO', observe
 
     function updateCurrentSection() {
       frame = 0;
+      const pageEnd = document.documentElement.scrollHeight - 1;
+      const atEnd = window.scrollY > 0 && window.scrollY + window.innerHeight >= pageEnd;
+      if (atEnd) {
+        setActive(sections.at(-1).id);
+        return;
+      }
+
       const threshold = Math.min(window.innerHeight * 0.25, 180);
       let current = sections[0].id;
       for (const section of sections) {

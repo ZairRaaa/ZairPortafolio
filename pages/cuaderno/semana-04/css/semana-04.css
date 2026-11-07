@@ -505,7 +505,12 @@ kbd {
   font-size: 17px;
   letter-spacing: -0.4px;
   font-weight: 600;
-  margin: 3px 0 0;
+  margin: 4px 0;
+}
+.demo-header p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
 }
 .demo-canvas-wrap {
   position: relative;
@@ -528,6 +533,10 @@ kbd {
   margin-top: 10px;
   flex-wrap: wrap;
   gap: 8px;
+}
+.demo-controls-bar > span {
+  font-size: 13px;
+  color: var(--muted);
 }
 .demo-fps {
   font-size: 12px;

@@ -1,0 +1,72 @@
+export const classroomEvidence = [
+  {
+    src: 'images/Practica_grupal (2).webp',
+    alt: 'Vista de la ruleta aleatoria con sectores y panel de edición',
+    tag: 'Ruleta',
+    title: 'Ruleta aleatoria interactiva',
+    description: 'Vista principal de la ruleta con sectores de 5 colores, puntero triangular rojo superior, lista editable de elementos y panel de atajos.',
+    caption: 'Sectores con colores rotativos, puntero indicador y panel de atajos de teclado.',
+  },
+  {
+    src: 'images/Practica_grupal (3).webp',
+    alt: 'Pantalla de configuración del sorteo con opciones de división',
+    tag: 'Configuración',
+    title: 'Configuración del sorteo de equipos',
+    description: 'Formulario de configuración con lista multifila de hasta 100 participantes, selector de modo de división (por equipos o por integrantes) y título personalizado.',
+    caption: 'Control de participantes, selector de agrupación y título para la asignación.',
+  },
+  {
+    src: 'images/Practica_grupal (1).webp',
+    alt: 'Resultados del sorteo organizados en equipos con botones de exportación',
+    tag: 'Resultados',
+    title: 'Resultados y exportación de equipos',
+    description: 'Segunda pantalla donde los participantes aparecen organizados en tarjetas rectangulares por equipo, con botones para descargar en JPG, copiar al portapapeles y copiar en columnas.',
+    caption: 'Distribución en tarjetas con opciones de exportar a JPG o copiar en columnas.',
+  },
+];
+
+export const orbitEvidence = [
+  {
+    src: 'images/Practica_individual (2).webp',
+    alt: 'Portada de Órbita con planeta animado y frase inspiradora',
+    tag: 'Portada',
+    title: 'Bienvenida e identidad de Órbita',
+    description: 'Portada de la experiencia con ilustración vectorial de planeta, frase de inspiración, contador de visitas guardado en localStorage y contador de destinos guardados.',
+    caption: 'Presentación espacial con contador de visitas y destinos en localStorage.',
+  },
+  {
+    src: 'images/Practica_individual (3).webp',
+    alt: 'Catálogo interactivo de destinos espaciales con filtros',
+    tag: 'Filtros DOM',
+    title: 'Explorador de destinos y filtros',
+    description: 'Sección \'Lugares para imaginar\' con selector por categorías (Todos, Rocosos, Gigantes, Guardados) y tarjetas interactivas de La Luna, Marte y Saturno con opción de favoritos.',
+    caption: 'Tarjetas dinámicas con gestión de favoritos y filtrado sin recarga.',
+  },
+  {
+    src: 'images/Practica_individual (4).webp',
+    alt: 'Lienzo de constelaciones animadas en Canvas con panel de control',
+    tag: 'Canvas 2D',
+    title: 'Canvas de constelaciones y control de ritmo',
+    description: 'Lienzo 2D con 200 partículas interconectadas en tiempo real, panel de control lateral (cantidad de estrellas, ritmo, paletas de cielo, rastro de luz) y telemetría de 137 FPS y 7.3 ms.',
+    caption: '200 estrellas conectadas en tiempo real corriendo a 137 FPS con closures.',
+    captionTitle: 'Canvas de constelaciones y ritmo',
+  },
+  {
+    src: 'images/Practica_individual (5).webp',
+    alt: 'Generador de postales espaciales y pase de explorador',
+    tag: 'Interactividad',
+    title: 'Postales para el universo y pase de explorador',
+    description: 'Módulo interactivo donde el usuario ingresa su texto personalizado (\'HOLA, UNIVERSO\') y este orbita dinámicamente en el Canvas, acompañado de la tarjeta de pase de explorador para La Luna.',
+    caption: 'Texto orbitando dinámicamente en Canvas con opción de descarga de postal.',
+    captionTitle: 'Postales para el universo y pase',
+  },
+  {
+    src: 'images/Practica_individual (1).webp',
+    alt: 'Sección final de reflexión y formulario de pase de explorador',
+    tag: 'Comunidad',
+    title: 'Cierre de experiencia y formulario personal',
+    description: 'Sección de reflexiones de asombro (\'Redescubre la Luna\', \'Inventa una constelación\', \'Comparte el momento\') y formulario para generar el pase personal de explorador.',
+    caption: 'Reflexiones de observación astronómica y validación de correo para pase personal.',
+    captionTitle: 'Cierre de experiencia y formulario',
+  },
+];

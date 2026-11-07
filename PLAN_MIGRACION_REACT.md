@@ -162,7 +162,7 @@ Commits sugeridos: `Comparto el visor de mis evidencias`, `Migro mi semana seis`
 - [x] Migrar la semana 1, su recorrido interactivo y la pregunta de repaso.
 - [x] Migrar la semana 2 conservando su estructura, sus filtros y sus evidencias.
 - [x] Migrar las evidencias y el panel de la semana 3 a React. Mantener Huellitas en su propio documento y verificar que Tailwind se cargue solo allí.
-- [ ] Semana 4: inventariar primero las interacciones reales; adaptar las que existan sin implementar de nuevo los proyectos que solo se documentan.
+- [x] Migrar la semana 4 y sus interacciones propias. El Canvas, el índice y las galerías funcionan en el cuaderno. Los proyectos se documentan con capturas y enlaces.
 - [ ] Pasar las plantillas 11–15 al layout compartido, conservando su estado pendiente.
 
 Salida: las diferencias entre semanas se mantienen; no todo se reduce a una plantilla genérica.

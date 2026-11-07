@@ -170,11 +170,11 @@ Commits sugeridos: `Migro mi semana uno`, `Adapto mi laboratorio de la semana tr
 
 ### Etapa 8 · Publicación y limpieza
 
-- [x] Confirmar que Pages publica desde `main` y `/(root)` sin dominio personalizado.
+- [x] Confirmar la fuente anterior de Pages en `main` y `/(root)`, sin dominio personalizado.
 - [x] Preparar el workflow de GitHub Actions para instalar con `npm ci`, verificar, compilar y desplegar solo `dist/` desde `main`.
 - [x] Verificar `base: '/ZairPortafolio/'` con la ruta pública actual y las 18 páginas del build local.
-- [ ] Ejecutar la validación del build completo y publicar cuando el primer lote coherente esté listo. Si se publican fases intermedias, incluir siempre todas las páginas aún no migradas.
-- [ ] Confirmar el éxito de Actions y abrir portada, semana y laboratorio desde sus URL públicas.
+- [x] Validar el build completo y publicar la migración de las 18 páginas mediante GitHub Actions.
+- [x] Confirmar el éxito de Actions y verificar las 18 rutas públicas, incluida la portada, las semanas y Huellitas.
 - [x] Retirar el script provisional `assets/js/main.js` tras comprobar sus referencias.
 - [x] Actualizar el README con instalación, comandos, estructura, publicación y forma de completar semanas.
 

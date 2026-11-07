@@ -1,6 +1,6 @@
 # Entorno de migración React + Vite
 
-Esta copia pertenece a la rama `codex/migracion-react`. La versión estable permanece en su carpeta original y en `main`. Consulta [INICIO.md](INICIO.md) para recuperar el respaldo.
+La migración se preparó en `codex/migracion-react`. La web se publica desde `origin/main` mediante GitHub Actions. Consulta [INICIO.md](INICIO.md) para recuperar el respaldo de la versión anterior.
 
 ## Ejecutar
 
@@ -23,7 +23,7 @@ npm run preview
 
 La vista previa normal estará en `http://127.0.0.1:4173/ZairPortafolio/` (Vite indicará otro puerto si está ocupado).
 
-El build verifica que las 18 entradas HTML, recursos y enlaces locales existan bajo el prefijo del repositorio. `dist/` no se guarda en Git. No se cambió la configuración de Pages ni se publica esta rama automáticamente.
+El build verifica que las 18 entradas HTML, recursos y enlaces locales existan bajo el prefijo del repositorio. `dist/` no se guarda en Git. GitHub Pages sirve el artefacto `dist/` que Actions genera desde `main`.
 
 ## Convivencia temporal
 
@@ -172,10 +172,11 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 
 ## Preparación de la etapa 8
 
-- El 6 de noviembre de 2026 se comprobó la [URL pública](https://zairraaa.github.io/ZairPortafolio/). La portada y la semana 10 publicadas coinciden con el HTML de `origin/main`. La API autenticada confirmó `build_type: legacy`, fuente `main` y carpeta `/`, sin dominio personalizado. La rama remota `main` apunta a `955a021`.
+- El 6 de noviembre de 2026 se comprobó la [URL pública](https://zairraaa.github.io/ZairPortafolio/). Antes del cambio, la portada y la semana 10 coincidían con el HTML del commit `955a021` en `origin/main`. La API autenticada confirmó que Pages publicaba desde `main` y la carpeta `/`, sin dominio personalizado.
 - El workflow `.github/workflows/pages.yml` ejecuta `npm ci`, `npm run lint` y `npm run build`. Las pull requests hacia `main` pasan la verificación. El artefacto contiene solo `dist/` y el trabajo de despliegue requiere `main` y el entorno `github-pages`.
 - Se validó el YAML con `actionlint` y se ejecutaron los tres comandos en una copia temporal limpia. Las 18 páginas y los recursos de la portada, las evidencias y Huellitas respondieron bajo `/ZairPortafolio/` en la vista previa.
 
-## Siguiente avance
+## Cierre de la etapa 8
 
-Cambiar **Source** a **GitHub Actions** e integrar la rama de migración en `main` para el primer despliegue. La portada, la semana 10 y el laboratorio Huellitas se comprobarán en sus URL públicas.
+- La fuente de Pages pasó a **GitHub Actions** y `origin/main` avanzó al commit `257018f`. Los trabajos de build y despliegue terminaron correctamente. [Primera ejecución de Pages](https://github.com/ZairRaaa/ZairPortafolio/actions/runs/42328605129)
+- Las 18 rutas públicas devolvieron HTTP 200 y sirvieron el HTML esperado. También respondieron el módulo de portada, el script de Huellitas y una evidencia WebP. [Portada](https://zairraaa.github.io/ZairPortafolio/) · [Semana 10](https://zairraaa.github.io/ZairPortafolio/pages/cuaderno/semana-10/index.html) · [Huellitas](https://zairraaa.github.io/ZairPortafolio/pages/cuaderno/semana-03/laboratorio.html)

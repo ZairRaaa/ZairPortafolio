@@ -164,6 +164,12 @@ El build verifica que las 18 entradas HTML, recursos y enlaces locales existan b
 - El índice compartido sigue la posición de lectura y selecciona la última sección al llegar al pie de página. La reflexión conserva su ancla en el HTML inicial. Se comprobaron los desplegables, la paginación y la apariencia en móvil y escritorio.
 - Lint y build pasaron con 18 páginas y 199 recursos.
 
+## Cierre de la etapa 7
+
+- Las semanas 11–15 usan una plantilla React y el layout compartido. Conservan sus rutas y sus cuatro apartados pendientes, con las anclas disponibles desde el HTML inicial.
+- Se comprobó en desarrollo y en el build local la navegación por teclado entre las semanas 10 y 15, el regreso al cuaderno, la recarga con ancla y la persistencia del tema y la paleta. Las cinco plantillas se probaron a 320, 390 y 1440 px.
+- Lint y build pasaron con 18 páginas y 199 recursos. El build prerenderiza las 15 semanas y conserva la ruta independiente del laboratorio Huellitas.
+
 ## Siguiente avance
 
-La etapa 7 continúa con las plantillas de las semanas 11–15. Cada semana conserva su estado pendiente.
+La etapa 8 comienza con la revisión de la configuración actual de GitHub Pages. Después siguen la publicación y la limpieza.

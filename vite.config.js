@@ -14,6 +14,8 @@ import { WeekSeven } from './src/pages/weeks/WeekSeven.jsx';
 import { WeekEight } from './src/pages/weeks/WeekEight.jsx';
 import { WeekNine } from './src/pages/weeks/WeekNine.jsx';
 import { WeekTen } from './src/pages/weeks/WeekTen.jsx';
+import { PendingWeek } from './src/pages/weeks/PendingWeek.jsx';
+import { weeks } from './src/data/weeks.js';
 import { readFileSync } from 'node:fs';
 import { pages, staticFiles, relativePath } from './scripts/site-files.mjs';
 
@@ -43,6 +45,10 @@ const reactPages = {
   'pages/cuaderno/semana-08/index.html': { rootId: 'week-root', Component: WeekEight },
   'pages/cuaderno/semana-09/index.html': { rootId: 'week-root', Component: WeekNine },
   'pages/cuaderno/semana-10/index.html': { rootId: 'week-root', Component: WeekTen },
+  ...Object.fromEntries(weeks.slice(10).map(week => [
+    'pages/cuaderno/' + week.path,
+    { rootId: 'week-root', Component: PendingWeek, props: { week } },
+  ])),
 };
 
 function renderReactPages() {
@@ -54,7 +60,7 @@ function renderReactPages() {
 
       const marker = '<!-- ' + page.rootId + ' -->';
       if (!html.includes(marker)) throw new Error('Falta la raíz de ' + relativePath(filename));
-      return html.replace(marker, () => renderToString(createElement(page.Component)));
+      return html.replace(marker, () => renderToString(createElement(page.Component, page.props)));
     },
   };
 }
